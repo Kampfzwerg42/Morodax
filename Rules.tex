@@ -1,0 +1,866 @@
+\raggedright
+\part{Regeln}
+\chapter{Allgemeine Regeln}
+\section{Zeiteinheiten}
+\begin{itemize}
+\item eine Kampfrunde(KR) dauert 3 Sekunden.
+\item ein Tag dauert c.a. 24 Stunden.
+\item eine Woche hat 6 Tage(5 Arbeitstage und 1 Feiertag).
+\end{itemize}
+
+\section{Größenkategorien}
+Alle Größenwerte werden in Kategorien eingeteilt. Jede Kategorie ist dabei $\approx1,5$ mal größer als de vorherige. Diese Kategorien werden bei bedarf auch benutzt um andere Zahlensteigerungen zu beschreiben(z.b. Masse).
+\begin{tabular}{|c|c|c|}
+\hline 
+Kategorie & Maximalgröße & Bemerkung \\ 
+\hline 
+0 & 0,225m & Gilt in Rechnungen als $\frac{1}{4}$ \\ 
+\hline 
+1 & 0,35m & Gilt in Rechnungen als $\frac{1}{3}$\\ 
+\hline 
+2 & 0,5m &\\ 
+\hline 
+3 & 0,7m & Gilt in Rechnungen als $\frac{2}{3}$\\ 
+\hline 
+4 & 1m &\\ 
+\hline 
+5 & 1,5m& \\ 
+\hline 
+6 & 2,25m& \\ 
+\hline 
+7 & 3,5m& \\ 
+\hline 
+8 & 5m &\\ 
+\hline 
+9 & 7m& \\ 
+\hline 
+10 & 10m &\\ 
+\hline 
++6 & *10& \\ 
+\hline 
+17/18 &  & Größe eines \textbf{H-Hohn}\\ 
+\hline 
+\end{tabular} 
+\section{Proben}
+\label{AllgProben}
+\subsection{Würfel}
+
+Es wird gewürfelt: 1w20 pro Attributspunkt, mit Spezialisierungspunkten kann 1 Würfel um 1ne Stufe verbessert werden, dies kostet 1 Punkt pro Würfelstufe.
+
+\begin{itemize}
+\item 1 Attribustpunkt$\xrightarrow{1}w20$
+\item Spezialisierungspunkte verbessern Würfel $\xrightarrow{0}w20\xrightarrow{1}w12\xrightarrow{1}w8\xrightarrow{0,5}w6\xrightarrow{0,5}w4(\xrightarrow{1}w3\xrightarrow{1}w2\xrightarrow{3}w1)$
+\item Spezialisierungspunkte können auch für weitere Würfel benutzt werden $\xrightarrow{3}w12$(allerdings nur 1x pro w4 Spezialisierung).
+\end{itemize}
+
+Sollten die Spezialisierungspunkte negativ sein(z.b. durch Mali) werden die obigen Regeln invers angewendet, beziehungsweise 1 w20 pro negativen Punkt entfernt, sollte hierdurch der Würfelpool auf unter 1 sinken wird mit einem einzelnen w100 gewürfelt.
+
+\subsection{Basis Probe}
+
+Jeder Würfel wird jeweils getrennt ausgewertet und liefert einen (Kritischen) Teilerfolg($\leq$Schwierigkeit) oder Misserfolg($>$Schwierigkeit). Übliche Probenschwierigkeiten:
+\begin{description}
+\item[Primitiv(20)] Natürliche Fähigkeit ohne Risiko(über eine Straße gehen).
+\item[Trivial(16)] Triviale Probe(über eine Straße rennen).
+\item[Einfach(12)] Standardprobe(über ein Feld rennen).
+\item[Mittel(8)] Eine etwas schwierigere Probe(In der Dämmerung arbeiten).
+\item[Schwierig(6)] Schwierigere Probe, die nicht jeder schafft(Einen Felsen hochklettern/ eine versteckte Falle finden).
+\item[Schwer(4)] Schwierige Probe, die einen Profi erfordert(Falle entschärfen/ausbauen).
+\item[Meisterhaft(3)] Probe bei der selbst Experten Fehler machen können(halb aktivierte Falle entschärfen).
+\item[Legendär(2)] 
+\item[Göttlich(1)] 
+\end{description}
+
+\textit{\textbf{Beispiel:} 
+Schlucki der Zwerg hat Konstitution 3 und Zähigkeit 7. Er will in einer Taverne Zwergenschnaps trinken und muss eine einfache Zähigkeitsprobe ablegen um nicht umzukippen. Er würfelt insgesamt mit 3w12 und 1w8 und hat somit garantiert 4 Erfolge, hat also keinerlei Probleme mit dem Schnaps. }
+
+\subsection{Gegenprobe}
+
+Aktionator und Verteidiger würfeln beide eine 'Basis Probe'(siehe oben) und sortieren ihre Teilerfolge(aufsteigend für den Angreifer bzw. absteigend für den Verteidiger).
+Falls einer der beiden mehr Teilerfolge als der andere hat werden die höchsten Teilerfolge als 'Kritische Teilerfolge' zur Seite gelegt.
+Die sortierten Erfolge beider Parteien werden paarweise verglichen und generieren:
+\begin{description}
+\item[+1 Erfolg] pro 'kritischem Teilerfolg' des Aktionators.
+\item[+1 Erfolg] wenn Aktionator Teilerfolg$<$Verteidiger Teilerfolg.
+\item[$\pm0$ Erfolge] wenn Aktionator Teilerfolg$=$Verteidiger Teilerfolg.
+\item[-1 Erfolg] wenn Aktionator Teilerfolg$>$Verteidiger Teilerfolg.
+\item[11 Erfolg] pro 'kritischem Teilerfolg' des Verteidigers.
+\end{description}
+Falls anschließend:
+\begin{itemize}
+\item Erfolge $>$ 0: Die Aktion gelingt mit min('kritische Teilerfolge' des Aktionators;Erfolge) kritischen Teilerfolgen und Erfolge-min('kritische Teilerfolge' des Aktionators;Erfolge) normalen Teilerfolgen.
+\item Erfolge $\leq$ 0: Die Aktion schlägt fehl mit min('kritische Teilerfolge' des Verteidigers;-Erfolge) kritischen Teilerfolgen und -Erfolge-min('kritische Teilerfolge' des Verteidigers;-Erfolge) normalen Teilerfolgen für den Verteidiger.
+\end{itemize}
+
+\textit{\textbf{Beispiel:}Ein anderer Gast der Taverne sieht das und kommt zu Schlucki um ihn zu einem Saufduell herauszufordern. Der Gegner hat Konstitution 3 und Zähigkeit 2 also 1w20 und 2w12, beide machen ihre Proben Schlucki würfelt 3,7,9,12 der Gegner würfelt 15,7,7. Damit ergibt sich 1 Misserfolg für den Gegner(15), 2 Kritische Teilerfolge für Schlucki(12,9), 1 Erfolg für den Gegner(5 vs 7) und 1 unentschieden(7 vs 7). Somit bleiben für Schlucki 1 Kritische Teilerfolge(der andere muss genutzt werden um den Erfolg des Gegners zu neutralisieren) und für den Gegner 1 Misserfolg, somit gewinnt Schlucki das Duell und der Gegner hat sich überschätzt und kippt ohnmächtig vom Stuhl.}
+
+\subsection{Ohne Gegner}
+\label{ohneGegner}
+Ohne Gegner gilt:
+\begin{description}
+\item[$\leq Schwierigkeit$] Erfolg.
+\item[$\leq \frac{Schwierigkeit}{2}$] Kritischer Erfolg.
+\item[$=1$] Erfolg + Kritischer Erfolg.
+\end{description}
+
+Der Spielleiter kann dann Minimalmengen von (kritischen) Erfolgen festlegen damit die Probe Erfolgreich ist:
+\begin{description}
+\item[1-3 Erfolge] Einfache Komplexität(Eine Falle in einem Haus finden).
+\item[2 Erfolge\& 1 Krit] Standard Komplexität(Eine Falle im Unterholz finden).
+\item[4 Erfolge\& 2 Krit] erhöhte Komplexität(Der richtigen Spur folgen wenn diese einer Straße folgt.).
+\item[...] ....
+\end{description}
+
+\textit{\textbf{Beispiel:}Anschließend wird Schlucki übermütig und bestellt sich das spezial des Hauses muss jetzt eine mittlere Probe(Schwierigkeit 8) schaffen und da er mittlerweile schon einiges getrunken hat erhöht sich auch die Komplexität auf 'Standard'. Er würfelt 5,7,8,10, das reicht leider nicht für einen Kritischen Teilerfolg(höchstens 4). Somit endet Schlucki's Abend mit diesem Drink und auch er sackt zusammen.}
+
+Vor allem für Zauberproben oder wenn der Spielleiter es zulässt:
+Um mehr Erfolge zu generieren kann man sich die Probe freiwillig schwerer machen. Falls man dies tut bekommt man für je 2 Erfolge einen Extraerfolg pro Stufe der Erschwernis.
+
+\textbf{Beispiel:} Für eine einfache Aufgabe(Schwierigkeit 12) wird eine schwierige Probe(Schwierigkeit 6) gemacht. Es wird dabei 4,1,6 und 3 gewürfelt, somit 3 normale und 2 kritische Erfolge also in summe 5 Erfolge. Hierfür bekommt man für die Erschwernis $2_{durch Extrastufen}*2_{\frac{5}{2}}=4$ Extraerfolge(normale) zum Ergebnis dazu und landet bei insgesamt 7 normale und 2 kritischen Erfolgen.
+
+\subsection{Deutung der Probenergebnisse}
+\begin{description}
+\item[Kritischer Teilerfolg:] Deutliche Überlegenheit über den Gegner(kann auch als normaler Teilerfolg benutzt werden). Kann benutzt werden um außergewöhnliche Nebeneffekte auszulösen(z.b. Kritische Treffer, verstärkter Effekt, schnellere Ausführung, ...).
+\textbf{Im Standardfall werden übrige Kritische Erfolge genutzt um die Gesamtprobe aufzuwerten('leicht erfolgreich'/'geradeso geschafft'$\rightarrow$'erfolgreich'$\rightarrow$'kritischer Erfolg'/besonders gut$\rightarrow$...}
+\item[Teilerfolg:] Erfolgreiche Aktion/Reaktion. Kann benutzt werden um normale Nebeneffekte auszulösen.\textbf{Falls keine Verwendung für normale Teilerfolge gefunden wird dürfen sie 3:1 in Kritische Teilerfolge umgetauscht werden.}
+\item[Misserfolg:] Patzer/Missgeschick/Komplikation. Kann benutzt werden um negative Nebeneffekte auszulösen(z.b. unkritischere/leichte Treffer, schlechterer Effekt, langsamere Ausführung, Werkzeug geht kaputt, Charakter fällt hin, ...).\textbf{Im Standardfall(falls keine explizite Verwendung für Misserfolge definiert ist/wird) wird ein Misserfolg benutzt um einen Kritischer Teilerfolg auf einen normalen herunterzustufen.(oder auch um normale Erfolge komplett zu entwerten(optional)) Misserfolge des Gegners bewirken entsprechend das Gegenteil.}
+\end{description}
+
+\subsection{Unterstützung/Gruppenprobe}
+(TODO)
+
+Bei einer Unterstützung erhält der Unterstützte die Hälfte(aufgerundet) der Spezialisierungspunkte des Unterstützers als Bonus für seine Probe.
+
+\section{Regeneration}
+\label{vital}
+Es gibt 2 Möglichkeiten Leben wiederherzustellen. Entweder mit Unterstützung durch Magie (oder Medizin), oder indem man einfach wartet. Für jede Stunde ohne große Aktivität(kein Kampf oder schwere Arbeit also z.b. rumsitzen, schlafen, durch die Stadt bummeln, ...) regeneriert man $Konstitution+Ausdauer$ LP.
+
+Vitale Charaktere regenerieren doppelt so viel. Außerdem haben sie auch mehr Leben(12+(6 o. 1d12) pro Konstitutionspunkt).
+
+\section{Erschöpfung}
+
+Charaktere werden durch Zauber, Kämpfe, (körperliche) Arbeit und langem wach bleiben erschöpft. Bei solchen Aktionen können/werden 'Erschöpfungspunkte' generiert.
+
+Erschöpfungspunkte pro Aktion:
+\begin{itemize}
+\item[1] pro Kampfrunde(zeigt erst nach dem Kampf Wirkung)
+\item[1] pro (Zauber)probe(außerhalb von Kämpfen) um diese zu 'beschleunigen'
+\item[1] pro 'unbeschleunigtem' Zauber
+\item[1(0)] pro rennen Aktion(während eines Kampfs)
+\item[2(1)] pro sprinten Aktion(während eines Kampfs)
+\item[1] pro 10min Harte Arbeit(z.b. Schmieden)
+\item[1] pro 30min mittlere Arbeit
+\item[1] pro 1h leichtere Arbeit(z.b. Marschieren)
+\end{itemize}
+
+Wenn ein Charakter bestimmte Erschöpfungsschranken überschreitet bekommt er Mali:
+\begin{description}
+\item[$>(Ausdauer+1)*5$:] -1 auf körperliche Attribute
+\item[$>(Ausdauer+1)*10$:] -2 auf körperliche und geistige Attribute
+\item[$>(Ausdauer+1)*15$:] -3 auf alle Attribute
+\item[$>(Ausdauer+1)*20$:] -4 auf alle Attribute
+\item[...:] -... auf alle Attribute
+\end{description}
+Hinweis: Wenn ein Körperliches Attribut auf 0 fällt sind damit verbunden Aktionen nicht mehr möglich.
+
+Zum abbauen von Erschöpfungspunkten gibt es folgende Möglichkeiten:
+\begin{itemize}
+\item[1] pro 1h Ruhepause
+\item[+1] pro 1h ohne schlechtes Bedingungen(Regen,Wind,...)
+\item[+1] pro 1h beim Schlafen
+\item[+1] pro 1h beim Schlafen in Sicherheit/mit Wachen
+\item[+1] pro 1h beim Schlafen pro 'Luxusstufe'(Schlafsack, gute Matratze, Bett, ...).
+\item[+1] pro 1h bei reichhaltiger Verpflegung.
+\item[X] durch Aufputschmittel(magisch oder chemisch/pflanzlich)
+\end{itemize}
+
+\section{Erfahrungspunkte}
+Im verlauf eines Abenteuers werden Erfahrungspunkte(EP) verdient. Mit EP können verschiedene Charakterverbesserungen erlernt werden.
+\begin{enumerate}
+\item[1+EP] einen Zauber erlernen
+\item[3 EP] 1 Spezialisierungspunkt(SpezP)
+\item[12 EP] 1 Attributspunkt(AttrP)
+\item[21 EP] 1 Spezialspezialisierung(1 freies Spezialisierungsfeld des Charakterblattes befüllen, erlaubt entsprechende Proben, Start mit Spezialisierung 0)
+\item[42 EP] 1 Spezialtalent
+\end{enumerate}
+	
+\section{Bewegung}
+%TODO Hex feld bewegung!
+Es gibt 5 Arten der Bewegung:
+\begin{enumerate}
+\item Wandern: $(Konstitution + Ausdauer) * 3 * $Größe km pro Tag(~8-10h).
+\item Gewaltmarsch: $Wandern * 1,5$, stark erschöpft am Abend.
+\item Gehen: $(\frac{Fitness + 5}{3}) * (Größe)$ pro Kampfrunde.
+\item Schleichen: $\frac{Gehen}{2}$.
+\item Rennen: $Gehen * 2 + \frac{Akrobatik}{2}$ pro Kampfrunde.
+\item Sprinten: $Gehen * 3 + Akrobatik$ pro Kampfrunde.
+\end{enumerate}
+Alle Bewegungsgeschwindigkeiten sind abhängig von der Körpergröße, diese werden aufgerundet auf eins der folgenden Werte: $0,5m; 0,66m; 1m; 1,5m; 2m; 3m; 4,5m; 7m$. Für Geschwindigkeitsproben können diese Größen als Modifikation der Probenerfolge betrachtet werden.
+
+Je nachdem wie sich ein Charakter über was für Gelände bewegen will kann eventuell eine Probe gefordert werden um die Bewegung auszuführen.(beim Schleichen,Rennen\& Sprinten erhöht sich die Schwierigkeit)
+
+Beispielschwierigkeiten für verschiedene Gelände:
+\begin{tabular}{rc}
+\multicolumn{1}{c}{Gelände} & Minimal notwendige Proben(Basis)\\
+\hline
+Wald: & 1 Trivial\\
+Sandwüste: & 2 Trivial\\
+lose Felsen: & 1 Einfach\\
+Sumpf: & 1 Mittel\\
+Treibsand: & 1 Schwer\\
+\end{tabular}
+
+\section{Schleichen}
+Um dich unerkannt zu bewegen ist eine Heimlichkeitsprobe erforderlich, die Schwierigkeit dieser Probe wird Maßgeblich vom Gelände beeinflusst(z.b. Hausboden:einfach, quietschende Dielen: mittel, ...).
+
+Ein Gegner hat die Optionen den Schleichenden wahrzunehmen(z.b. Wachposten oder generell Leute die in der nähe sind), dazu wird eine Wahrnehmungsprobe ausgeführt. Je nachdem was die entsprechenden Personen gerade machen wird die Probenschwierigkeit gewählt(Wachen auf Patrouille: einfach, Leute ohne Wachabsichten: mittel, aktiv abgelenkte/betrunkene: schwer)
+
+Sollte der Gegner sich des Schleichenden schon bewusst sein(zumindest, dass er da ist) wird stattdessen eine Suchenprobe durchgeführt(Schwierigkeit -1).
+
+Alternativregel für große Gruppen: pro Person einer Gruppe, vor der man sich verstecken will muss ein Erfolg generiert werden, kritische Erfolge für wachsame/suchende Personen einer Gruppe.
+
+\section{Glücksproben}
+Bei Glücksproben wird ein w20 geworfen, besonders glückliche Menschen(Glück>1, oder Glücksbonus) dürfen mehrere w20 werfen und das beste Ergebnis nutzen.
+
+Anders als bei anderen Proben können auch Zwischenwerte(3,5,7,...) zu einem leicht anderen Ergebnis führen, je besser die Probe ausfällt desto besser ist das Ergebnis für den Charakter.
+\chapter{Charisma Regeln}
+
+Es gibt verschiedene Möglichkeiten andere Charaktere zu beeinflussen, diese haben jedoch unterschiedliche Nebeneffekte, von denen einige Dauerhafter Natur sind.
+
+\section{Unerkannt}
+\label{Unerkannt}
+Mit dem Spezialtalent Unerkannt können bist du ein sehr unauffälliger Typ und andere werden Probleme sich an dein genaues Aussehen zu erinnern(halt so'n Durchschnittstyp). Dadurch sind alle gesellschaftlichen Effekte nur temporär(solange sie dich noch wahrnehmen können), dies betrifft sowohl durch Beeinflussung hervorgerufene Effekte(Einschüchtern/Verführen) als auch andere Effekte(Schlechtes Benehmen bis hin zu Diebstahl). Effekte die auf dich wirken bleiben unverändert.
+
+\section{Rhetorik}
+\begin{description}
+\item[Anwendungen:] Überzeugen/Überreden/Lügen/Verhandeln($\pm 10\%$ pro kritisch(inklusive 0-fach kritisch))/...
+
+Allgemein eben alles was mit Worten zu tun hat.
+
+\item[Gegenprobe:] Menschenkenntnis
+
+\item[Erfolg:] Der Gegner ist überzeugt.
+
+\item[(Kritischer) Fehlschlag:] Der Gegner ist definitiv vom Gegenteil überzeugt.
+\end{description}
+
+\section{Einschüchtern}
+\begin{description}
+\item[Probe:] $Einschüchtern(Charisma) + \frac{Fitness}{2} w20s$
+
+\item[Gegenprobe bei Humanoiden:] $Menschenkenntnis(Charisma) + \frac{Fitness}{2} w20s$
+
+\item[Gegenprobe allgemein:] $Willenskraft(Konstitution) + \frac{Fitness}{2} w20s$
+
+\item[Erfolg:] Der Gegner ist verängstigt und versucht möglichst schnell und dauerhaft von dir wegzukommen.
+
+\item[(Kritischer) Fehlschlag:] Du hast angst vor deinem Gegner und wirst dich ihm nicht mehr widersetzen.
+\end{description}
+
+\section{Verführen}
+\begin{description}
+\item[Beschränkung:] nur gegen anders geschlechtliche(m$\rightarrow$w oder w$\rightarrow$m)
+
+\item[Gegenprobe:] Verführen
+
+\item[Dekowert:]Die Probe wird um X erschwert wenn gilt:$Dekowert<2^X*gegnerischer\ Dekowert$.
+
+Basis Dekowert=(Verführen+1)*2
+
+\item[Homosexualität:] Verführen nur gegen gleichgeschlechtliche, Verführung von Homosexuellen gegen Heterosexuelle oder umgekehrt: -2 Schwierigkeit bei der Verteidigung.
+
+\item[Erfolg:] Der Gegner ist in dich verliebt und wird versuchen dir nah zu bleiben (potentielle Anhänglichkeit).
+
+\item[(Kritischer) Fehlschlag:] Du bist in deinen Gegner verliebt und machst dir (e.v. falsche) Hoffnungen auf eine Beziehung.
+\end{description}
+
+\section{Täuschung}
+\begin{description}
+\item[Anwendungen:] Für optische/Akustische Täuschungen(vorgeben jemand anders zu sein). Beschreibt nicht wie gut man mit Worten täuschen kann!
+
+\item[Probe:] Heimlichkeit mit dem Würfelpool von Charisma(Das Talent Unerkannt gibt einen Schwierigkeitsbonus)
+
+\item[Gegenprobe:] Menschenkenntnis mit dem Würfelpool von Wahrnehmung
+
+\item[Erfolg:] Gegner nimmt dir deine Imitation ab.
+
+\item[(Kritischer) Fehlschlag:] Gegner durchschaut die Täuschung und betrachtet dich als Feind.
+\end{description}
+
+\chapter{Kampf Regeln}
+In jeder Kampfrunde hat jeder Charakter 3 Aktionen(1 Haupt- bzw. Angriffsaktion(Haupt), 1 Defensivaktion(Def) und 1 andere/unterstützende Aktion(Sup)) zur Verfügung.
+
+Jede dieser 3 Aktionen kann unabhängig von den anderen Aktionen über die gesamte Kampfrunde hinweg ausgeführt werden. Aktionen können auch hintereinander passieren, in einander übergehen oder fusioniert werden(siehe \ref{SupportKampfaktionen}).
+
+Eine Kampfrunde besteht aus 4 Phasen:
+\begin{description}
+\item[1. Manöverphase:] Support-/Bewegungsaktionen nutzen.
+\item[2. Hauptphase der Spieler:] Angriffe der Spieler auswürfeln.
+\item[3. Hauptphase der Gegner:] Angriffe der Gegner auswürfeln.
+\item[4. Endphase:] Kampfrunde beenden \& Wirkung der Angriffe auswerten.
+\end{description}
+\section{Manöverphase}
+Für jeden Charakter wird gesammelt/ausgewertet was er mit seiner Supportaktion machen will.
+Die Supportaktion der Kampfrunde kann z.b. folgendes sein:
+\begin{itemize}
+\item Bewegen(gehen).
+\item Spezielles Kampfmanöver ausführen.
+\item Spezielles Kampfmanöver unterstützen(2. Aktion).
+\item Nachladen ausführen(2. Aktion).
+\item Zaubern(2. Aktion).
+\item (einfache) Interaktionen ausführen(z.b. unverschlossene Tür öffnen).
+\item Reden.
+\end{itemize}
+Falls die Supportaktion für andere Aktionen mitbenutzt wird gibt es entsprechend keine Auswertung in dieser Phase.
+
+Falls der Charakter sich für eine Bewegung entscheidet(auch wenn andere Aktionen mit betroffen sind(rennen/sprinten)):
+\begin{description}
+\item[Nahkampfdistanz eines Gegners betreten:] Standarddistanz=max(eigene Waffenreichweite, gegnerische Waffenreichweite).
+\item[Nahkampfdistanz eines Gegners verlassen:] Verteidigung nur über Ausweichen(nicht Abwehr) in dieser Runde.
+\end{description}
+
+\section{Hauptphase}
+Die Hauptaktion/Primärfokus der Kampfrunde kann z.b. folgendes sein:
+\begin{itemize}
+\item Angriff durchführen.
+\item Spezielles Kampfmanöver ausführen.
+\item Nachladen ausführen(kann weitere Aktionen benutzen).
+\item Zaubern(benutzt weitere Aktionen).
+\item (Komplexe) Interaktionen ausführen.
+\item ...
+\end{itemize}
+Bei einem Angriff wird generell eine Angriffsprobe(Nahkampf) gegen eine Verteidigungsprobe ausgeführt.
+
+\subsection{Nahkampfdistanzen}
+Jede Waffe hat eine andere optimale Nahkampfdistanz, diese leitet sich aus der Größenkategorie der Waffe ab(eine 1,5m Waffe hat eine um 1 höhere optimale Nahkampfdistanz verglichen mit einer 1m Waffe).
+
+Für Verteidigungsproben(Abwehr \& Schildabwehr) gibt es einen Malus in Höhe von $max(0,Waffendistanz-Kampfdistanz)*2$.
+
+Für Angriffsproben gibt es einen Malus in Höhe von $|Kampfdistanz-Waffendistanz|*2$.
+
+Beispiel 1: Kampf von einer 0,33m Waffe(A) gegen eine 0,66m Waffe(B). Die beiden Kämpfer halten eine Kampfdistanz die einer 0,5m Waffe entspricht.
+Greift A B an bekommt A er -2 Spezialisierungspunkte auf seinen Angriff während B -2 Spezialisierungspunkte auf seine Verteidigung erhält.
+Greift B A an bekommt B er -2 Spezialisierungspunkte auf seinen Angriff während A seine normale Verteidigung nutzen darf.
+
+Wenn ein Schild getragen wird gilt bei Verteidigungsproben immer die Waffendistanz des Schildes statt der der eigenen Waffe.
+
+Um die Nahkampfdistanz(für die nächste Runde) zu ändern gibt es verschiedene Möglichkeiten:
+\begin{itemize}
+\item Spezielle (bewegungs-)Manöver.
+\item Bei einem Angriffswurf kann jeder Erfolg genutzt werden um die Distanz um 1 zu verringern.
+\item Bei einem Verteidigungswurf(Ausweichen)kann jeder Erfolg genutzt werden um die Distanz um 1 zu erhöhen.
+\end{itemize}
+
+\subsection{Abwehraktion}
+Es gibt verschiedene Verteidigungsmöglichkeiten, eine Verteidigung erfordert jedoch immer die Defensivaktion, weshalb jede Verteidigungsprobe immer gegen alle Angriffe der Kampfrunde gilt(bei jedem Angriff gelten aber alle für den Angriff relevanten Würfe):
+
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline 
+Aktion & Ausweichen & Abwehr & Schildabwehr\\ 
+\hline 
+\hline 
+Probe & Ausweichen & Abwehr & Ausweichen \textbf{oder} Abwehr \\ 
+\hline 
+Schwierigkeit gegen Nahkampf & $+ 1$ & $\pm 0$ & $\pm 0$ \\ 
+\hline 
+Schwierigkeit gegen Fernkampf & $\pm 0$ & $+ 1$ & $\pm 0$ \\ 
+\hline 
+Schwierigkeit gegen größere Gegner(nur bei 'gezielten Angriffen') & \multicolumn{3}{c|}{$- 1$ pro Größenkategorie Differenz.} \\ 
+\hline
+Gegen Tech. Nahkampf & \multicolumn{2}{c|}{Todo} & ? \\ 
+\hline 
+Konteraktion Gegenschlag(nur mit Nahkampfwaffe) & (leichter) Treffer & Gegner entwaffnen & Schildschlag(1 Runde betäubt) \\ 
+\hline 
+Konteraktion Angriff umlenken(Verfälschung der Angriffsrichtung um Ziel auszuwählen) & Ja($\pm 0^\circ$ Verfälschung) & Ja($\pm 30^\circ$ Verfälschung). & Ja($\pm 90^\circ$ Verfälschung) \\ 
+\hline 
+Tech. Nahkampf Konter & - & Umlenkung(Tech. trifft den Gegner) & Nahkampf Konter? \\ 
+\hline 
+Voraussetzung & - & Waffe o. Metallarmschienen & Schild \\ 
+\hline 
+\end{tabulary}
+
+Bei Konteraktionen gilt: ein normaler kritischer Erfolg generiert einen leichten Treffer auf das Ziel der Konteraktion/löst den beschriebenen Effekt aus, ein 2-fach kritischer Erfolg generiert einen normalen Treffer oder verdoppelt den Effekt, ein X-fach kritischer Erfolg generiert einen X-3-fach kritischen Treffer oder ver-x-facht den Effekt.
+
+\subsubsection{Kleinerer Gegner}
+Bei einem Angriff durch einen größerer Angreifer wird die Verteidigungsprobe für Fernkampf um 1 Stufe(4 Punkte) erleichtert pro Größenkategorie unterschied.
+
+\subsubsection{Mehrere Gegner}
+Wenn mehrere Angreifer ein Ziel angreifen wird die Verteidigungsprobe um 1 Stufe(4 Punkte) erschwert.
+Wenn die Angreifer das Ziel umzingelt(Angriffswinkel $>120^\circ$, mindestens 3 Angreifer) haben wird die Verteidigungsprobe nochmals um 1 Stufe erschwert.
+
+Die Verteidigungsprobe erhält außerdem einen Malus von 2 pro zusätzlichen Angreifer gegen den Verteidigt werden soll.
+
+Man muss sich nicht gegen alle Gegner verteidigen(wodurch z.b. der Malus durch umzingeln vermieden, bzw. die Angriffsboni reduziert werden können), alle gegen die man sich nicht verteidigt können einen allerdings angreifen als ob man sich überhaupt nicht verteidigt(Probe ohne Gegenprobe \ref{ohneGegner}).
+
+Wenn man sich gegen '0' Angreifer(z.b. durch Verteidigungsboni) wird die Schwierigkeit um 1 Stufe reduziert.
+
+\paragraph{Gruppenangriff}
+TODO
+\paragraph{Gruppenverteidigung}
+TODO
+
+
+\subsection{Schaden}
+Der Schadensmultiplikator des Angriffs ist $Anzahl\ kritischer\ Erfolge-1$. Wenn kein kritischer Teilerfolg erzielt wurde gilt es als leichten Treffer, mit einem Schadensmultiplikator von 0,5.
+Der Schaden(mindestens 0 Punkte) berechnet sich aus:
+
+$Grundschaden*Multiplikator(abgerundet)/Rüstungswert(aufgerundet) - Zähigkeit$
+\subsubsection{Nahkampfschaden}
+Bei Nahkampfwaffen ergibt sich der Grundschaden aus:
+
+$(4 + Qualität) * Waffengröße * Fitness + Kraft$
+\subsubsection{Faustkampf}
+Faustkampfwaffen gelten als Größenkategorie eigene Größe-5. Für unbewaffneten Kampf als 'Waffenqualität' standardmäßig -2 genutzt, sodass als unbewaffneter Schaden: $(4-2) * (eigene Größe/1,5^5) * Fitness + Kraft$ rauskommt(auf die passende Größenkategorie gerundet).
+
+\subsubsection{Fernkampfschaden}
+Bei üblichen Fernkampfwaffen ergibt sich der Grundschaden aus:
+
+$(4 + Qualität) * Waffengröße * Waffenmultiplikator + w12(beim 'Kauf')$
+
+\section{Endphase}
+Effekte(Schaden, Magie, ...) die in der Kampfrunde erzeugt werden gelten normalerweise erst für die nächste Kampfrunde. Schaden \& Co können/sollten zwar schon während der Kampfrunde berechnet und aufgeschrieben werden die Konsequenzen davon(Tod, Bewusstlosigkeit, ...) gibt es jedoch erst in der Endphase.
+
+Alle Teilnehmer bekommen außerdem 1 Erschöpfungspunkt(zusätzlich zu eventuellen Erschöpfungspunkten durch spezielle Aktionen).
+
+\section{Manöver}
+\label{SupportKampfaktionen}
+Manöver werden unterteilt in Standardmanöver und Spezialmanöver.
+
+Standardmanöver sind immer/für jeden verfügbar:
+\begin{description}
+\item[Gehen:] ($Sup$)
+\item[Rennen:] ($Atta + Sup$) +1 auf Abwehrschwierigkeit.
+\item[Sprinten:] ($Atta + Sup + Def$)
+
+\item[Stürmen:] ($Sup$) Reduziert die Nahkampfdistanz(für die nächste Runde) auf die eigene Waffenreichweite. Alle Distanzmali auf Angriffsproben werden auf die Verteidigungsproben übertragen.
+\item[Wegspringen:] ($Sup$) Erhöht die Nahkampfdistanz(für die nächste Runde) auf die eigene Waffenreichweite. Alle Distanzmali auf Angriffsproben werden auf die Verteidigungsproben übertragen.
+
+\item[Normaler Angriff:] ($Atta$) Kritische Erfolge werden genutzt um kritische Treffer zu erzeugen.
+\item[Gezielter Angriff:] ($Atta$) Gegenprobe wird um die Rüstungsschwierigkeit verbessert dafür wird der Rüstungswert ignoriert(sonst wie Normaler Angriff).
+\item[Schneller angriff:] ($Atta + Sup$) Jeder kritische Erfolg erzeugt 1 normalen Treffer. Jeder Erfolg erzeugt 1 leichten Treffer. Gegnerische Misserfolge werten leichte Treffer zu normalen Treffern auf. Eigene Misserfolge werten Treffer ab oder entfernen 1 leichten Treffer.
+\item[Heftiger Angriff:] ($Atta + Sup$) Normale Erfolge werden genutzt um kritische Treffer zu erzeugen. Misserfolge gleichen sich aus und wandeln Kritische Erfolge in normale Erfolge bzw. neutralisieren normale Erfolge. Verteidigungsproben der Runde sind erschwert um 1 Stufe.
+
+\item[Konter:] ($Sup??$) Ausführung einer Konteraktion(siehe Tabelle) bei kritischem Defensiverfolg.
+
+\item[Nahschuss:] ($Atta$) ??
+\item[Hastiges Nachladen:] ($Atta + Sup + Def$) Keine anderen Aktionen(inklusive Verteidigungen) während des Nachladens möglich. Probe notwendig, Erfolge reduzieren die Nachladezeit, Misserfolge erhöhen die Nachladezeit.
+\item[Zielen:] ($Sup$) Bonus auf den nächsten gezielter Angriff(+2 Spez).
+
+\item[Angriff mit 2 Waffen(Erfordert Spezialtalent Beidhändigkeit):]($Atta + Sup + Def(optional)$) Ermöglicht einen Angriff mit beiden Waffen, entweder auf 2 Gegner oder als '2 Angreifer' gegen einen Gegner. Die Schwierigkeit des Angriffs erhöht sich um 1.
+Abwehraktionen werden ausgeführt als gebe es 1 Angreifer weniger.
+Schaden ist mit 'normalen' Waffen um 3 statt 1 Kraft reduziert, mit 'großen' Waffen um 6 statt 3.
+Große Fernkampfwaffen sind nicht nutzbar.
+
+\item[Schnelle Reaktion(Spezialtalent):] ($Speziell$) Keine Überraschungsangriffe/Schleichangriffe auf dich möglich, Waffe ziehen als Unterstützungsaktion statt Hauptaktion.
+\end{description}
+
+Spezialmanöver benötigen spezielles Training(ähnlich wie Zauber) deshalb:
+\begin{itemize}
+\item Der Spieler beschreibt was er vorhat bzw. was die Aktion seines Charakters bewirken soll und wie sie aussehen soll(z.b. dreifacher Salto rückwärts auf den Kopf des Gegners mit Schwert voraus und ich nenne es den 'Todesdreher').
+\item Falls die Aktion und Wirkung sinnvoll sind wird eine Manöverprobe festgelegt(meist eine passende Kampfprobe, z.b. Nahkampf, mittel\& komplexer) um das Manöver richtig auszuführen.
+\item Je nach Aktion und Wirkung können weitere Proben notwendig sein(bzw. kann das Ergebnis entsprechend weiter/wiederverwendet werden).
+\item Falls die Manöverprobe erfolgreich ist kann der Charakter die Aktion ausführen.
+\item Falls die Manöverprobe kritisch fehlschlägt ...
+\item Falls die Manöverprobe kritisch erfolgreich ist(2 extra Krits) hat der Charakter das Manöver sogar direkt gelernt(ohne EP-Kosten).
+\item Spezialmanöver können für EP gelernt werden(siehe Zauber).
+\item Ein einmal erfolgreich durchgeführtes Manöver kann der Charakter einfacher lernen(siehe 'lernen mit Buch' bei Zaubern).
+\item Erlernte Manöver benötigen keine Manöverprobe mehr.
+\item Proben für das Manöver sind für gelernte Manöver leichter als für ungelernte Manöver.
+\end{itemize}
+Beispiele für Spezialmanöver(Zu lernen wie Zauber Stufe 0):
+\begin{description}
+\item[Rundumschlag:] ($Atta + Sup$) Trifft alle die sich innerhalb der eigenen Waffenreichweite befinden.
+\item[Finte:] ($Atta$) Normaler oder gezielter Angriff um 1 Stufe erschwert für beide Seiten.
+\item[Umhauen:] ($Atta + Sup$) Kein schaden aber ein Erfolg haut den Gegner um(muss erst wieder aufstehen). Jeder kritische Erfolge zwingen den Gegner min. 1 Runde liegenzubleiben.
+\item[Entwaffnen:] ($Atta + Sup$) Je nach Waffe gibts eine Erschwernis(+1 für normale Waffen, +3 für kleine Waffen, +2 für zweihändig geführte Waffen). Kritische Erfolge schleudern die Waffe weiter weg.
+
+\item[2 Pfeile gleichzeitig schießen:] TODO
+\end{description}
+
+\chapter{Magie Regeln}
+\section{Regeln}
+\label{Kampfmagier}
+Eine Zauberaktion benötigt eine volle Runde(Atta. + Sup. + Def.).
+Manche Magier, sogenannte Kampfmagier, haben gelernt sich beim Zaubern auf das notwendigste zu beschränken. Sie sind so geübt im Zaubern, dass dies nicht ihre komplette Aufmerksamkeit benötigt, somit können sie parallel zu ihrem Zauber eine weitere Aktion ausführen(Zauberaktionen benötigt -1 Aktion).
+
+Durch langes Training mit auf sie gewirkte Zauber haben Kampfmagier eine bessere Kontrolle über ihren Magieschild und können Spezialisierungspunkte darin investieren.
+
+Jeder Zauber hat eine Stufe und eine Zauberschule, alle Proben für den Zauber werden mit der Spezialisierung der Schule(entweder als Verstands oder als Macht Proben) und der Probenschwierigkeit (Primitiv für Stufe -1,) Trivial für Stufe 0 Zauber, Einfach für Stufe 1, ... ausgeführt.
+
+Um einen Zauber zu wirken muss man mindestens den entsprechenden Basiszauber erlernt haben, am besten sollte man den Zauber selbst auch studiert haben.
+
+Ein Basiszauber bildet die Grundlage aller Zauber einer Spezialisierung und stellt eine sehr allgemeine Zaubermatrix dar(z.b. haben entsprechend alle Zauber der Angriffsspezialisierung eine ähnliche Zaubermatrix und damit ähnliche Bewegungen/Beschwörungsformeln).
+Die Kenntnis des Basiszaubers einer Spezialisierung wird durch die Magische Macht Spezialisierung dargestellt, womit bei dieser für den 1. Spezialisierungspunkt zusätzlich zu den Spezialisierungspunktkosten noch die Kosten für den Basiszauber hinzukommen.
+Ein Basiszauber selbst ist jedoch direkt anwendbarer Zauber sondern mehr eine Grundlage, die man verändert um einen 'nützlichen' Zauber zu kreieren.
+
+Die Verbesserungseffekte, die für den Basiszauber gelten, gelten für alle Zauber der entsprechenden Spezialisierung(alle davon abgeleiteten Zauber).
+
+\subsection{Zaubern}
+Um Zauber zu wirken müssen 2 Proben durchgeführt werden eine mit Magieverstand um zu sehen ob der Zauber richtig gewirkt wurde und eine mit Magischer Macht um die Stärke zu bestimmen.
+
+Jeder von Zauberproben generierte Erfolg kann benutzt werden um den Zauber stärker zu machen indem damit die (Sonder)effekte eines Zaubers ausgelöst werden(siehe Zauberliste(\ref{Zauberliste})/Zaubergenerierung(\ref{Zaubergenerierung})).
+
+\subsection{Zauber kombinieren TODO?!}
+Es ist möglich Zauber zu kombinieren, dafür werden beide Zauber gleichzeitig ausgeführt.
+
+Dafür wird:\begin{itemize}
+\item der Attributspool wird auf die zu wirkenden Zauber verteilt(für alle Proben), hierbei muss für jeden Zauber mindestens 1 Würfel benutzt werden, die Spezialisierungen sind allerdings unabhängig von einander.
+\item alle Proben aller Zauber müssen gleichlang ausgeführt werden(wenn ein Zauber mit 2 Zauberwebenproben durchgeführt wird müssen alle anderen auch mit 2 Zauberwebenproben durchgeführt werden).
+\item die Erschöpfungspunkte der Zauberproben werden aufsummiert(bei 2 Zaubern 2 temporären Erschöpfungspunkte pro Runde).
+\item es müssen zusätzliche Kombinationserfolge generiert werden, damit die Zauber nicht scheitern.
+Je Probe müssen (Zauberanzahl - 1) Erfolge mit Schwierigkeit=(Schwierigkeit des Schwersten Zaubers + 1) Kombinationserfolge erzielt werden.
+Diese müssen von einem(oder mehreren) der beteiligten Proben gezahlt werden(z.b. 1. Zauber=mittlerer und schwerer Erfolg, 2. Zauber=einfacher Erfolg, 1 schwere Kombinationsprobe ist nötig => Ergebnis der Probe ist 1. Zauber=mittlerer Erfolg, 2. Zauber=einfacher Erfolg).
+\end{itemize}
+\subsection{Anhaltende Zauber}
+Für anhaltende Zauber muss in jeder Runde eine zusätzliche Probe gemacht werden, ob der Zauber aufrecht erhalten werden konnte.
+Dafür gilt:\begin{itemize}
+\item Es wird für den Zauber in jeder Runde, die er aufrecht erhalten werden soll eine Zauberwebenprobe und eine Zaubermachtprobe ausgeführt.
+\item Sollten mehrere Zauber gleichzeitig aufrecht erhalten werden oder zusätzlich neue Zauber gewirkt werden gelten die selben regeln wie bei mehreren Zaubern, der Attributspool muss also auf alle gewirkten und erhaltenen Zauber aufgeteilt werden mit min. 1 Punkt pro Probe.
+\item Die Zauberwebenprobe muss mindestens einen(2 bei ungelernten Zaubern) Erfolg(e) in der Schwierigkeit des Zaubers generieren oder sie gilt als gescheitert.
+\item Die Zaubermachtprobe benötigt nur 1 trivialer Erfolg, da temporäre Zauber kaum Energie abgeben.
+\item Sollten eine Probe nicht ausgeführt werden können oder scheitern erlischt die Wirkung des Zaubers(e.v. gibt es einen Abklingeffekt).
+\end{itemize}
+
+\subsection{Zauberwebenprobe(Magie Verstand)}
+
+Bei einer Zauberwebenprobe wird standardmäßig 1 kritischer Teilerfolg verbraucht um den Zauber erfolgreich/kontrolliert zu erzeugen.
+Ohne diesen kritischen Teilerfolg ist der Zauber Ungezielt, die Effekte werden zwar normal bestimmt, jedoch wird bei der Aktivierung des Zaubers ein zusätzlicher Zielwürfel genutzt.
+
+Für ungelernte Zauber sind alle Kosten verdoppelt und es werden entsprechend auch 2 kritische Teilerfolge für die Erzeugung verbraucht.
+
+%Um einen Zauber besonders gut auszuführen kann der Zauberer den Umgebungswürfelpool um 1 w20 erweitern um bei einem Zaubererfolg 1 extra Erfolg für Verbesserungen zu erhalten.
+%Der Zauber kann auch den Umgebungswürfelpool um 1 w12 erweitern um bei einem Zaubererfolg 1 extra Kritischen Erfolg für Verbesserungen zu erhalten.
+
+%Der ein Zauber bei dem die 'Umgebungswürfel' gewinnen gilt als Fehlschlag ein Zauber bei dem sich alle erfolge ausgleichen wird ungezielt(gekaufte extra Erfolge werden dennoch eingesetzt, da diese die ursprüngliche Absicht des Zauberers darstellen).
+
+Bei einem Fehlschlag($<1 Erfolg$ bzw. $<2 Erfolge$ bei ungelernten Zaubern) wird eine Glücksprobe ausgeführt und ein dem Ergebnis entsprechend ein zufälliges magisches Ereignis generiert. Die folgenden Tabellen sind Beispiele für mögliche Ereignisse.
+
+\begin{TODO}
+seltene Änderung des Magiebereichs -> Hälfte im gleichen bereich hälfte speziell/2 Würfel/...
+\end{TODO}
+\begin{tabulary}{\textwidth}{|c|C|}
+\hline 
+Fehlschläge (1w20) & Effekt (immer ungezielt wenn nicht näher definiert) \\ 
+\hline 
+\hline 
+1 & Dein Zauber. \\ 
+\hline 
+2 & Jede Mag. Tech wird aufgeladen \\ 
+\hline 
+3 & • \\ 
+\hline 
+4 & zufällige Heilung \\ 
+\hline 
+5 & • \\ 
+\hline 
+6 & Zufällige Explosionen \\ 
+\hline 
+7 & • \\ 
+\hline 
+8 & Alles wird sauber \\ 
+\hline 
+9 & • \\ 
+\hline 
+10 & Drachenillusion(alle) \\ 
+\hline 
+11 & Gegenstände fliegen durch die Luft. \\ 
+\hline 
+12 & • \\ 
+\hline 
+13 & (Elementar)Beschwörung \\ 
+\hline 
+14 & Feuerball auf dich \\ 
+\hline 
+15 & zufälliger Schutz \\ 
+\hline 
+16 & Aktiven Zauber werden aufgelöst. \\ 
+\hline 
+17 & Licht \\ 
+\hline 
+18 & • \\ 
+\hline 
+19 & Du(+zufällige andere) verwandelst dich(nutzlose Erscheinung)\\ 
+\hline 
+20 & 'Angriff' auf dich. \\ 
+\hline 
+\end{tabulary} 
+
+\begin{tabulary}{\textwidth}{|c|C|}
+\hline 
+Ungezielt(1w20) & Effekt \\ 
+\hline 
+\hline 
+1 & Zauber wird auf alle Verbündeten des Ziels gewirkt. \\ 
+\hline 
+2 & Zufällig triffst du das richtige Ziel \\ 
+\hline 
+3 & \multirow{3}{*}{Ein Verbündeter des Ziels.} \\ 
+4 & \\ 
+5 & \\ 
+\hline 
+6 & \multirow{12}{10cm}{\center Umgebung/Neutral:\linebreak Niedrigere Zahlen haben positivere Nebenwirkungen.\linebreak Höhere Zahlen haben negativere Nebenwirkungen.} \\ 
+7 & \\ 
+8 & \\ 
+9 & \\ 
+10 & \\ 
+11 & \\ 
+12 & \\ 
+13 & \\ 
+14 & \\ 
+15 & \\ 
+16 & \\ 
+\hline 
+17 & \multirow{3}{*}{Ein Gegner des Ziels} \\ 
+18 & \\ 
+19 & \\ 
+\hline 
+20 & Zauber wird auf alle Gegner des Ziels gewirkt. \\ 
+\hline 
+\end{tabulary}
+
+\subsection{Zaubermachtprobe(Magische Macht)}
+
+%Wie bei der Verstandprobe kann auch für die Macht probe der Umgebungswürfelpool erweitert werden um extra erfolge zu erhalten. Für die Machtprobe ist der Standardpool allerdings leer.
+
+Bei 0(oder weniger) Erfolgen verpufft der Zauber wirkungslos.
+
+Für jeden Erfolg können wie auch beim Zauberweben bestimmte Effekte gekauft werden, diese sind vom jeweiligen Zauber abhängig. Anders als die Effekte der Zauberweben probe, die hauptsächlich die Kontrolle über den Zauber darstellen, sind die Effekte der Zaubermachtprobe eine Darstellung der Kraft/des Effekts eines Zaubers.
+
+\subsection{Magie Verteidigung}
+
+Jedes Geschöpf, dass mit der Magie verbunden ist hat einen natürlichen Schutzschild, der die Einwirkung schädlicher bzw. ungewollter Magie versucht zu verhindern. Dabei wird mit magischer Macht(Schild Spezialisierung) gegen den Zaubermachtwurf gewürfelt.
+
+Dies betrifft ausschließlich Zauber, die das entsprechende Geschöpf direkt betreffen und nicht von diesem gewirkt wurden:
+\begin{enumerate}
+\item Zauber die direkten Schaden verursachen(betrifft nur direkten magischen Schaden(keine Elementarmagie)).
+\item Verwandlungsmagie(außer Rückverwandlung).
+\item Illusionen, die die körperliche Erscheinung verändern(Unsichtbarkeit, Illusionäre Verwandlung, ...).
+\item Beschwörungsmagie.
+\end{enumerate}
+
+\subsubsection{TODO: effekte...}
+
+Bei einem 'kritischen Treffer' werden die Erfolge des Ziels 'konsumiert' und stärken den Zauber(Gesamterfolge=Zaubererfolge + Verteidigungserfolge).
+
+Bei einem 'leichten Treffer' wird der Effekt halbiert(2 Erfolge für einen Verbesserungspunkt).
+
+Bei einem Fehlschlag kann der Zauber die Verteidigung nicht überwinden. 
+
+Bei einem kritischen Fehlschlag prallt der Zauber ab und trifft ein zufälliges nahes Ziel.
+
+\subsection{Lebensdauer der Magie}
+Normalerweise ist ein Zauber eine einmalige Angelegenheit und erzeugt einen bestimmten Effekt, dies ist spontane Magie, bei der die Zaubermatrix für das Wirken des Zaubers 'verbraucht' wird. Die Zaubermatrix destabilisiert sich dabei durch das zuführen Magischer Kraft und der gewünschte Effekt tritt normalerweise auf wenn die Matrix zerbricht und die enthaltene Energie gezielt freigibt.
+
+Einige Zauber haben jedoch eine stabilere Zaubermatrix, diese werden temporäre Zauber genannt, bei diesen tritt der Effekt auf solange die Zaubermatrix intakt und befüllt ist. Solche Zauber benötigen konstante Aufmerksamkeit um die Zaubermatrix über längere Zeit aufrechtzuerhalten. Eine Zuführung Magischer Energie nach der Aktivierung können diese Zauber allerdings nur sehr selten verkraften. Sobald der Zauberer sich nicht mehr um die Zaubermatrix kümmert(sei es durch Unfähigkeit oder weil er sie einfach nicht mehr braucht), zerfällt sie relativ schnell(innerhalb der nächsten Runde).
+
+Eine dritte Kategorie sind sogenannte permanente Zauber, diese sind in vielen Punkten den temporären Zaubern sehr ähnlich, mit dem unterschied, das sich nach einer gewissen Zeit (bestimmten Anzahl an Runden) die Zaubermatrix stabilisiert, sodass sie auch ohne das Zutun von irgendjemandem erhalten bleibt, solche stabilisierten Matrizen lassen sich nur durch Spezialzauber auflösen.
+Während eine permanente Magie noch in der Anfangsphase ist gelten jedoch die gleichen Regeln wie für temporäre Magie.
+
+\chapter{Technik Regeln - Anwendung TODO}
+
+Jeder durch Technik verursachte Schaden ist tödlich wenn es bei der Waffe nicht anders definiert ist, anders als bei Magischem und Nahkampfschaden kann man sich bei technischen Angriffen nicht zurückhalten, um den Gegner nicht zu töten....
+
+\section{Gegenstände allgemein}
+\subsection{Eigenschaften von Gegenständen}
+Jeder Gegenstand kann bestimmte Eigenschaften besitzen:
+
+\begin{itemize}
+\item Stufe angegeben als Technikstufe-Qualitätsstufe bestimmt den Schwierigkeitsgrad für Konstruktion/Analyse/Verbesserung des Gegenstands.
+\item Spezial listet Spezialfunktionen des Gegenstands auf, diese können reguläre Aktionen(Angriff/Nachladen/...) ersetzen, erweitern oder dauerhaft ändern.
+\item Supportaktionen listet Spezialfunktionen des Gegenstands auf, diese benötigen mindestens eine Supportaktion um aktiviert zu werden.
+\item Magazin/Verbrauch wenn im Magazin weniger ist als Verbraucht werden müsste kann das Gerät/Spezialfunktion nicht benutzt werden. Wenn nichts angegeben ist sind beide Werte 1.
+\item Nachladen Zeit, die investiert werden muss bis das Magazin erneuert wurde einsetzbar ist. Ist für Technische Geräte relevant. Wenn nichts angegeben ist kann das Gerät nicht(normal) Nachgeladen werden.
+\end{itemize}
+
+\subsection{Haltbarkeit}
+Jeder Gegenstand(Schwert, Tür, Mauer, ...) hat 10 Haltbarkeitspunkte(\textbf{HP}) wenn mit dem Gegenstand eine Aktion ausgeführt wird, für die er nicht geeignet ist(Schwert als Brechstange, Gewehr als Keule, Schaden, ...) wird eine Haltbarkeitsprobe durchgeführt. Eine Haltbarkeitsprobe hat triviale Schwierigkeit und nutzt die Haltbarkeitsspezialisierung des Gegenstands. Standardmäßig hat jeder Gegenstand 2 Haltbarkeitswürfel und 0 Spezialisierungspunkte.
+
+Je nachdem wie unpassend die Aktion war/wie leicht sie zu Beschädigungen führt wird eine Erfolgszahl festgelegt (z.b. 3 für leicht unpassende Aktionen, 15 für mutwillige Zerstörung(Taschenuhr aus 20 m Höhe auf den Boden werfen)). Wenn die Probe scheitert verliert der Gegenstand HP in Höhe der Differenz von benötigten zu erreichten Erfolgen.
+
+Wenn ein Gegenstand die Hälfte seiner HP verloren hat können keine Spezialaktionen mehr ausgeführt werden, außerdem werden wichtige Werte halbiert(halber Schaden bei Waffen). Durch eine Reparatur kann jedoch die volle Funktionsfähigkeit wiederhergestellt werden. Für Schusswaffen gilt jeder weitere Schuss als unpassende Aktion(3-5 je nach Beschädigung).
+
+Wenn ein Gegenstand auf 0 HP sinkt zerbricht er völlig/wird komplett unbrauchbar, eine Reparatur ist dann kaum mehr möglich.
+
+\subsection{Reparatur}
+Es gibt 3 Varianten einen Gegenstand zu reparieren. Für die ersten beiden gilt: wenn die Ausführung scheitert muss eine erneute Haltbarkeitsprobe(7) gemacht werden.\begin{enumerate}
+\item durch Magie
+\item \label{Reperatur} durch eine normale Reparatur: Mechanik + Spezialerfolge(je nach Typ z.b. Chemie für Explosivwaffen) Schwierigkeit je nach Schaden und Technikstufe(1h Basiszeit, passendes Werkzeug) um den Gegenstand zu reparieren in der folgenden Tabelle wird angegeben, wie schwer es ist den Gegenstand um je 1 HP zu reparieren. Für eine vollständige Reparatur eines beschädigten Gegenstands muss eine Probe mit der Erfolgssumme aller Schadenswerte von 1 HP bis X HP geschafft werden.
+
+\begin{description}
+\item[1 HP Schaden:] 1 Technikstufe-2 Mechanikerfolge \& 2 Technikstufe-2 Spezialerfolge
+\item[2 HP Schaden:] 2 Technikstufe-2 Mechanikerfolge \& 1 Technikstufe-1 Spezialerfolge
+\item[3 HP Schaden:] 1 Technikstufe-1 Mechanikerfolge \& 2 Technikstufe-1 Spezialerfolge
+\item[4 HP Schaden:] 2 Technikstufe-1 Mechanikerfolge \& 1 Technikstufe Spezialerfolge
+\item[5 HP Schaden:] 1 Technikstufe Mechanikerfolge \& 2 Technikstufe Spezialerfolge
+\item[6 HP Schaden:] 2 Technikstufe Mechanikerfolge \& 3 Technikstufe Spezialerfolge
+\item[7 HP Schaden:] 3 Technikstufe Mechanikerfolge \& 1 Technikstufe+1 Spezialerfolge
+\item[8 HP Schaden:] 1 Technikstufe+1 Mechanikerfolge \& 2 Technikstufe+1 Spezialerfolge
+\item[9 HP Schaden:] 2 Technikstufe+1 Mechanikerfolge \& 3 Technikstufe+1 Spezialerfolge
+\item[10 HP Schaden:] 3 Technikstufe+1 Mechanikerfolge \& 4 Technikstufe+1 Spezialerfolge
+\end{description}
+\item Einen Handwerker bezahlen(nur möglich bei weniger als 10HP Schaden): TODO!?
+\begin{description}
+\item[Kosten:] $Schaden*10\%$ des Grundpreises(abzüglich der Materialkosten(bis zu 50\%))
+\item[Zeit:] $Schaden*10\%$ der Basisherstellungszeit
+\end{description}
+\end{enumerate}
+
+\subsection{Wartung}
+Nach Spielleiterentscheid können für Gegenstände Wartungskosten anfallen(bis zu 1\% pro Monat), wenn diese nicht (rechtzeitig) bezahlt werden verlieren die entsprechenden Gegenstände 1HP. Die Wartungskosten können u.a. auch Munitionskosten ect. mit abdecken.
+
+\section{Fernkampf}
+
+Siehe Kampfregeln, Schusswaffen als Angriffsprobe. Ein Schuss abzugeben benötigt eine Haupt oder Supportaktion.
+
+Beidhändigkeit: Auch mit Fernkampfwaffen/kombiniert möglich. Bei 2 Fernkampfwaffen darf für jede bis zu 2 mal geschossen werden. Bei Nutzung 'Normaler' Waffen gibt es einen Malus von 1 Würfel aufs Zielen. Große Fernkampfwaffen benötigen mindestens Stärke 3 und geben einen Malus von 3 Würfeln. Das Nachladen muss für jede Waffe getrennt durchgeführt werden.
+
+Eine bestimmte Körperstelle anzuvisieren(so es mit der Waffe überhaupt möglich ist) erhöht die Schwierigkeit des Angriffs um 1, dadurch kann z.b. eine tödliche Wunde in eine dauerhafte Verkrüppelung verwandelt werden(wenn Medizinischer Support vorhanden ist), es kann auch zu Schadensänderungen/Nebeneffekten führen.
+
+Jede Waffe verfügt über eine Magazingröße, diese beschreibt wie oft geschossen werden kann bevor nachgeladen werden muss.
+
+Jede Waffe hat eine Nachtladedauer, die angibt wie viele Aktionen zum Nachladen benötigt werden, pro Nachladerunde muss mindestens die Hauptaktion benutzt werden, es kann optional auch die Supportaktion oder die Defensivaktion mit benutzt werden(um bis zu 3 Nachladeaktionen pro Runde auszuführen).
+
+Jede Waffe hat einen Schaden, dieser ist normalerweise fix(pro Kugel).
+
+Sollte sich das Ziel im Nahkampf befinden besteht die Möglichkeit andere Kämpfer zu treffen, so auch wenn das Ziel durch Personen/Gegenständen gedeckt ist, in beiden Fällen kann der Spielleiter eine Erschwernis(z.b. mindestens X Erfolge um das Ziel zu treffen) festlegen, bei einem 'Fehlschuss' wird dann potentiell die Person/der Gegenstand getroffen.
+
+Jede Waffe hat eine Reichweite für jeden Gegner, der näher dran ist wird die Schwierigkeit für einen Schuss um 1 erhöht. Ist das Ziel weiter als $2^X*Reichweite$ entfernt wird die Schwierigkeit um X+1 erhöht.
+
+\section{Nahkampf}
+
+Spezielle Nahkampfwaffen(z.b. ein Explosivhammer o. Federspeer) haben die Möglichkeit Spezialfunktionen zu aktivieren um den Angriff zu verbessern. Das aktivieren muss allerdings noch vor dem ausführen der Angriffsprobe angekündigt werden(außer mit dem Spezialtalent Schnelle Reaktion, mit dem keine Ankündigung nötig ist). Sollte der der Angriff fehlschlagen schlägt auch der Technische Angriff fehl.
+
+Für den Technischen Angriff wird eine Probe auf sonstige Waffen durchgeführt gegen die Verteidigungsprobe des Gegners. Manche Waffen erfordern eine Mindesterfolge, die für eine erfolgreiche Aktivierung notwendig sind.
+
+Jede Waffe verfügt über eine begrenzte Anzahl von Aktivierungen, und einer Nachtladezeit(üblicherweise nur außerhalb eines Kampfes möglich).
+
+Auch Fallenstellen/-entschärfen wird mit dieser Spezialisierung geregelt, je nachdem wie geschickt der Fallensteller beim aufstellen der Falle vorgegangen ist ist es schwerer sie zu entdecken, sie zu entschärfen oder auf sie zu reagieren(Ausweichen als Def.Aktion wenn man sie bemerkt hat).
+
+\section{Rüstungen}
+
+Das Rüstungsgeschick wird benutzt um den Umgang mit Technologien zu beschreiben, die der Verteidigung dienen(Rüstungen, Schilde, Burgtore, ...).
+
+Eine normale Rüstung hat folgende Werte:
+
+Rüstungsklasse: Wenn ein Treffer erzielt wurde wird die Rüstungsklasse zu den Verteidigungserfolgen hinzugefügt und diese Summe anschließend verwendet um die Schwere des Treffers(leichter/normaler/X-Fach-kritisch) zu bestimmen. Rüstung kann einen Treffer jedoch nicht verhindern also selbst mit RK+Verteidigungserfolge=2*Angriffserfolge würde noch ein leichter Treffer generiert werden.
+
+Minimale Anzahl von Basiserfolgen, welche bei jeder Verteidigungsaktion(auch bei unterlassener Verteidigung) erzeugt wird, sollte ein Probe weniger als die angegebenen Erfolge erzielen werden stattdessen diese Basiserfolge benutzt. 
+Diese Basiserfolge können niemals einen kritischen Verteidigungserfolg generieren.
+
+Rüstungsschutz: Schadensreduktion, diese besteht meist aus Relativwerten($\frac{1}{10}$, ...) es können jedoch auch zusätzlich Absolutwerte(als $+X$ mit $X\in\mathbb N_{> 0}$) angegeben werden, diese werden unabhängig vom Grundschaden bei Schaden subtrahiert. Absolutwerte sind meistens bei magisch verbesserter Ausrüstung zu finden.
+
+Primäre Voraussetzungen/Sekundäre Voraussetzung/Tertiäre Voraussetzung: min. Wert in Gegenstände + Tech. Geschick zum tragen/verwenden der Rüstung bzw. um Mali zu reduzieren.
+
+Primäre Mali: Negative Effekte durch Tragen der Rüstung. Dieser Malus ist aktiv solange die 3. Voraussetzung nicht erfüllt ist.
+
+Sekundäre Mali: Negative Effekte durch Tragen der Rüstung. Dieser Malus ist aktiv solange die 2. Voraussetzung nicht erfüllt ist.
+
+\section{Sonstiges}
+
+Technik kann für vieles verwendet werden, alles außer den oben beschriebenen wird aktuell unter sonstiges zusammengefasst(z.b. der Umgang mit Lampen/Werkzeug/...).
+
+Auch der Umgang mit medizinischem Gerät(Verbandskasten, ...) fällt in diese Kategorie. Heilung mit regulärer Medizin dauert länger als eine Magische Heilung wird aber ähnlich eruiert(z.b. Magie verstand Probe fällt weg, Technische Geschick(Sonstiges) Probe ersetzt die Zaubermachtprobe als Zeitprobe(1h, Verbände, mit Misserfolgen)).
+
+\section{Technik Regeln - Erzeugung und Analyse}
+Für die Herstellung(/Analyse) sind folgende Sachen nötig:
+\begin{itemize}
+\item Werkzeug
+\item Material(oder ein zu analysierender Gegenstand)
+\item Zeit(eine Einheit ist bei Analyse weniger($\sim \frac{1}{2}$h) als bei Herstellung($\sim 8$h))
+\end{itemize}
+
+Als nächstes wird die Technikstufe und Komplexität des Gegenstands bestimmt: TODO(abhängig von AP Kosten?)
+
+Anschließend wird die eigentliche Probe durchgeführt, dabei gilt:
+\begin{itemize}
+\item Erfolg: wird benutzt um Komplexität zu erreichen
+\item zusätzliche Erfolge: Reduzieren die Dauer um 1 Basiszeiteinheit oder halbiert die Zeit(je nach dem was weniger bringt)(normalerweise gilt Komplexität * Basiszeiteinheit)
+\item Kritischer Erfolg: wie Erfolg + zusätzlicher Erfolg
+\item Misserfolg: Erhöht die Dauer um 1 Basiszeiteinheit(siehe zusätzlicher Erfolg)
+\end{itemize}
+
+TODO: MAC Guyver/Kosten
+
+Mit dem Spezialtalent Mac Guyver werden:
+\begin{itemize}
+\item Zeitproben um 50\% reduziert(oder auf Minutenbasis statt Stundenbasis berechnet wenn Probenschwierigkeit+1 in Kauf genommen wird)
+\item oder Materialkosten um 50\% reduziert(oder auf nahezu 0 gesetzt wenn Probenschwierigkeit+1 in Kauf genommen wird)
+\item oder Werkzeugerfordernisse um 50\% reduziert(oder auf nahezu 0 gesetzt(funktioniert mit irgendwelchem Werkzeug) wenn Probenschwierigkeit+1 in Kauf genommen wird)
+\end{itemize}
+
+\subsection{Alt}
+Erzeugung und Analyse kann/wird über einen längeren Zeitraum durchgeführt, es werden also unterbrechbare Zeitproben, mit Bestrafung der Misserfolge gemacht.
+
+Normalerweise benötigt jede Probe mindestens 1h Zeit und passendes Werkzeug(z.b. Werkstatt/Labor) als Katalysator.
+
+Zusätzlich zu den pro Ressourcen pro Probe können zusätzlich Gesamtressourcen benötigt werden(ein X-Kg Klumpen Arglardor um eine Arglardorwaffe zu schmieden, ...).
+
+Mit dem Spezialtalent Mac Gyver werden Erfordernisse der einzelnen Zeitproben etwas reduziert(entweder alle etwas(um $\approx25\%$) oder eine stärker($\approx50\%$)). 
+Zusätzlich darf durch Erhöhung der Probenschwierigkeit um 1 je eine Voraussetzung stark reduziert werden($\approx90\%$).
+Es wird dann z.b. nur noch eine Basisausstattung an Werkzeug(nur noch Hammer\& Zange statt Werkstatt/Schmiede) bzw. Ressourcen benötigt.
+Die Gesamtressourcen können sich entweder zusammen mit den Probenressourcen reduzieren oder als Konstante erhalten bleiben, diese Entscheidung obliegt dem Spielleiter.
+
+Die Proben werden immer auf Technikwissen durchgeführt die Spezialisierungen richten sich dabei nach den im technischen Gerät benutzten Grundprinzipien. Magische und elektrische Geräte können nur von entsprechenden Meistertechnikern verstanden werden.
+Ein technisches Gerät, dass auf mehreren Grundprinzipien aufbaut benötigt auch entsprechend aufgeteilte Erfolge(z.b. Revolver Kombination aus Mechanik und Chemie benötigt von beidem je 10 Erfolge, also auch mindestens 1 Mechanik- und 1 Chemieprobe).
+
+Die Probenschwierigkeit entspricht der Technikstufe des entsprechenden Gegenstands.
+Die Menge der Erfolge für einen Erfolg ist von dem Projekt und der Qualitätsstufe des Projekts abhängig.
+
+Üblicherweise benötigte Erfolge um ein Projekt erfolgreich abzuschließen(z.t. können weniger ausreichen um Zwischenergebnisse zu erhalten bzw. mehr Erfolge das Ergebnis verbessern. Bsp.: nach der Analyse einer Falle werden weitere Erfolge gesammelt mit dem Ergebnis, dass ein weiterer versteckter Auslöser entdeckt wird.):
+\begin{itemize}
+\item Analyse: $\frac{Qualitätsstufe}{2}$
+\item Reparieren: Je nach Beschädigung siehe \ref{Reperatur}
+\item Bau: 2x Qualitätsstufe.
+\item Verbesserung: (Analyse, falls nicht schon gemacht) + Bau
+\end{itemize}
+
+\section{Magietechnik}
+Mittles Magietechnik lassen sich Zauber in Gegenständen 'speichern'. Dies kann auf 2 verschiedene Weisen passieren: entweder wird nur eine Zaubermatrix im Gegenstand gespeichert(z.b. Zauberstab), dadurch entfällt beim Anwenden des Zaubers die Verstandprobe, es wird immer die im Gegenstand gespeicherte Matrix verwendet.
+Die Machtprobe ist allerdings weiterhin notwendig(siehe Magieregeln) und Machtverbesserungen können normal ausgewählt werden.
+
+Die 2. Option ist zusätzlich einen Magiekristall einzusetzen, der letztlich die Machtprobe übernimmt(falls genug Energie gespeichert ist).
+
+Regeltechnisch wird beim erschaffen von Magietechnik 1 bzw. 2 Magietechnik Proben durchgeführt.
+
+Die 1. Probe bestimmt die Zaubermatrix, e.v. kann eine zusätzliche Verstandprobe(leichter als normalerweise) gefordert sein, falls komplexere Zauber gespeichert werden sollen. Erfolge der Magietechnikprobe können genutzt werden um die Zaubermatrix zu 'verbessern'.
+
+Die optionale 2. Probe bestimmt wie die Zaubermatrix mit Energie versorgt wird. Erfolge der Magietechnikprobe können genutzt werden um 'Machtverbesserungen' des Zaubers zu kaufen. Die menge der benutzten Erfolge beeinflusst auch wieviel Energie die Aktivierung des Gegenstands braucht.
+
+Für die 2. Probe gilt:
+\begin{description}
+\item[1 benutzter Erfolg:] +4 Kapazitätseinheiten verbrauch
+\item[1 benutzter kritischer Erfolg:] +6 Kapazitätseinheiten verbrauch
+\item[1 unbenutzter Erfolg:] -2 Kapazitätseinheiten verbrauch
+\item[1 unbenutzter kritischer Erfolg:] -3 Kapazitätseinheiten verbrauch
+\item[1 Misserfolg:] +2 Kapazitätseinheiten verbrauch
+\end{description}
+
+Die Energiekristalle können jederzeit von jedem wieder nachgeladen werden. Dafür wird eine Magische Macht(Angriff) Probe gegen 12 ausgeführt:
+\begin{description}
+\item[1 Erfolg:] +5 Kapazitätseinheiten wiederhergestellt.
+\item[1 Misserfolg:] 1 Kapazitätseinheit wiederhergestellt.
+\end{description}
+
+\chapter{Regelanhang: Sonderregeln}
+\section{Trolle TODO?}
+Trolle sind keine Fleischlichen sondern Mineralische Geschöpfe. Sie werden bis zu 7000 Jahre alt sind sehr selten. Die meisten Trolle bestehen aus Gesteinen, einige wenige bestehen aber auch aus Metallen oder Kristallen, diese sind aber auch deutlich kleiner als ihre gesteinischen Brüder. Trolle essen üblicherweise(zumindest zum teil) was sie sind(Ein Granittroll frisst Granit um Material für sein Wachstum zu erhalten).
+\begin{description}
+	\item [0-700 Jahre] Entstehungsphase
+	\item [700-1500 Jahre] Wachstumsphase(0,5m zu 2m), erste selbstwahrnehmung/Bewegungen
+	\item [1500-2500 Jahre] Jugendphase(2m-3m), Welt erkunden, Abenteuer erleben. 
+	\item [2500-6000 Jahre] Weisheitsphase(<10m), Rückzug zu anderen Trollen, Philosophieren, ...
+	\item [6000-7000 Jahre] Endphase(bis zu 20m), Troll findet seinen 'Endfelsen' und wird langsam eins mit ihm.
+	\item [Geschlechtslos]
+	\item [Mineralisch:] Körper funktioniert anders als bei anderen. Essen Mineralien/Erze/Steine/... können sich nur sehr schwer in 'Fleischsäcke' hineinversetzen.(gegenseitige Verständnislosigkeit)
+	\item[Temperierter Geist:]\ 
+	\begin{description}
+	\item [$\bm{<\text{-}30^\circ C}$:] Geistige Attribute +1 je 1 vollen Punkten
+	\item [$\bm{<\text{-}15^\circ C}$:] Geistige Attribute +1 je 2 vollen Punkten
+	\item [$\bm{<\ \ 0^\circ C}$:] Geistige Attribute +1 je 3 vollen Punkten
+	\item [$\bm{>\ 10^\circ C}$:] Geistige Attribute -1 je 3 vollen Punkten
+	\item [$\bm{>\ 25^\circ C}$:] Geistige Attribute -1 je 2 vollen Punkten
+	\item [$\bm{>\ 40^\circ C}$:] Geistige Attribute auf 0
+	\end{description}
+	\item [Haut] Die Haut eines Trolls ist härter als die eines Fleischsacks, daher ist die bei der Charaktererstellung ausgewählte Rüstung für den Troll seine Haut(je nach Rüstung ist dies dann eben Granit/Sandstein/...).
+	\item[Größe:] 2-3m
+\end{description}
+

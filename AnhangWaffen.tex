@@ -1,0 +1,238 @@
+\part{Beispiele}
+\chapter{Gegenstandstände}
+\section{Nahkampfwaffen}
+\begin{multicols}{2}
+\raggedcolumns
+\addAndPrintItem{Dolch}{
+	Schaden={$\frac{Stärke+Geschick}{2}d4$},
+	Kosten=1AP, Preis={1+ Gold}, Stufe=0-5, Size=Klein}%
+%
+\addAndPrintItem{Spritze}{
+	Schaden={1},
+	Kosten=1AP, Preis={?}, Stufe=1, Size=Klein,
+	Spez={Je nach Inhalt}}%
+%
+\addAndPrintItem{Einhänder}{
+	Schaden={$(Stärke)d6$},
+	Kosten=4AP, Preis={4+ Gold}, Stufe=1-7+, Size={Normal},
+	Spez={Je nach Waffe;
+	Die andere Seite(Schwert): nicht tödlicher Schaden;
+	Einschläger(Hammer): Angriff gegen Türen/Schlösser/...(ohne Haltbarkeitsverlust)}}%
+%
+\addAndPrintItem{Zweihänder}{
+	Schaden={$(Stärke-1)d10$},
+	Kosten={5AP}, Preis={5+ Gold}, Stufe=1-9+, Size={Groß},
+	Spez={Je nach Waffe siehe auch Einhänder}}%
+%
+\addAndPrintItem{Explosivhammer}{
+	Schaden={$(Stärke-1)d12$},
+	Kosten={15AP}, Preis={45 Gold}, Stufe=2-18, Size={Groß}, Mag={3d4 Einheiten(baubedingt)},
+	Nachladen={90 Aktionen}, Verbrauch={$Xd4$ ($X\in\mathbb N_{> 0}$)},
+	Spez={Explosive Verstärkung: Min(Xd4, Restkapazität) Einheiten werden verbraucht(X beliebig wählbar). Jede Einheit generiert 1 zusätzlichen Stärkewürfel.},
+	Bild=Waffenbilder/Hammer.jpg}%
+%
+\addAndPrintItem{Federspeer}{
+	Schaden={;Kurz:$(Stärke)d8$;Lang:$(Stärke-1)d12$},
+	Kosten={11AP}, Preis={22 Gold}, Stufe=2-11+, Size={Normal}, Nachladen={7 Aktionen},
+	Supp={Verlängern: Auslösen der Feder um die volle Länge zu erreichen. Verursacht 20 Schaden und schaltet die Waffe vom Kurzspeer Modus in den Langspeer Modus.}}%
+%
+\addAndPrintItem{Feuerschwert}{
+	Schaden={$(Stärke)d6$},
+	Kosten=18AP, Preis={75 Gold}, Stufe=2, Size={Normal}, Mag={20+4d12 Einheiten(baubedingt)},
+	Nachladen={15 Aktionen}, Verbrauch={2..5d8},
+	Spez={Feuerschlag: Jede verbrauchte Einheit generiert 1 zusätzlichen Feuerschaden(ein genügend großer Feuerschaden kann Sachen in Brand setzen).},
+	Bild=Waffenbilder/flameSword.jpg}%
+%
+\addAndPrintItem{Revolverschwert}{
+	Beschreibung={Durch erstklassige zwergische Handwerkskunst konnte Spezialmunition geschaffen werden, die eine eigene Minidruckluftkapsel enthält, wodurch die Munition wesentlich teurer ist, die Abschussvorrichtung ist damit jedoch deutlich einfacher.},
+	Schaden={Schlag:$(Stärke)d6$;Schuss:$9(+1d6, baubedingt)$},
+	Kosten=20AP, Preis={1 Kupferkristall}, Stufe=3, Size={Normal},
+	Supp={Nahschuss: Nakampfangriff mit anschließendem Schuss(ohne Nahkampfmalus)},
+	Bild=Waffenbilder/BladeGun.jpg,
+	Nachladen={4 Aktionen + 1 Aktion pro Patrone}, Reichweite={3-30m}, Mag={6 Schuss}}%
+%
+\end{multicols}
+
+\newpage
+\section{Fernkampfwaffen}
+\begin{multicols}{2}
+\raggedcolumns
+\addAndPrintItem{Donnerbüchse}{
+	Beschreibung={Spezielles Schießpulvermodel der Schrotflinte von menschlichen Waffenschmieden.},
+	Schaden={$1d6$(bei jedem Schuss, pro Kugel},
+	Kosten={4AP}, Preis={8 Gold}, Stufe=1-8, Size={Groß},
+	Nachladen=18 Aktionen, 
+	Reichweite={4-10m;bis 1m: 20 Kugeln.;bis 2m: 16+d4 Kugeln.;bis 3m: 12+d8 Kugeln.;bis 4m: 8+d12 Kugeln.;bis 7m: d20 Kugeln.;bis 10m: d12 Kugeln.;bis 12m: d8 Kugeln.;bis 15m: d6 Kugeln.;ab 15m: d4 Kugeln.},
+	Spez={Potthässlich: -5 Deko und niemand will so was offen Tragen, vor allem nicht in Siedlungen/Städten;Powerboost: 8 Schaden pro Kugel, jedoch wird das Gewehr beschädigt: 1d4 'Kugeln' treffen den Schützen, jede dieser Kugel fügt der Waffe 2HP Schaden zu.}}%
+%
+\addAndPrintItem{Bogen}{
+	Beschreibung={Jeder Bogen ist für einen bestimmten Stärkebereich(normalerweise X..X*2) konstruiert(ein zu geringer Stärke Einsatz kann keinen Schuss erzeugen, ein zu hoher beschädigt den Bogen)},
+	Schaden={;Kurz:$(Stärke)d6$;Lang:$(Stärke-1)d10$},
+	Kosten=4AP, Preis={4-10 Gold}, Stufe=1-8/10/12, Size={Groß},
+	Mag={Extern als Köcher.},
+	Nachladen={Entfällt},
+	Reichweite={4-30m},
+	Spez={Vor jedem Schuss muss ein neuer Pfeil aus dem Köcher genommen werden(Supportaktion);Elfenbogen: Kann mit Geschick statt Technik benutzt werden, erhöht die Kosten um 1AP.}}%
+%
+\addAndPrintItem{Armbrust}{
+	Beschreibung={Modelle mit Schnellspanner sind teurer als Modelle mit Kurbelspanner.},
+	Schaden={$12(+1d12, baubedingt)$},
+	Kosten=4-8AP, Preis={10+ Gold}, Stufe=1, Size={Groß},
+	Nachladen={7/18 Aktionen}, Reichweite={4-30m}}%
+%
+\addAndPrintItem{Gewehr}{
+	Schaden={$18(+1d10, baubedingt)$},
+	Kosten=8AP, Preis={20 Gold}, Stufe=2, Size={Groß},
+	Nachladen={5 Aktionen}, Reichweite={4-50m}}%
+%
+\addAndPrintItem{Schrotflinte}{
+	Schaden={$4(+1d4, baubedingt, pro Kugel)$},
+	Kosten=8(10)AP, Preis={20 Gold}, Stufe=2, Size={Normal},
+	Nachladen={5 Aktionen + 1 Aktion pro Patrone}, Mag={1-2 Schuss},
+	Reichweite={2-10m;bis 2m: 12 Kugeln.;bis 3m: 8+d4 Kugeln.;bis 4m: 6+d6 Kugeln.;bis 5m: 4+d8 Kugeln.;bis 7m: 2+d10 Kugeln.;bis 10m: d12 Kugeln.;bis 13m: d10 Kugeln.;bis 16m: d8 Kugeln.;bis 20m: d6 Kugeln.;ab 20m: d4 Kugeln.}}%
+%
+\addAndPrintItem{Repetier}{
+	Schaden={$18(+1d10, baubedingt)$},
+	Kosten=15AP, Preis={50 Gold}, Stufe=3, Size={Groß},
+	Nachladen={6 Aktionen}, Reichweite={5-60m}, Mag={7 Schuss},
+	Spez={Durchladen(Supportaktion) und Feuern(Hauptaktion)}}%
+%
+\addAndPrintItem{Revolver}{
+	Schaden={$9(+1d6, baubedingt)$},
+	Kosten=15AP, Preis={50 Gold}, Stufe=3, Size={Klein},
+	Nachladen={3 Aktionen + 1 Aktion pro Patrone}, Reichweite={1-25m}, Mag={6 Schuss}}%
+
+\addAndPrintItem{Magieblaster}{
+	Schaden={$10+2d4$},
+	Kosten=15AP, Preis={50 Gold(ohne Kristall)}, Stufe=3, Size={Klein},
+	Nachladen={20 Aktionen(Kristallwechsel)}, Reichweite={1-15m},
+	Mag={Kleiner Magiekristall(normal)}, Verbrauch={Wie Schaden},
+	Supp={Powerboost: Der Gesamte Speicher wird vollständig entleert und als Schaden verursacht.}}%
+
+\addAndPrintItem{Magiesniper}{
+	Schaden={$15+2d8$},
+	Kosten=22AP, Preis={60 Gold(ohne Kristall)}, Stufe=3, Size={Groß},
+	Nachladen={25 Aktionen(Kristallwechsel)}, Reichweite={5-60m},
+	Mag={Mittlerer Magiekristall(normal)}, Verbrauch={30}}%
+\end{multicols}
+
+\section{Rüstungen \& Defensives}
+Jede Rüstung hat eine bestimmte Kapazität um Inventargegenstände zu verstauen(auch im Kampf zugreifbar). Jede Standard Kleidung hat eine Standardausstattung und eine Maximalausstattung pro Kategorie. Normalerweise kann die Standardausstattung durch Modifikationen verbessert werden(Anpassung der Kleidung entweder selbstständig oder durch geschultes Personal(+1AP/Kategorie um zu Maximieren)).
+TODO
+\begin{multicols}{2}
+\raggedcolumns
+\addAndPrintItem{Kleidung}{
+	RusRS=0, RusRK={1}, RusVor=0, RusMali={-},
+	InvGrAnz=0,
+	InvNorAnz=0,	InvNorAnzMax=1,
+	InvKleinAnz=0, InvKleinAnzMax=3,
+	Kosten=0AP, Stufe=0}%
+%
+\addAndPrintItem{Leder}{
+	RusRS={$\frac{1}{10}$}, RusRK=1, RusVor=0, RusMali={-},
+	InvGrAnz=0, InvGrAnzMax=1,
+	InvNorAnz=1, InvNorAnzMax=2,
+	InvKleinAnz=2, InvKleinAnzMax=4,
+	Kosten=4AP, Stufe=1}%
+%
+\addAndPrintItem{Schweres Leder}{
+	RusRS={$\frac{1}{5}$}, RusRK=1, RusVor=1,
+	RusMali={Akrobatik,Zauberweben - 1},
+	InvGrAnz=1, InvNorAnz=1, InvNorAnzMax=2,
+	InvKleinAnz=3, InvKleinAnzMax=6,
+	Kosten=5AP, Stufe=1}%
+%
+\addAndPrintItem{Beschlagenes Leder}{
+	RusRS={$\frac{1}{4}$}, RusRK={$1,5$}, RusVor=2,
+	RusMali={Ausweichen, Heimlichkeit, Akrobatik, Zauberweben - 1},
+	InvGrAnz=1, InvNorAnz=2, InvKleinAnz=3, InvKleinAnzMax=7,
+	Kosten=6AP, Stufe=1}%
+%
+\addAndPrintItem{Kettenhemd}{
+	RusRS={$\frac{1}{3}$}, RusRK={$2$}, RusVor=3,
+	RusMali={Ausweichen, Heimlichkeit, Akrobatik, Zauberweben - 2},
+	InvGrAnz=1, InvGrAnzMax=2, InvNorAnz=2, InvKleinAnz=3, InvKleinAnzMax=7,
+	Kosten=8AP, Stufe=2}%
+%
+\addAndPrintItem{Vollrüstung}{
+	RusRS={$\frac{1}{2}$}, RusRK={$2,5$}, RusVor=4,
+	RusMali={Geschick - 1, Ausweichen, Heimlichkeit, Akrobatik, Zauberweben - 2},
+	InvGrAnz=2, InvNorAnz=2, InvKleinAnz=4, InvKleinAnzMax=9,
+	Kosten=15AP, Stufe=3}%
+%
+\addAndPrintItem{Arglardor-Rüstung}{
+	RusRS={$\frac{2}{3}$}, RusRK={$3$}, RusVor=6,
+	RusMali={Geschick - 1, Ausweichen, Heimlichkeit, Akrobatik, Zauberweben - 2, Zaubern=0, Mag.Macht=0},
+	InvGrAnz=2, InvGrAnzMax=3,
+	InvNorAnz=2, InvNorAnzMax=3,
+	InvKleinAnz=5, InvKleinAnzMax=10,
+	Kosten=50AP, Stufe=10,
+	Spez= {Magieimmunität: Träger kann nicht direkt von Magie beeinflusst werden und auch selbst keine Magie wirken (inklusive sämtlicher Magietech).}	}%
+%
+\addAndPrintItem{Kleiner Schild}{
+	Kosten=4AP, Stufe=1, Size=Normal,
+	Spez= {Abwehrschwierigkeit -1;Am Unterarm montierbar/tragbar}}%
+%
+\addAndPrintItem{Großer Schild}{
+	Kosten=6AP, Stufe=1, Size={Groß},
+	Spez= {Abwehrschwierigkeit -1;Umzingeln erfordert einen Angriffswinkel von $>240^\circ$}}%
+%
+\addAndPrintItem{Klappschild}{
+	RusVor={mindestens Rüstungsspezialisierung 2}, Kosten=8AP, Stufe=2, Size={Normal},
+	Spez= {Abwehrschwierigkeit -1;Umzingeln erfordert einen Angriffswinkel von $>240^\circ$;Am Unterarm montierbar/tragbar}}
+
+\end{multicols}
+
+\section{Gebrauchsgegenstände}
+\begin{multicols}{2}
+\raggedcolumns
+\addAndPrintItem{Arglardormamulett}{
+	Kosten=XAP, Stufe=1,
+	Spez= {Mag.Macht \underline{Wert} wird um X reduziert, bei Magie von dir oder die auf dich wirkt.}}\label{Arglardormamulett}%
+%
+\addAndPrintItem{Magie Unterdrücker(Handschellen oder Armband)}{
+	Preis={?}, Stufe=?,
+	Spez= {Die Magie des Trägers wird durch den eingebauten 'Magie auflösen' Zauber komplett unterdrückt.}}%
+%
+\addAndPrintItem{Kleiner Rucksack}{
+	Kosten=1AP, Stufe=1, InvKleinAnz=5}%
+%
+\addAndPrintItem{Rucksack}{
+	Kosten=2AP, Stufe=1, InvKleinAnz=10}%
+%
+\addAndPrintItem{Wanderrucksack}{
+	Kosten=4AP, Stufe=1, InvNorAnz=2, InvKleinAnz=15}%
+%
+\addAndPrintItem{Kleiner Gegenstand}{
+	Name={Kleiner Gegenstand},
+	Beschreibung={z.b. Uhr, Topfpflanze, ...},
+	Kosten=1-2AP}%
+%
+\addAndPrintItem{Basis Werkzeugset}{
+	Name={Basis Werkzeugset nach Wahl},
+	Beschreibung={z.b. Nadel und Faden},
+	Kosten=1AP, Size=Klein}%
+%
+\addAndPrintItem{Standard Werkzeugset}{
+	Name={Standard Werkzeugset nach Wahl},
+	Beschreibung={z.b. Hammer, Meißel, Zange\& Co., bzw. Dietrichset},
+	Kosten=2AP, Size=Klein(1-3x)}%
+%
+\addAndPrintItem{Erweitertes Werkzeugset}{
+	Name={Erweitertes Werkzeugset nach Wahl},
+	Beschreibung={z.b. ...},
+	Kosten=5AP, Size=Klein(1-3x) + Normal(0-1x)}%
+%
+\addAndPrintItem{Reisender Paket}{
+	Beschreibung={Standard Reiseausrüstung, beinhaltet Zelt/Schlafutensilien, einfaches Besteck/Geschirr, Feuerzeug(bzw. Streichhölzer o.ä.)\& Co., Wasserschlauch\& Proviantbeutel für je 3 Tage.},
+	Kosten=3AP, Size=Klein(3x) + Normal(1x)}%
+%
+\addAndPrintItem{Abenteurer Paket}{
+	Beschreibung={Erweitert Reiseausrüstung um für Abenteurer relevante Ausrüstung dies beinhaltet Kletterseil mit Wurfhaken(10m), Fackel, Messer\& Beil, +2 Tage Nahrung\& Wasser, erste Hilfe Set(Verbände,..).},
+	Kosten=5AP, Size=Klein(5x) + Normal(1x)}%
+%
+\addAndPrintItem{nimmerleerer Munitionsbeutel}{
+	Kosten={In der Waffe enthalten}, Preis={50 Gold},
+	Spez={Beutel mit einem endlosen Vorrat an Munition(Patronen, Gasflaschen, ...) zum nachladen(Verbindung zu einem Munitionslager über Beschwörungsmagie(Dauerportal), Munitionskosten werden dem Besitzer in Rechnung gestellt.).; Gilt nur für 1 Munitionsart(z.b. Revolverkugeln).; Munitionskosten werden über Erhaltungskosten simuliert.}, Size={Klein bis Normal}}%
+\end{multicols}
+

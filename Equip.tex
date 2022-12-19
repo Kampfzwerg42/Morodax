@@ -1,0 +1,529 @@
+\part{Ausrüstung}
+\chapter{Gegenstandstände}
+\section{Allgemeine Erklärungen}
+Es gibt Inventarbeschränkungen(je nach Rüstung):
+\begin{itemize}
+\item Riesige Ausrüstung: Größere Größenkategorie als der Charakter(Stationär oder Transport mir Karren/..)
+\item Große Ausrüstung: bis zu selbe Größenkategorie wie der Charakter(bzw. auf dem Rücken tragbar)
+\item Normale Ausrüstung: bis zu Größenkategorie des Charakters -2(bzw. an Hüfte/Gürtel tragbar)
+\item Kleine Ausrüstung: bis zu Größenkategorie des Charakters -5(In Taschen verstaubar) oder explizit als klein deklariert(Messer, ...).
+\item Kleine Ausrüstung: Größenkategorie 0,25m ist die kleinste und gilt immer als kleiner Gegenstand.
+\end{itemize}
+Zusätzlich können Gegenstände jederzeit auch aktiv getragen werden, wodurch sie keinen Stauraum verbrauchen(Rüstung, Ringe, Amulette in sinnvoller Menge)(Mann kann also auch die ganze Zeit einfach immer mit seiner Großaxt in der Hand rumrennen....könnte aber Konsequenzen haben...).
+
+Man kann Gegenstände auch in größere Inventurslots packen, dabei wird jedoch der ganze Slot verbraucht.
+
+Normale und Große Slots sind normalerweise immer 'Außenlasten'(Schwertscheide am Gürtel/auf dem Rücken/...).
+
+In einem zusätzlichen Behältnis(Rucksack, Karren, ...) können weitere nicht direkt benutzbare Gegenstände untergebracht werden.
+\section{Generische Gegenstände}
+\section{Waffen}
+\begin{description}
+\item[Größe:] Größenstufe * 3 AP(bzw. * 3 Gold)
+\end{description}
+\
+subsection{Waffengröße}
+Die maximal verwendbare Waffengröße(abgesehen von semi-stationären Waffen) ist die eigene Größenkategorie-1. Es gelten des weiteren folgende Regeln:
+\begin{tabular}{|r|l|}
+\hline
+Größenkategorie relativ zum Benutzer & Einschränkungen\\
+\hline
+-1 & Fitness-1 für Schaden\\
+ & Nur zweihändig\\
+\hline
+-2 & Fitness-1 für Schaden\\
+ & (bei einhändiger Benutzung)\\
+ & Für Fernkampf: nur zweihändig\\
+\hline
+-3 & Für Fernkampf: Malus bei einhändiger Benutzung.\\
+\hline
+$\leq-4$ & Keine Einschränkungen\\
+\hline
+0,25m & minimale Waffengröße\\
+\hline
+\end{tabular}
+
+\subsection{Nahkampfwaffen}
+Qualität ist bei Erstellung immer 'normal'(Basisschaden=4)
+
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Kosten AP &Kosten Geld &Bonus\\ 
+\hline
+1 AP	&	-	&		Schwer/Massiv(Axt): -1 Größenkategorie Platz\& Reichweite		\\
+\hline 
+1 AP	&	-	&		Langwaffe: +1 Größenkategorie Nahkampfdistanz		\\
+\hline 
+1 AP	&	-	&		Stumpf/Hammer: -1 Stufe gegnerischer Rüstungsschutz		\\
+\hline 
+1 AP	&	-	&		Klingenwaffe: +2 Nahkampfspezialisierung		\\
+\hline 
+1 AP	&	-	&		Mehrere Griffe: für eine Supportaktion kann die Waffenreichweite um bis zu 2 reduziert werden.(-1 Größenkategorie Schaden)\\
+\hline 
+1 AP	&	-	&		...\\
+\hline 
+\end{tabulary}
+\subsection{Fernkampfwaffen TODO}
+Qualität ist bei Erstellung immer 'normal'(Basisschaden=4)
+
+TODO: Bonuskosten
+
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Kosten AP &Kosten Geld &Reichweite\\ 
+\hline
+4 AP	&*5	&200m	\\
+\hline 
+3 AP	&*4	&80m	\\
+\hline 
+2 AP	&*3	&30m	\\
+\hline 
+1 AP	&*2	&15m\\
+\hline 
+0 AP	&*1	&3m\\
+\hline 
+\end{tabulary}
+
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Kosten AP &Kosten Geld &Nachladezeit\\ 
+\hline
+4 AP	&*6	&3 Aktionen	\\
+\hline 
+3 AP	&*4	&6 Aktionen	\\
+\hline 
+2 AP	&*2	&9 Aktionen	\\
+\hline 
+1 AP	&*1,5	&20 Aktionen	\\
+\hline 
+0 AP	&*1	&10 min\\
+\hline 
+\end{tabulary}
+
+Magazin: 1+AP
+
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Kosten AP &Kosten Geld &Schadenfaktor\\ 
+\hline
+-	&*15	&20x	\\
+\hline 
+-	&*10	&15x	\\
+\hline 
+4 AP	&*6	&10x	\\
+\hline 
+2 AP	&*4	&7x	\\
+\hline 
+1 AP	&*2	&4x	\\
+\hline 
+0 AP	&*1	&2x\\
+\hline 
+\end{tabulary}
+\section{Kleidung/Rüstung}
+\subsection{Schutzwirkung}
+Rüstung wird durch das Rüstungsmaterial und die Bauweise bestimmt:
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline 
+Material & Rüstungsschutz(Schadensdivisor) & Malistufe & Kosten\\ 
+\hline
+Textil & 1,5 & 2 & 2 AP (1,5 Gold*Größe) \\
+\hline 
+Leder & 2 & 4 & 4 AP (3 Gold*Größe) \\
+\hline 
+Schweres Leder & 3 & 6 & 6 AP (6 Gold*Größe)\\
+\hline 
+'Kettenhemd' & 5 & 8 & 8 AP (10 Gold*Größe)\\
+\hline 
+Schuppen/Lamellen & 7 & 10 & 10 AP (14 Gold*Größe)\\
+\hline 
+Stahlplatte & 10 & 12 & 12 AP (18 Gold*Größe)\\
+\hline 
+Spezial(z.b. sehr dicker Stahl) & 15 & 14 & 14 AP\\
+\hline 
+Spezial(z.b. Argladorplatte) & 20 & - & -\\
+\hline 
+\end{tabulary}
+
+\begin{tabulary}{\textwidth}{|C|C|C|C|C|C|}
+\hline 
+Bauweise & Verteidigungsbonus(bei gezielten Angriffen) & Verteidigungsbonus(bei gezielten Angriffen)(Fernkampf) & Malistufe & Kosten\\ 
+\hline
+Verstärkte Kleidung & 2 & 3 & 2 & 1 AP (Geldpreis *1)\\
+\hline 
+Brustpanzer & 4 & 6 & 4 & 2 AP (Geldpreis *2)\\
+\hline 
++ Helm & 6 & 9 & 6 & 3 AP (Geldpreis *3)\\
+\hline 
++ Arm/Beinschienen & 8 & 12 & 8 & 4 AP (Geldpreis *4)\\
+\hline 
+Vollrüstung & 10 & 15 & 10 & 5 AP (Geldpreis *5)\\
+\hline 
+...(z.b. magisch verbessert) & ... & ... & ... & ?\\
+\hline 
+\end{tabulary}
+
+Die Malistufen der beiden Tabellen werden zusammengezählt und ergeben die folgenden Mali. Dabei gilt: 
+\begin{description}
+\item[Mali stufe 1:] werden benutzt falls der Nutzer $< Malistufensumme$ Punkte in Technisches Geschick + Gegenstände hat.
+\item[Mali stufe 2:] werden benutzt falls der Nutzer $< \frac{Malistufensumme}{2}$ Punkte in Technisches Geschick + Gegenstände hat.
+\item[Mali stufe 3:] werden benutzt falls der Nutzer $< \frac{Malistufensumme}{3}$ Punkte in Technisches Geschick + Gegenstände hat.
+\end{description}
+
+\begin{tabulary}{\textwidth}{|C|C|C|C|}
+\hline 
+Malistufensumme & Mali stufe 1 & Mali stufe 2 & Mali stufe 3\\ 
+\hline
+1-5 & Primär - 1 & Primär - 2 & Primär - 3\\ 
+\hline 
+6-10 & Primär - 1 & Primär - 3 & Primär - 3, Sekundär -1\\ 
+\hline 
+11-15 & Primär - 2 & Primär - 3, Sekundär -1 & Primär - 3, Sekundär -2\\ 
+\hline 
+16-20 & Primär - 2 & Primär - 3, Sekundär - 2 & Primär - 4, Sekundär -2, Tertiär -1\\ 
+\hline 
+21+ & Primär - 3, Sekundär -1 & Primär - 4, Sekundär -2, Tertiär -1 & Bewegung=0\\ 
+\hline 
+\end{tabulary}
+
+'Primär':Malus auf Ausweichen, Heimlichkeit, Akrobatik, Zauberweben \& ähnliche besondere Spezialisierungen
+
+'Sekundär':Malus auf Kraft, Ausdauer, Basteln \& Reparieren, Gegenstände(außer für die Rüstungsvoraussetzung) \& ähnliche besondere Spezialisierungen
+
+'Tertiär':Malus auf Abwehr, Nahkampf, Wachsamkeit, Suchen, Schusswaffen, andere Waffen \& alle anderen Körper bezogenen Proben.
+
+\subsection{Taschen}
+
+\begin{tabulary}{\textwidth}{|C|C|}
+\hline 
+Kosten &Gegenstandlimit (kann jeweils mehrfach gewählt werden) \\ 
+\hline
+-&(+1 gigantischer Gegenstand)	\\
+\hline 
+0,75 AP(1 Gold)&+1 großer Gegenstand	\\
+\hline 
+0,5 AP(5 Silber)&+1 normaler Gegenstand	\\
+\hline 
+0,25 AP(3 Silber)&+1 kleiner Gegenstand	\\
+\hline 
+\end{tabulary}
+\subsection{Sonstiges}
+Magische Verzauberungen oder andere Extras können an Rüstungen angebaut werden sind jedoch nicht bei Charaktererstellung verfügbar. Die einzige Ausnahme sind Kühlungen für Trolle.
+
+\begin{tabulary}{\textwidth}{|C|C|}
+\hline 
+Kosten &Wirkung \\ 
+\hline
+0,25 AP&Isolierung(Temperaturschwankungen werden ausgeglichen.)\\
+\hline 
+\end{tabulary}
+
+\section{Besondere Materialien}
+Es ist Möglich spezielle Materialien zu nutzen um die Ausrüstung zu verbessern, dies ändert nicht zwingend die 'Generatormatrix' des Gegenstands, es kann jedoch die Technikstufe(durch eine 'Minimalstufe' des Materials) und die Qualitätsstufe(Abgeleitet von den Extrakosten) eines Gegenstands erhöhen.
+\subsection{Arglardor}
+\vbox{\begin{description}
+	\item Arglardor ein extrem seltenes, schweres, teures, robustes Metall, dass die Wirkung vom Magie negiert(sowohl eigene als auch fremde), jedoch nur direkte Magie(z.b. keine Elementarmagie), selbst kleine Mengen(etwa ein Amulett) tragen dazu bei, das Magie den Träger schwerer beeinflussen kann. Arglardor wird ausschließlich von Zwergen produziert, die das Geheimnis des Metalls mit keinem anderen Volk teilen, selbst unter den Zwergen kennen es nur wenige.;
+	Als Rüstung oder Amulett dient es vor allem dem Schutz des Trägers vor Magie.
+	Als Waffe kann damit Magie aufgelöst werden(Schaden an der Zaubermatrix und Kraftquelle) kann jedoch den Träger nicht mehr so gut abschirmen.
+	\item[Als Vollmaterial:] 1.: Hohe Magieresistenz(siehe \ref{Arglardormamulett}) bis -immunität(nur bei den direkt berührten Körperteilen);
+							2.: besonders haltbar(+3 auf Haltbarkeitsspezialisierung);
+							3.: Rüstungen reduzieren Schaden mehr(+2 Rüstungsstufen für Schutz, allerdings auch +2 Malistufe);
+							4.: Schilde wirken gegen Magie?;
+							5.: Waffen lösen Magie auf(feste Matrix hat etwa 10HP + e.v. passiven RK und RS. Der Zauberer kann die Erhaltungsprobe verstärken um dem entgegenzuwirken jeder (angesagte) extra Erfolg negiert 1 Schadenspunkt.)
+	\item[Als Veredelung:] 	1.: leichte Magieresistenz(Effekt siehe \ref{Arglardormamulett}, jedoch nur bei direkt berührten Körperteilen);
+							2.: Rüstungen/Schilde können gegen Magische Angriffe benutzt werden (Unterstützung des passiven Magieschilds);
+							3.: Waffen verursachen erhöhten schaden gegen Magie(Magische Gegenstände, ...)(+X), können jedoch die Zaubermatrix nicht direkt angreifen.
+	\item[Kosten Vollmaterial, Groß:] +35AP/7 Kupferkristalle
+	\item[Kosten Vollmaterial, Mittel:] +20AP/3 Kupferkristalle
+	\item[Kosten Vollmaterial, Klein:] +10AP/1 Kupferkristall
+	\item[Kosten Veredelung, Groß:] +8AP/70 Gold
+	\item[Kosten Veredelung, Mittel:] +5AP/30 Gold
+	\item[Kosten Veredelung, Klein:] +3AP/10 Gold
+\end{description}}
+	
+\subsection{Mithril}
+\vbox{\begin{description}
+	\item Mithril ein extrem leichtes und doch stabiles Metall. Gegenstände aus Mithril sind leichter als normal und werden meist besonders elegant gestaltet.
+	\item[Als Vollmaterial:] Rüstungen haben -2 Malistufe, Waffen sind leichter zu führen(+1 auf Fitness für Angriffe).
+	\item[Kosten Vollmaterial, Groß:] +30AP/3 Kupferkristalle
+	\item[Kosten Vollmaterial, Mittel:] +15AP/1,5 Kupferkristalle
+	\item[Kosten Vollmaterial, Klein:] +7AP/50 Gold
+\end{description}}
+
+\subsection{Adamantium}
+\vbox{\begin{description}
+	\item Adamantium ein extrem seltenes, schweres, teures, robustes Metall. Anders als Arglardor ist Adamantium eine bekannte natürliche wenn auch sehr seltene Ressource. Adamantium ist ein magisches Metall und kann gegen Magie schützen oder Magie und nicht durch normale Waffen verletzbaren Wesen schaden zufügen.
+	\item[Als Vollmaterial:] besonders haltbar(Bonus auf Haltbarkeitsspezialisierung), Rüstungen/Schilde reduzieren Schaden mehr(+1 Rüstungsstufe), Waffen fügen Bonusschaden zu, ....
+	\item[Kosten Vollmaterial, Groß:] +55AP/2 Silberkristalle
+	\item[Kosten Vollmaterial, Mittel:] +35AP/1 Silberkristall
+	\item[Kosten Vollmaterial, Klein:] +20AP/3 Kupferkristalle
+\end{description}}
+
+\section{Magiekristalle}
+
+
+\subsection{Kapazitäten}
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+\diagbox{Größe}{Qualität} & einfach & normal & besser & ausgezeichnet & legendär\\
+\hline
+\hline
+winzig & 1d20 & ... & ... & ... & ...\\
+\hline
+klein & 1d100 & 50+1d100 & 150+2d100 & 300+3d100 & 1000+\\
+\hline
+mittel & 2d100 & 100+2d100 & ... & ... & ...\\
+\hline
+größer & 4d100 & ... & ... & ... & ...\\
+\hline
+Groß & 10d100 & ... & ... & ... & ...\\
+\hline
+Gigantisch & ... & ... & ... & ... & ...\\
+\hline
+\end{tabular}
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+\diagbox{Größe}{Qualität} & einfach & normal & besser & ausgezeichnet & legendär\\
+\hline
+\hline
+winzig & 1 Gold & ... & ... & ... & nicht käuflich\\
+\hline
+klein & ... & ... & ... & ... & nicht käuflich\\
+\hline
+mittel & ... & ... & ... & ... & nicht käuflich\\
+\hline
+größer & ... & ... & ... & ... & nicht käuflich\\
+\hline
+Groß & ... & ... & ... & ... & nicht käuflich\\
+\hline
+Gigantisch & ... & ... & ... & ... & nicht käuflich\\
+\hline
+\end{tabular}
+
+\chapter{Zauber TODO}
+\newcommand\Verbesserung[1][1]{\item[$\xrightarrow{#1}$] }
+Beschreibung der Beschreibungen: Verbesserungseffekte: '$\xrightarrow{1}$' bedeutet: durch Einsatz eines Verbesserungspunktes(= Ein (zusätzlicher) Erfolg) kannst du diese spezielle Fähigkeit freischalten. Eine solche Verbesserung kann üblicherweise beliebig oft gewählt werden, solange genügend Verbesserungspunkte beim Zaubern erzielt wurden.
+
+\section{Überblick}
+\label{Zaubergenerierung}
+Zauber werden in verschiedene Stufen eingeteilt genau wie die Technik. Zauber mit höheren Stufen haben zunehmend ungewöhnliche Effekte, die auch zunehmend weniger mit der Beschreibung des Basiszaubers gemein haben müssen. Höhere Zauber können außerdem stärkere Effekte haben oder eine größere Bandbreite von Effekten gleichzeitig abbilden.
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Stufe & Beschreibung & Startkosten\\ 
+\hline
+Stufe -1 (primitive Zauber)&Aufladen von Magiespeichern u.ä.&Kann jeder\\
+\hline
+Stufe 0 (triviale Zauber)&Abgeschwächte Basiseffekte/Haushaltszauber&1 AP\\
+\hline 
+Stufe 1 (einfache Zauber)&Standarteffekte&4 AP\\
+\hline 
+Stufe 2 (normale Zauber)&Erweiterte Standarteffekte&8 AP\\
+\hline 
+Stufe 3 (Schwierige Zauber)&beliebige 'normale' Effekte&15 AP\\
+\hline 
+Stufe 4 (schwere Zauber)&Ungewöhnliche Effekte&-\\
+\hline 
+Stufe 5 (meisterhafte Zauber)&Hochrangig/(sehr) seltene Effekte&-\\
+\hline 
+Stufe 6 (legendäre Zauber)&Grenzeffekte der physikalischen Machbarkeit.&-\\
+\hline 
+Stufe 7 (göttliche Zauber)&Realitätsverändernde Effekte&-\\
+\hline 
+Stufe 8 (unmögliche Zauber)&Einzig Morodis konnte solche Zauber wirken.&-\\
+\hline 
+\end{tabulary}
+
+\section{Zaubergenerierung}
+Bei der Zaubererstellung wird folgendes für den Zauber bestimmt:
+\begin{itemize}
+\item genau 1 Zauberweben Basiseffekt(Verbesserungskosten: initial), durch den der Zauber zwar verwendbar aber nur begrenzt nützlich ist.
+\item maximal 1 Zaubermacht Basiseffekt(Verbesserungskosten: initial, nur in Ausnahmefällen)
+\item mindestens 1 Zaubermacht Verbesserungseffekt mit Kosten 1, der beliebig oft gewählt werden kann.
+\item weitere Verbesserungseffekte(Menge ist je nach Zauberstufe begrenzt).
+\begin{itemize}
+\item Zauberweben Verbesserung: Form, Art, Genauigkeit u.ä.
+\item Zaubermacht Verbesserung: Radius, Stärke, Dauer u.ä.
+\end{itemize}
+\item Die Zauberstufe ergibt sich dann aus der Art/Menge der Verbesserungen.
+\end{itemize}
+Ein generischer Zauber kann Verbesserungseffektgruppen haben(z.b. Zielgröße), die als 1 Verbesserungseffekt mit funktionaler Kostensteigerung gilt(Verbesserungspunkte=Maximalkosten(mit X=1 wenn der letzte Eintrag eine Formel hat z.b. 3+X: $Größe=Körpergröße*X$)).
+
+Ein generischer Zauber der Stufe 0 kann normalerweise keinen der Standarteffekte, der Zauberschule, nutzen.
+Zauber höherer Stufen sollten die Standarteffekte der Schulen mit nutzen(müssen für diese aber entsprechende Punkte 'ausgeben').
+
+Für Zauber gelten folgende Richtwerte für die Anzahl und Güte der Verbesserungseffekte, es sind jedoch nicht zwingend festen Grenzen, durch die sich die Zauberstufe erhöht, da die Effekte vor allem sinnvoll zusammenpassen sollten.
+\begin{tabulary}{\textwidth}{|C|C|C|}
+\hline 
+Stufe & max. Verbesserungseffekte & max. Verbesserungspunkte\\ 
+\hline
+Stufe 0 (triviale Zauber)&3&7\\
+\hline 
+Stufe 1 (einfache Zauber)&5&12\\
+\hline 
+Stufe 2 (normale Zauber)&7&18\\
+\hline 
+Stufe 3 (schwierige Zauber)&10&24\\
+\hline 
+Stufe 4 (schwere Zauber)&15&30\\
+\hline 
+Stufe 5 (meisterhafte Zauber)&20&35\\
+\hline 
+Stufe 6 (legendäre Zauber)&Alle&Alle\\
+\hline 
+Stufe 7 (göttliche Zauber)&Alle&Alle\\
+\hline 
+\end{tabulary}
+
+\subsection{Verbesserungseffekte}
+\begin{tabulary}{\textwidth}{|C|C|C|C|C|}
+\hline 
+Name & Beschreibung & Kosten Verbesserungspunkte & Basiszauberstufe & Levelpunkte Kosten \\ 
+\hline 
+Schaden & Einzelziel schaden(5 pro Erfolg) & 1 & 1 & 1 \\ 
+ & Einzelziel schaden(7 pro Erfolg) & 1 & 2 & 1 \\ 
++AOE & +1 Zauberstufe & - & +1 & 1 \\ 
++Zeitschaden & +1 Zauberstufe & - & +1 & 1 \\ 
+\hline 
+Heilung & Einzelziel heilen(7 pro Erfolg) & 1 & 1 & 1 \\ 
++AOE & +1 Zauberstufe & - & +1 & 1 \\ 
++über Zeit & +1 Zauberstufe & - & +1 & 1 \\ 
+\hline 
+Schutz & +/-1 & 1 & 1 & 1 \\ 
+\hline 
+Wertänderung & +/-1 & 1 & 1 & 1 \\ 
+Attribut & +/-1 & 1 & 1 & 1 \\ 
+Spezialisierung & +/-1 & 1 & 1 & 1 \\ 
+Anderes & +/-1 & 1 & 1 & 1 \\ 
+(Situationsabhängig) & +/-1 & 1 & 1 & 1 \\ 
+(Situationsunabhängig) & +/-1 & 1 & 1 & 1 \\ 
+(mehrere Werte) & +/-1 & 1 & 1 & 1 \\ 
+\hline 
+Erschaffung & +/-1 & 1 & 1 & 1 \\ 
+\hline 
+Änderung & +/-1 & 1 & 1 & 1 \\ 
+\hline
+Bewegung & +/-1 & 1 & 1 & 1 \\ 
+\hline 
+Wissen & +/-1 & 1 & 1 & 1 \\ 
+\hline 
+\end{tabulary} 
+
+\subsection{Beispiele}
+Einige Beispiele beliebter und verbreiteter Zauber:
+\begin{tabulary}{\textwidth}{|C||C|C|C|C|}
+\hline 
+Schule & Stufe 0 (Trivial, 1 AP) & Stufe 1 (Einfach, 4 AP) & Stufe 2 (Mittel, 8 AP) & Stufe 3 (Schwierig, 15 AP) \\ 
+\hline 
+\hline 
+Ilusion & Licht & Ilusion/ WobelBobelBoden & Verändernde Illusion & ... \\ 
+\hline 
+Angriff & Aufladen Mag. Technik & Angriff & Direkter Schmerz /Explosion & ... \\ 
+\hline 
+Verstärkung & Reinigung & Heilung/ Schlid(Magie) & Schild(Elementar o. Physisch) & Schutzschild \\ 
+\hline 
+Verwandlung & Telekinese & Rückver-wandlung & Verwandlung selbst & Verwandlung andere \\ 
+\hline 
+Elementar (jeweils pro Element ein Zauber) & einfache Elementarmanipulation & Erzeugung von Elementen & Elementarangriff St. 2 & Elementarangriff St. 3; Elementarexplosion St. 2 \\ 
+\hline 
+Beschwörung & ??? & ??? & ??? & ???? \\ 
+\hline 
+\end{tabulary} 
+
+\subsection{Zauberbücher}
+Um einen Zauber zu meistern wird ein Zauberbuch benötigt. Dies kann(ähnlich wie bei normalen Gegenständen) je nach Angebot verschiedene Kosten haben(insbesondere Bücher des Typs Elementar/Beschwörung sind häufig teurer). Ab Magie Stufe 3 sind die Bücher ebenfalls extrem selten(und damit potentiell teurer). Listenpreise:
+\begin{tabular}{|c||c|c|c|c|c|c|c|}
+\hline 
+Kosten & Basiszauber & Stufe 0 & Stufe 1 & Stufe 2 & Stufe 3 & Stufe 4 & Stufe 5\\ 
+\hline 
+\hline 
+Lernen mit Buch & 1 SpezP & 1 EP & 2 EP & 4 EP & 7 EP & 11 EP & 15 EP\\ 
+\hline 
+Buch & 10 Gold & 1 Gold & 5 Gold & 10 Gold & 25 Gold & speziell & -\\ 
+\hline 
+\hline 
+Lernen ohne Buch & über Spezialtalent & 4 EP & 8 EP & 16 EP & 30 EP & 50 EP & 75 EP\\ 
+\hline 
+\end{tabular} 
+
+\addAndPrintSpell{Magie allgemein}{
+	Beschreibung={Diese generalisierten Effekte sind für alle Zauber benutzbar.;
+		Standard Reichweite Magie = Berührung.},
+	MagVerstand={
+		;$\xrightarrow{1}$: Einfacher Split: +1 zusätzliches Ziel(Magische Macht Erfolge werden auf beide Ziele aufgeteilt(beliebige Aufteilung nach dem Wurf möglich)).
+		;$\xrightarrow{1 Krit}$: Perfekter Split: +1 zusätzliches Ziel(Magische Macht Erfolge - 1 für beide Ziele).
+		;Hinweis: Bei einem Split gelten Verbesserungen für beide Zauber, es wird nur eine Erhaltungsprobe benötigt, jedoch auch nur eine Macht Probe ausgeführt.
+		;$\xrightarrow{1}$: Reichweite 10m
+		;$\xrightarrow{1}$: Reichweite + 1 Stufe(*1,5)
+		;$\xrightarrow{1}$: + 1 Mag. Macht Spezialisierung.},
+	MagMacht={Je nach Kategorie.}
+}
+\section{Illusion}
+\addAndPrintSpell{Illusion allgemein}{
+	Beschreibung={Es wird eine Täuschung erzeugt, die verschiedene Sensorische Eigenschaften haben kann(Licht, Ton, ...). Hochrangige Magiern ist es möglich damit auch direkt die Nerven eines Ziels zu beeinflussen, sodass nur dieses eine Ziel diese Illusion 'wahrnimmt'.
+	}
+	MagDauer={Temporär},
+	MagVerstand={
+		;$\xrightarrow{3}$: Illusion ist nur für ein einzelnes Ziel wahrnehmbar(Berührungsreichweite).},
+	MagMacht={Gegenprobe mit Mag. Verstand Illusion(gleiche Schwierigkeit wie der Zauber) oder Wahrnehmung($Zauberschwierigkeit + 1$), ob die Illusion durchschaubar ist. Bei einem Kritischen Erfolg nimmt der Gegner die Illusion als wahrhaft echt an, bei einem normalen Erfolg erkennt der Gegner zumindest, das Magie im Spiel ist, bei einem Patzer kann die Illusion durchschaut werden, bei einem Kritischen Patzer ist die Illusion zu schwach um überhaupt Einflüsse zu haben.;
+	Je nach Qualität der Illusionen können diese auch im laufe der Zeit durchschaut werden, bei einer 'unpassenden' Aktion(durch gleiten durch etwas, ...) werden Gegenproben um 1 erleichtert und neu ausgeführt(Gegenprobe leichter als Trivial ist automatisch bestanden).
+		;$\xrightarrow{1}$: Gegenprobe benötigt +1 Erfolg.}
+}
+\section{Angriff}
+\addAndPrintSpell{Angriff allgemein}{
+	Beschreibung={Der Magier nutzt die Elementare Magie um meist zerstörerische Effekte zu erzielen, diese Magie kann aber auch als Energiequelle benutzt werden, da sie die magischen Energien nur minimal umwandelt. Mit höherer Kontrolle können auch Schockwellen u.ä. ausgelöst werden.;
+	Die Energie kann auch genutzt werden um die Zaubermatrix anderer Zauber zu zerstreuen.;
+	Bei einem Magieangriff gelten(soweit nicht anders spezifiziert) die selben Verteidigungsregeln wie für normale Angriffe(Fernkampf).},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{X}$: Angriff hat Verteidigungsschwierigkeit trivial und $X+3$ Angriffserfolge.
+		;$\xrightarrow{X}$: Angriff hat Verteidigungsschwierigkeit einfach und $X$ Angriffserfolge.
+		;$\xrightarrow{1,5*X+2}$: Angriff hat Verteidigungsschwierigkeit mittel und $X$ Angriffserfolge.
+		;$\xrightarrow{2*X+4}$: Angriff hat Verteidigungsschwierigkeit schwer und $X$ Angriffserfolge.
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: +5 Schadenswürfel(d1) für den Zauber.
+		},
+}
+\section{Verstärkung}
+\addAndPrintSpell{Verstärkung allgemein}{
+	Beschreibung={Die Magie wird genutzt um in einer positiven Weise auf Wesen/Objekte einzuwirken und schon existierende Eigenschaften zu verstärken. Dies beinhaltet u.a. die Stärkung der normalen Regenerativen Eigenschaften von Lebewesen, um Wunden innerhalb kürzester Zeit zu heilen, mitunter sogar solch, die auf normalem Wege nicht heilbar wären. Hochrangigen Magiern ist es sogar möglich nicht existierende Eigenschaften zu verstärken/erzeugen und somit Wesen bzw. Objekten neue Eigenschaften zu geben.},
+}
+\section{Verwandlung}
+\addAndPrintSpell{Verwandlung allgemein}{
+	Beschreibung={Die Magie wird genutzt um eine Permanente Veränderung zu erzeugen, dabei wird meist 'nur' das äußere(Körperliche) eines Objektes/Wesens verändert. Hochrangige Magier können aber sogar die inneren(Geistigen) Eigenschaften verändern, oder Veränderungen bewirken, die äußerlich kaum bis gar nicht sichtbar sind.;
+	Sollte die Magische Macht nicht für eine vollständige Verwandlung reichen bleibt man in einer Mischform stecken.;
+	Verwandlungsmagie Manifestiert sich nach 24h vollständig sollte in dieser Zeit ein weiterer Verwandlungszauber auf das Ziel angewendet werden ohne es vorher in seinen Ursprungszustand zurückzuversetzen kann es zu unschönen Komplikationen kommen, die Wahrscheinlichkeit dafür steigt mit jeder weiteren Verwandlung.;
+	Braucht man für einen Verwandlungszauber länger als 1 KR verzögern sich auch alle anderen Effekte entsprechend der Zauberzeit(Vollständige Manifestation($24h*Zauberzeit$), Dauer der temporären Phase, ...).},
+	MagDauer={Permanent(5 * Zauberzeit(in Kampfrunden))},
+	MagMacht={
+		;$\xrightarrow{1}$: Zielgröße $\pm 1$Größenstufe.
+		;$\xrightarrow{2}$: Zielgröße $*2$ oder $\div2$ der Ursprungsgröße.
+		;$\xrightarrow{1}$: 1 Attribut + 1 \& 1 Attribut - 1 (entsprechend dem Verwandlungsziel).
+		;$\xrightarrow{4}$: 1 Attribut $\pm 1$.
+		;$\xrightarrow{4}$: 1 Spezialisierung $\pm 1$.
+		;$\xrightarrow{Automatisch}$: Vollständige Verwandlung wenn alle Attribute denen des Ziels entsprechen.
+		;$\xrightarrow{8}$: 1 Spezialtalent/Spezialeigenschaft.
+		}
+}
+\section{Elementar}
+TODO
+\addAndPrintSpell{Elementar allgemein}{
+	Beschreibung={Manche Magier sind dazu in der Lage mithilfe der Magie direkt die Elemente zu beeinflussen um z.b. Feuer, Blitzte, o.ä. zu erschaffen und zu kontrollieren. Jeder Zauber, außer dem Basiszauber, ist nur für ein einzelnes Element gültig, ungelernt kann man nur Zauber anwenden die zu einem Element gehören für das man mindestens 1 Zauber gelernt hat.},
+	MagDauer={Spontan},
+}
+\section{Beschwörung}
+\addAndPrintSpell{Beschwörung allgemein}{
+	Beschreibung={Wenige Magier haben die Kunst der Beschwörung gemeistert. Eine erfolgreiche Beschwörung besteht an sich aus 2 Zaubern, dem eigentlichen Beschwörungszauber, bei dem ein Tor geöffnet wird und das zu beschwörende Subjekt hindurch gezogen wird und einem Kontrollzauber, damit die beschworene Kreatur auch das tut, was sie soll.;
+		Das Tor führt dabei normalerweise in eine andere Dimension und hält nur für den Bruchteil einer Sekunde, Meistermagier können jedoch die nötige Kontrolle aufbringen um ein solches Tor auch länger offen zu halten und beliege orte zu verbinden.;
+		Der Kontrollzauber lässt sich normalerweise auch nur auf die Beschworenen Kreaturen anwenden, und auch dann nur in dem Moment der Beschwörung und muss aufrechterhalten werden um die Kontrolle zu behalten. Meistermagier können jedoch diesen Zauber jedoch auch für andere Kreaturen/Wesen verwenden.;
+		Um ein Tor zu öffnen wird meistens ein Fokus verwendet, durch den die Toröffnung erleichtert wird. Auf einem Friedhof zum Beispiel sind die Grenzen zum Totenreich schwächer und Totenbeschwörungen somit einfacher.},
+	MagDauer={Spontan(Tor) und Temporär(beherrschen)},
+	MagVerstand={
+		;$\xrightarrow{TODO}$: Beschwören von X
+		;$\xrightarrow{TODO}$: Beschwören ohne passenden Fokus.
+		;$\xrightarrow{TODO}$: Beschwören ohne Ritualkreis.
+		},
+	MagMacht={
+		;$\xrightarrow{TODO}$: Kreatur Beschwörung
+		;$\xrightarrow{TODO}$: Kontrolle (über Beschwörung)
+},
+}

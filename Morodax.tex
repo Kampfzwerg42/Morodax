@@ -1,0 +1,369 @@
+\documentclass[a4paper]{report}
+%umlaute
+\usepackage{lmodern}
+\usepackage[english,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%math
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{array}
+%tabelle
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{tabulary}
+\usepackage{diagbox}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%Zeug
+\usepackage{parskip}
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{fullpage}
+\usepackage{rotating}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+\usepackage{xcolor}
+\usepackage{setspace}
+\graphicspath{{./Bilder/}}%Bilder
+%tolle macros
+\usepackage{xkeyval}
+\usepackage{xstring}
+\usepackage{forloop}
+\usepackage{xnewcommand}
+\usepackage{xargs}
+
+\usepackage{multicol}%equip multicol
+\usepackage{enumitem}%better controll for descriptions/other lists
+
+\usepackage{hyperref, bookmark}
+\hypersetup{
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    hidelinks
+}
+
+%hide stuff
+
+\usepackage{comment}
+	\newif\ifDevelop
+	%\Developtrue
+	\Developfalse
+	\newif\ifSpecial
+	%\Specialtrue
+	\Specialfalse
+	\newif\ifNice
+	%\Nicetrue
+	\Nicefalse
+	\newif\ifChars
+	\Charstrue
+	%\Charsfalse
+	\ifDevelop
+		\includecomment{Images}
+		\includecomment{characterSheets}
+		\includecomment{Beispiele}
+		\includecomment{specialEquip}
+		\includecomment{hiddenWorld}
+		\includecomment{TODO}
+	\else
+		\ifChars
+			\includecomment{characterSheets}
+		\else
+			\excludecomment{characterSheets}
+		\fi
+		\excludecomment{TODO}
+		\ifSpecial
+			\includecomment{specialEquip}
+			\includecomment{hiddenWorld}
+		\else
+			\excludecomment{specialEquip}
+			\excludecomment{hiddenWorld}
+		\fi
+		\includecomment{Beispiele}
+		\ifNice
+			\includecomment{Images}
+		\else
+			\excludecomment{Images}
+		\fi
+	\fi
+	\newcommand{\hidden}[1]{}
+	\begin{hiddenWorld}
+		\renewcommand{\hidden}[1]{#1}
+	\end{hiddenWorld}
+	\newcommand{\Image}[1]{}
+	\begin{Images}
+		\renewcommand{\Image}[1]{#1}
+	\end{Images}
+%set chapter spacing
+\usepackage{titlesec}
+\titleformat{\chapter}[display]   
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-40pt}{10pt}
+
+%define gnewcommand as a global newcommand
+\usepackage{etoolbox}
+\makeatletter
+\def\gnewcommand{\g@star@or@long\gnew@command}
+\def\grenewcommand{\g@star@or@long\grenew@command}
+\def\g@star@or@long#1{% 
+  \@ifstar{\let\l@ngrel@x\global#1}{\def\l@ngrel@x{\long\global}#1}}
+\def\gnew@command#1{\@testopt{\@gnewcommand#1}0}
+\def\@gnewcommand#1[#2]{%
+  \kernel@ifnextchar [{\@gxargdef#1[#2]}%
+                {\@argdef#1[#2]}}
+\let\@gxargdef\@xargdef
+\patchcmd{\@gxargdef}{\def}{\gdef}{}{}
+\let\grenew@command\renew@command
+\patchcmd{\grenew@command}{\new@command}{\gnew@command}{}{}
+\makeatother
+
+\begin{document}
+
+\input{MACROS_Character_Sheet.tex}
+\input{MACROS_Equip.tex}
+
+\title{System Morodax}
+
+\input{Character_Sheet.tex}
+\tableofcontents\newpage
+\input{Welt.tex}
+
+\input{Rules.tex}
+
+\input{Equip.tex}
+
+\part{Anhang}
+\begin{Beispiele}
+%\input{WaffenRüstungen.tex}
+\input{AnhangGegenstände.tex}
+\input{AnhangZauber.tex}
+%\input{AnhangManover.tex}
+\end{Beispiele}
+\begin{characterSheets}
+\input{MACROS_Character_Sheet_Setup.tex}
+\input{Monster.tex}
+\input{Characters.tex}
+\end{characterSheets}
+\input{Tables.tex}
+\end{document}
+
+\input{Abenteuer/DerTraum.tex}
+\input{Abenteuer/VerlorenerJunge.tex}
+\input{Abenteuer/00Kampanie01.tex}
+\input{Abenteuer/Plots.tex}
+\input{AlteGedanken.tex}
+
+Alatas(Elf/Lucas)
+Lucy(Morodianer/Felix)
+Karf(Zwerg/Tobias)
+Kijo(Tiermensch/Eric)
+
+Hinweis: 1 Gold~300€
+
+Schwierigkeitsmeter:
+	-Trivial: keine besonderen Kenntnisse nötig(Gehen auf Staßen, nahes Gebirge finden, Tür öffnen(mit schlüssel), Leiter hochklettern, ...)
+	-Einfach: Standartaufgabe(Schlagen, Zechen mit Bier/Wein, Orientierung, Tür aufbrechen, Seil hochklettern, ...)
+	-Mittel: Semiprofessionelle Kenntnisse nötig(Orientierung im Wald/Höhlen, Klettern an Felswand, )
+	-Schwer: professionelle Kenntnisse nötig(Orientierung in der Wüste, Klettern im Überhang, )
+	-...
+	-'+1': 1 Einschränkung(Klettern mit leichter Verletzung an der Hand, ...)
+	-'+2': 1 starke oder mehrere Einschränkungen(Klettern mit leichter Verletzung an der Hand, ...)
+	- '+...':...
+	-'-1': mit Hilfe(Klettern mit Professioneller Ausrüstung, mit (guten) Anweisungen, ...)
+	...
+Komplexitäts:
+	1: Trivial(1m Klettern, 1 Bier/... trinken, ...)
+	2: Normal(<5m Klettern, 3 Bier/... trinken, )
+	3:
+	...
+	12: extrem(doppelt versteckter Mechanismus)
+
+		
+Sonst:
+	-Leichter/Schwerer als Trivial/Legendär optional+/- 1 Erfolg pro extra Schwierigkeit wenn Probe erlaubt ist auf Probenergebniss
+Regeln e.v. vereinfachen
+DONE	- Tabelle mit garantierten Erfolgen (100% bis zu Wert X)
+	- Spezialtallente &"Primärspez." geben Schwigkeit -1
+	- Ausgedehnte Proben: beschränken -> nicht beliebig oft ausführbar machen!!
+
+
+		
+Gegenstände:(siehe auch boni/Ausrüstung in "Das System v1.ods" -> Komplettüberarbeitung?!)
+	- RÜSTUNGEN
+		-> RS+RK tragen zur Rüstungsstufe bei
+		-> je nach Rüstungsstufe sind die Mali/Voraussetzungen/Das Material(Leder,Metall,...)/Rüstungstyp(Platte/...) gegeben.
+		-> Rüstungstyp MAX: Golemanzug(Stein)
+	- mehr stufen?
+	- unterteilung in Primäre QS und sekundäre QS
+		-Primäre: Größe, Qualität(/Stabilität) und Dekowert: ändert die Kosten pro QS
+		-Sekundär: Rest, wie jetzt
+		-Gegenstände haben passive Kosten(Kosten=XQS+/-SekundärQS)
+		-Bonusschaden neu balancieren(einen Grund für kleine Bonusschäden? z.b. Waffenbeschädigung=Fixschadenfaktor pro Schuss) => auch bei Nahkampf?(alle 2 Würfel)
+		-Größe neu Balancieren(vorallem mit fernkampfwaffen -> warum sollte jemand eine kleine fernkampfwaffe wählen?)
+		-Alle Größen von den Generischen Größenklassen ableiten(0,33/0,5/0,66/1/1,5/2/3/4,5/7/10,5/16)
+			-Schadenswerte: <=0,33=>d4/0,33..0,66(2Klassen)=>d6/0,66..1=>d8/1..1,5=>d10/1,5..2=>d12/2..3=>d8+d6/3..4,5=>d20/...
+			-Benötigte Hände(Körpergröße-Stufe=x):<=0,33 oder <x-2=>0,5/x-2=>1/x-1=>1,5/x=>2/x+1=>3/...
+			-Inverntar: klein: <=0,33/normal:<=x-2/groß:<=x
+  -Bonustabelle für generische Boni?!
+	-> Einfache Boni/QS
+	-> Normale Boni/QS
+	-> Tech. Boni+QS
+	-> Extreme Boni +QS
+	e.v. Wie 'Gegenstandsding' von Lucas?
+		-> alles ist ein Boni(Reichweite, Ladungen, ...)
+		-> ALLE Boni kosten TSP UND QSP(können aber auch negative oder =0 kosten in einem oder beidem haben)
+			-> TSP sind (üblicherweise) fest für einen Bonus/Modifikator(Schaden, Magazin, ...)
+			-> QSP verändern die Stärke(1m, 3m, 100m) des Bonus/Modifikator
+			=> Tabelle: |Bonus|TS|Effektstärke1&QSP1|Effektstärke2&QSP2|...
+		-> Unterscheidung in Basisboni und Modifikatoren
+			-> Basisboni: z.b. Schaden, Zeitschaden, Rüstung, Taschen, ...
+				-> 'Funktionen'
+			-> Modifikatoren: Reichweite, Ladung/Reload, Flächenwirkung, ...
+				-> 'Metafunktionen' und 'Spezifikatoren'
+				-> (Bel.?) menge and Modifikatoren pro Basisfunktion
+				-> Aufgeteilt in Modifikatorgruppen(Reichweite, Schaden, ...)
+					-> aus jeder Modifikatorgruppe kann nur max 1 pro Boni gewählt werden
+					-> Bestimmte Modifikatorgruppen sind für bestimmte Basisboni nicht verfügbar(Spielleiterentscheid)
+					-> z.b. Gruppe Reichweite besteht aus den Modifikatoren Selbst,Berührung/Nahkampf,Fernkampf
+						-> QS(Nahkampf): Kurz,Mittel,Lang(jeweils mit Angriff/Verteidigungsmali gegen längere Nahkampfwaffen)
+						-> QS(Fernkampf): 10m, 20m, ...
+			-> 'Extender': e.v. 'Grundkosten'(TSP) der Basisboni
+				-> Transformator als 'negativ' Modifikation -> -QSP je nach Dauer der Transformation, QSP einer Funktion(+Modifikatoren) können damit nicht unter 0 gebracht werden(-> an/aus/um Schalter).
+		=> Gegenstandsding kann dann auch auf Magie angewendet werden?
+			Basiseffekt(Magie):MSP je nach Wirkung(inklusive (MSP)Modifikatoren)
+				=> =Basisboni?
+			Verbesserungen:MSP pro Verbesserung+MKP je nach Bonus
+				=> =Modifikatorgruppe(/Stärke)?
+			Macht Verbesserung:
+				=> =Modifikatorenstärke(/gruppe)?
+
+			
+  -Fernkampf:
+	- Nachlanden überarbeiten?
+		- Usage-dice/Munitions-dice(bei 1 Nachladen)
+		- Nachladen dauert normal 1 Runde
+		- ??
+	- Kosten pro Schaden überarbeiten
+	- Je nach Größe haben Waffen andere Reichweiten (min-max1/max2/max3) =>min behandeln wie max(:2->Schwierigkeit +1
+	- Max Fixschaden=TechStufe
+	- 
+	
+Stabilität:
+	-Zufall weg!? -> Stabilität-#Würfel-Fixschaden*2=Schaden an der Waffe 
+			=> Provisorisch=1
+			=> 1QS=2 2QS=3 4QS=4 8QS=6 12QS=8 20=10
+	- <0: kommplett Kaputt
+	- O-1: unbrauchbar
+	- 2-4: stark beschädigt(+1 auf alle Proben, ...)
+	- 5 - 7: beschädigt(-1 auf Stabilität)
+	- 8 -10: ganz/leicht beschädigt
+	- Probe:
+		- 0,5 pro würfel/O,5 Fixschaden
+		- Sonst: je nach Einsatz/...
+		
+Tech Geschick:
+	-Reparieren????
+Reperatur/Konstruktion:
+	-> einfluss durch QS
+	- Rep: pro HP ~10% Herstellungskosten + 10% der QS Schwierigkeit je nach Beschädigung
+	- Konstruktion: 
+		- QS=Benötigte Erfolge
+		- Herstellungs/Materialkosten je nach TS(
+			1/2 der 'Kosten' bei TS0, 
+			1/3 bei TS1, 
+			1/4 bei TS2,
+			1/6 bei TS3,
+			1/10 bei TS4,
+			1/15 bei TS5)
+		- Material ist TS-1 und kann entweder mit Mechanikprobe mit QS Erfolgen hergestellt werden oder gekauft/angefertigt werden(Mat. Kosten erhöhen sich um 1 Stufe+Muss verfügbar sein)
+		-Geschick ist benötigt?!(synergien?)
+		
+		
+		
+Zauberoption:
+	- Zaubereffekte generischer: 
+		mit Zauberweben lässt sich die Form verändern
+		mit Zaubermacht lässt sich Radius/Stärke verbessern
+	Effekt: ~8 Schaden pro erfolg bei St.1
+	Effekt: *1,5 bei St2...
+	Problem aktuell:??
+		-> wenn SL Magie wirken will:
+			SL würfelt gegen sich selbst(Magie vs Umgebungsprobe)
+			-> bessere Lösung:?!		
+
+Verführen: -> Einschmeicheln: vs Willenskraft/Wachsamkeit
+Sozial: Fehlschläge bearbeiten?		
+
+Magiteck mehr zeug machen(was/wie) -> nochmal in dem Regelteil schreiben
+-> Technisches Wissen wichtiger machen!/lohnt sich aktuell nicht
+=> nicht nur Basteln?
+
+Einkaufsliste als Tabelle.
+
+Treffer ~ 30-70% im schnitt
+Schaden leicht;normal;krit;multikrit~50;30;10;10%
+
+MAGIE!!!
+Magie zu wenig/langweilig
+Fernkampf:
+	-> zielen auf Körperteile???
+	-> Interessanter
+	-> Nachladen & Co?(siehe oben)
+Ausdauerkosten für Aktionen festlegen(1 pro Kr + extra pro Attacke)
+Kampferschöpfung wirkt sich am ende des Kampfes aus?(Annahme kurzer Kampf -> Adlenarinschub)
+
+Würfel/Wurf auswertung zu langsam
+	-> sortieren braucht viel zeit
+	-> Würfel raussuchen passt..
+	-> auswertung heftig(2..3 vergleiche=1 Addition;2..3 Additionen=1 multi)
+		-> 5 Würfel: 5 vergleiche + 5/7 für sortieren + 4/5 für Gegner vergleich + ...
+		-> 4-5 Aktionen pro würfel(max 3 aktionen!)
+		
+		
+		
+TODO:
+	Kampange: bei erstellung: festlegung einer Organisation(Elfen/Technohasser, Zwerge/Forscher/Erkunder, Abenteurer(Monster töten & co), Gnome/Diebe/..., Menschen/Söldner)
+	Für mich: 2. Übersichtsseite mit 'Standartwerten' bzw. 'Standartzauber'/'Standartmanöver' aus denen Gegner auswählen können...
+		Rüstung
+		Gegnerwerte/Defaultgegner
+		Standartzeuber in kurz
+		Manöverliste(auch für andere)
+		Bewegungs cheat sheat(auch für andere)
+		...
+GRUPPENKAMPF!!
+	- Verteidigungsmali statt Angriffsboni für viele Gegner
+	- Gruppenaktionsregeln(z.b. +Spez/2 der Unterstützer)
+	- Erschwerung/Erleichterung nicht so sinnvoll? -> besser boni/mali? => Simulieren
+
+PLOT=SÖLDNER!!
+
+
+FERNKAMPFWAFFEN? -> verschieben da aktuell nicht benötigt...
+!!- Kleine Fernwaffen!!
+
+- Verteidigung: Keine Situationsboni/Schwierigkeiten(sonst blöd mit nur 1x Würfeln)
+	- Angreifermenge(gegen wieviele man verteidigt) gibt Verteidigungsmalus
+	- Schild gibt vert. Bonus
+	- Größe gibt keinen Vert. bonus/malus(oder gibt statischen Bonus unabhängig von Gegnern)
+		-> Tankige kleine Leute?
+		-> e.v. LP=(Größe*4+1d8) pro KO punkt 
+			dafür Verteidigungsbonus=X*(6-Größenkategorie)
+				!!Gleichgewicht Faktor/Boni
+	- ??Rüstung: bessere Tragbarkeit???
+	- Kampfdistanz gibt keinen Verteidigungs bonus/malus -> Angriffs malus/bonus
+	- Rüstung gibt keinen Verteidigerbonus dafür Angriffsmalus(für 'Umgehungstreffer')
+		- Kleine Waffen: Bonus auf 'Rüstungsdurchdringung'/gezielte Angriffe
+			- Umgehungstreffer erschwerniss/bonus= 2*(Rüstung+Waffengrößenkategorie-Y)
+			!!Gleichgewicht Schaden/Trefferboni!!(incl. Kampfdistanz)
+
+- Giftwurfdoch
+- Heilung
+- Waffen
+	- Bogen mit spezialpfeilen...
+- Spezialpfeile machen...
+	-> Bastelset
+- Schild/Schutzzeug?!
+- Troll
+
+Angriffsboni!!

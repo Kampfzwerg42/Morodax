@@ -1,0 +1,63 @@
+\makeatletter
+
+\newcommand{\CharacterSheetDefault}{
+\setkeys{CharacterSheet}{LPMax,MPMax,MPDesc={MP:\hfill}}
+\setkeys{CharacterSheet}{St=2,Ge=2,Ko=2,Wa=2,Ch=2,AW=2,TW=2,TG=2,MV=2,MM=2}
+\setkeys{CharacterSheet}{StKr=0,StAb=0,StAk=0,
+							GeNa=0,GeAu=0,GeHe=0,
+							KoZa=0,KoAu=0,KoWi=0,
+							WaSu=0,WaWa=0,WaSc=0,
+							ChRh=0,ChEi=0,ChVe=0,ChMe=0,
+							AWMo=0,AWGe=0,AWAk=0,AWUn=0,AWFr=0,
+							TWMe=0,TWCh=0,TWDr=0,TWMa=NA,TWEl=NA,
+							TGSc=0,TGAn=0,TGRu=0,TGSo=0,
+							MVAn=0,MVIl=0,MVVS=0,MVVW=0,MVEl=NA,MVBe=NA,
+							MMAn=0,MMIl=0,MMVS=0,MMVW=0,MMEl=NA,MMBe=NA,MMSh=0}
+\setkeys{CharacterSheet}{Titel, Name, Rasse, Alter, Gewicht, Size,
+				Eigenschaften,
+				Beschreibung,
+				Talente,
+				Gold=0, Silber=0, Kupfer=0,
+				InvGrAnz=0, InvGr, InvNorAnz=0, InvNor, InvKleinAnz=0, InvKlein, InvSonst,
+				Zauber,
+				Rus=Kleidung, RusRS=0, RusRK=0,RusMali,RusVor=0}
+}
+
+\newcommand{\CharacterSheetUnknown}{
+\setkeys{CharacterSheet}{LPMax,MPMax,MPDesc}
+\setkeys{CharacterSheet}{St=??,Ge=??,Ko=??,Wa=??,Ch=??,AW=??,TW=??,TG=??,MV=??,MM=??}
+\setkeys{CharacterSheet}{StKr=??,StAb=??,StAk=??,
+							GeNa=??,GeAu=??,GeHe=??,
+							KoZa=??,KoAu=??,KoWi=??,
+							WaSu=??,WaWa=??,WaSc=??,
+							ChRh=??,ChEi=??,ChVe=??,ChMe=??,
+							AWMo=??,AWGe=??,AWAk=??,AWUn=??,AWFr=??,
+							TWMe=??,TWCh=??,TWDr=??,TWMa=??,TWEl=??,
+							TGSc=??,TGAn=??,TGRu=??,TGSo=??,
+							MVAn=??,MVIl=??,MVVS=??,MVVW=??,MVEl=??,MVBe=??,
+							MMAn=??,MMIl=??,MMVS=??,MMVW=??,MMEl=??,MMBe=??,MMSh=??}
+\setkeys{CharacterSheet}{Titel, Name, Rasse, Alter, Gewicht, Size,
+				Eigenschaften,
+				Beschreibung,
+				Talente,
+				Gold, Silber, Kupfer,
+				InvGrAnz, InvGr, InvNorAnz, InvNor, InvKleinAnz, InvKlein, InvSonst,
+				Zauber,
+				Rus, RusRS, RusRK,RusMali,RusVor}
+}
+
+\newcommandx{\CharSetup}[1]{\setkeys{CharacterSheet}{#1}}
+
+\newcommandx{\CharSetupSt}[4][2=0, 3=0, 4=0]{\setkeys{CharacterSheet}{St=#1, StKr=#2, StAb=#3, StAk=#4}}
+\newcommandx{\CharSetupGe}[4][2=0, 3=0, 4=0]{\setkeys{CharacterSheet}{Ge=#1, GeNa=#2, GeAu=#3, GeHe=#4}}
+\newcommandx{\CharSetupKo}[4][2=0, 3=0, 4=0]{\setkeys{CharacterSheet}{Ko=#1, KoZa=#2, KoAu=#3, KoWi=#4}}
+\newcommandx{\CharSetupWa}[4][2=0, 3=0, 4=0]{\setkeys{CharacterSheet}{Wa=#1, WaSu=#2, WaWa=#3, WaSc=#4}}
+\newcommandx{\CharSetupCh}[5][2=0, 3=0, 4=0, 5=0]{\setkeys{CharacterSheet}{Ch=#1, ChRh=#2, ChEi=#3, ChVe=#4, ChMe=#5}}
+\newcommandx{\CharSetupAW}[6][2=0, 3=0, 4=0, 5=0, 6=0]{\setkeys{CharacterSheet}{AW=#1, AWMo=#2, AWGe=#3, AWAk=#4, AWUn=#5, AWFr=#6}}
+\newcommandx{\CharSetupTW}[6][2=0, 3=0, 4=0, 5=0, 6=0]{\setkeys{CharacterSheet}{TW=#1, TWMe=#2, TWCh=#3, TWDr=#4, TWMa=#5, TWEl=#6}}
+\newcommandx{\CharSetupTG}[5][2=0, 3=0, 4=0, 5=0]{\setkeys{CharacterSheet}{TG=#1, TGSc=#2, TGAn=#3, TGRu=#4, TGSo=#5}}
+\newcommandx{\CharSetupMV}[7][2=0, 3=0, 4=0, 5=0, 6=0, 7=0]{\setkeys{CharacterSheet}{MV=#1, MVAn=#2, MVIl=#3, MVVS=#4, MVVW=#5, MVEl=#6, MVBe=#7}}
+\newcommandx{\CharSetupMM}[7][2=0, 3=0, 4=0, 5=0, 6=0, 7=0]{\setkeys{CharacterSheet}{MM=#1, MMAn=#2, MMIl=#3, MMVS=#4, MMVW=#5, MMEl=#6, MMBe=#7}}
+
+
+\makeatother

@@ -1,0 +1,382 @@
+Alatas(Elf/Lucas)
+Lucy(Morodianer/Felix)
+Karf(Zwerg/Tobias)
+Kijo(Tiermensch/Eric)
+
+TODOS:
+1. Wertesystem(Geldwert Bier Essen Unterkunft Gegenstände ...)(Orientierung ~ DSA /2) ~3(1-10(20)) Gold pro AP -> Rüstung Waffen etc haben Werte von 30-1000 Gold...
+2. Tränke&Spruchrollen
+3. Abenteurerbedarf(Zelt, ...)
+4. Reisemittel(Pferd, Kutsche, ...)
+5. ...
+
+-> Kosten: Trinken: 1-3 Kupfer pro Becher(-unendlich bei Spezialwünschen)
+-> Kosten: Essen: ~3-5 Kupfer pro Mahlzeit(-unendlich bei Spezialwünschen)
+-> Kosten: Unterkunft: ~7K(Absteige)/1 Silber(Günstig)/++ pro Nacht.
+
+->Sprache/...?/
+
+Historie?!
+
+->Scharfschütze(Doppelte Reichweite...)
+
+-> Magie: 
+	einschränkungen?(spezielle eingeschränkte Zauber einfacher, 
+	allgemeine überarbeitung Stufensystem,
+	 Gedankenkontrolle/lesen(Beschwörung), 
+	 ?!Verzauberungen/Beeinflussung(aktuell nur über Beschwörung)!?
+	 ?!Nekromantie(->als elementare(Lebens)kraft über Elementar)!?
+	 ?!Erkentnisszauber(Illusionen vernichten(e.v. über angriffsmagie))!?
+	 ?!Hellsicht/etc. e.v. über vertärkung!?
+	=> Rebalance Verbesserungseffekte
+	=> Rebalance Schaden/Wirkung(Zauber brauchen 2KR!)
+
+DONE Bewegung KR=5s(3s):
+DONE 	Gehen: Weltrekord 20Km Gehen: 4,3m/s
+DONE 	Min: 7(4)m pro KR(3,5)(2)
+		ca 1,5m/s -> 4,5 pro KR
+		(Schrittgeschwindigkeit ca. 1 m/s oder als 4Km/h angesetzt)
+		max:11
+		ca. 1,5m/s-3,5m/s
+
+DONE 	Joggen/rennen: Weltrekord Marathon: 5,8m/s; Hürdenlauf(3Km): 6,25
+DONE 	Min: 11(7)m pro KR(6)(3,5)
+		
+		Dauerlauf(Marathon)
+		Max:<3-<5m/s (<11-~17,5 pro KR)
+
+DONE 	Sprinten: Weltrekord Sprint: 10,5m/s
+DONE 	Min: 20(12,5)m pro KR(10)(6)
+DONE 	Max: 50(30)m pro KR(25)(15)
+		ca. 4m/s-10m/s
+Laufen für Lame typen überarbeiten
+	-> Basistempo*Größe + Akrobatik
+		=> 	Gehen: Größe + (1,5)
+					4-7
+					=> (Str/4+1,5)*Größe
+			Rennen: Größe*1,5 + (2)
+					7-17,5/20
+					=> Gehen((Str/4+1,5)*Größe)*2+Akro/2
+			Sprinten: Größe*2 + (6)Akro*3/4
+					12-30
+					=> Gehen((Str/4+1,5)*Größe)*3+Akro
+
+Gehen,rennen,sprinten
+11/17,5/30
+1/*1,6/*3
+gehen min/max:1/*2,5
+Attr: 3-4 zu 1-2
+Spez: ~7 zu ~0
+=> (1+Attr+spez/2)*(Größe-2)=Gehen
+=> Gehen*1,5=Rennen
+=> Gehen*3=Sprinten
+
+Bewegung:
+DONE	Rennen/Sprinten=Gehen*X
+DONE	Probe nur einmal!?
+DONE	Wandern/Gewaltmarsch -> fixformel
+DONE?	Erschöpfung für Rennen/sprinten
+Erschöpfung:
+DONE?	- einfacher
+DONE?	- pro Kampfrunde?
+DONE?	- wichtiger?
+DONE?	- Probe entfernen?(Schranken -> Normal,müde,erschöpft,ende)
+DONE?	- Erschöpfung vs Zeitverlängerung für Zeitproben
+DONE?	- Erschöpfungspunkte auf Charakterblatt
+
+
+Technlogie:=> generatortabelle => obsolet
+	-> beschreiben
+	-> neue Waffen/Gegenstände
+	
+
+DONE? Kampf/Schaden&HP überarbeiten
+DONE? 	HP: Ko:(8+1d8) + Zä:+1d4
+DONE? 	Schaden: ST:XdY + Kr:ZdQ
+DONE? 	Zähigkeit: ...?
+
+DONE Kampfmanöver?!
+DONE 	-> Absicht Beschreiben(Rundumschlag/Klingenwirbel/...)
+DONE 	-> Manöver testen/erlernen(Kampfprobe)
+DONE 		-> Krit: Dauerhaft erlernt(kostet sonst EP wie Zauber)
+DONE 		-> Erfolg: Durchführung(bei erlernung wie mit Buch?)
+DONE 		-> Misserfolg: Keine Aktion
+DONE 		-> Krit: Malus(Stolpern)
+
+DONE 'Würfelorgie' reduzieren
+DONE 	Attr in Spez umwandeln?
+
+DONE Freie Spezialisierungen?
+
+Verteidigung:
+	Abwehr: primär gegen Nahkampf, malus auf Fernkampf
+	Ausweichen: primär gegen Fernkampf, malus gegen Nahkampf
+	Schild: erlaubt Proben mit ausweichen oder Abwehr, immer ohne malus
+	Schild bonus durch Rüstungskenntnis? => canceled
+	-Vorteil für kleine!(Schadensbonus =20%-50% pro Größenkategorie)
+			-v1:Schwierigkeit Verteidigung-1 pro Großenkategorie kleiner als Angreifer bei gezielten Angriffen
+
+Rüstung:
+	- Gibt bonus auf Proben statt min. Probe
+		-> hilft nur Treffer zu entwerten nicht treffer zu vermeiden(
+			angriff>=Verteidigung=> Treffer
+			angriff>=(Verteidigung+RK)*1,5 => normaler Treffer
+			angriff>=(Verteidigung+RK)*2 => kritischer Treffer
+			angriff>=(Verteidigung+RK)*4 => kritischer Treffer)
+	- Einfacherere Proben?/Schranken?
+		- S1: tragbar
+		- S2: Mali reduziert
+		- S3: Mali~0
+	- Spezialisierung umbenennen(Gegenstände)?
+	
+
+\section{Zähigkeit}
+Wenn ein Angriff erfolgreich durchgeführt wird und Schaden erzeugt muss der Geschädigte eine Zähigkeitsprobe bestehen oder er fällt in Ohnmacht.
+
+Für diese Zähigkeitsprobe muss 1 einfacher Erfolg aller vollen 5 LP Gesamtschaden und aller 5 LP Angriffsschaden geschafft werden damit die Probe erfolgreich ist(bsp.: 19 Punkte Angriffsschaden \& 1 LP Schaden von vergangenen Aktionen: 3*5LP(15+4LP) + 4*5LP(20LP) = 3+4 = 7 einfache Erfolge).
+
+Sollte die Probe misslingen fällt der Charakter für die Differenz Sollerfolge - geschaffte Erfolge in Ohnmacht.
+
+
+
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+Würfel rework:(https://topps.diku.dk/torbenm/troll.msp : function)
+	Idee 1: Attribute: 0..10; Spezialisierung: 0..??
+Function:
+	Attr:=5;
+	Spez:=0;
+	Min:=11;
+	Max:=10;
+	W:=20;
+
+	(Spez~0)+sum foreach x in (Attr~1)d(W~1) do (count (x>=(Min~1)) - count (x<=(Max~1)))
+		- Attributspunkte geben Würfel
+			- Würfel können +/- 1 Erfolg generieren
+			- >Würfelgröße*0,5: Erfolg
+			- 1: Misserfolg
+		- Spezialisierungspunkte geben (feste) Boni
+		- Schwierigkeit:
+			- je Schwieriger desto:
+				a) kleiner die Attributswürfel(größere Chance auf Misserfolg(/kleinere Chance auf Erfolg))
+				oder b) kleiner der Erfolg-teil/größer der Misserfolg teil des Würfels
+					- trivial:?
+					- einfach:?
+					- mittel:?
+					- schwer:?
+					- meisterhaft:?
+					- legendär: 50\%+ 50\%- -> würfel bringt (fast) nix
+				+ optional c) mehr Spezialisierungspunkte werden für 1 Erfolg benötigt
+					- offene Spezpunkte?
+						-> wie jetzt?
+			- je Komplexer desto:
+				a) mehr Erfolge sind notwendig um die Probe zu bestehen
+	Idee 2: Attribute: 0..10; Spezialisierung: 0..15(>18 unnötig?!)
+Function:
+	Attr:=8;
+	Spez:=0;
+	Min:=2;
+	Diff:=5;
+	W:=20;
+
+	sum foreach x in (Attr~1)d(W~1) do (count ((x+(Spez~0))>=((Min~1)+(Diff~1))) - count ((x+(Spez~0))<(Min~1)))
+		- Attributspunkte geben Würfel
+			- Würfel können +/- 1 Erfolg generieren
+			- >=X: Erfolg
+			- <Y: Misserfolg
+		- Spezialisierungspunkte verringern X und Y
+			- Con: Spezialisten erfordern auch Attributspunkte
+			- ?bei negativem X? (gibt es |X| als Erfolgsbonus?)
+!!!!			- Würfeln e.v. sinnlos/weg -> schwierigeres ist nicht mehr(sinnvoll) mit Attributen allein schaffbar!!
+		- Schwierigkeit:
+			- je Schwieriger desto:
+				a) kleiner der Erfolg-teil/größer der Misserfolg teil des Würfels
+					- X/Y werden größer
+					- trivial:X=8,Y=3
+					- einfach:X=11,Y=6
+					- mittel:X=14,Y=9
+					- schwer:X=17,Y=12
+					- meisterhaft:X=20,Y=15
+				b) ??kleiner ist die Differenz X-Y???
+			- je Komplexer desto:
+				a) mehr Erfolge sind notwendig um die Probe zu bestehen
+				
+	Idee 1,2: Attribute: 0..10; Spezialisierung: 0..15(>18 unnötig?!)
+Function:
+	Attr:=3;
+	Spez:=0;
+	Erfolg:=2;
+	Diff:=5;
+	W:=20;
+
+	sum foreach x in (Attr~1)d(W~1) do (count ((x)<=(Erfolg~1)) - count ((x)>((Erfolg~1)+(Diff~5))))
+
+		- Attributspunkte geben Würfel
+			- Würfel können +/- 1 Erfolg generieren
+			- <=X: Erfolg
+			- >X+5: Misserfolg
+		- Spezialisierungspunkte wie jetzt
+			- 1 Würfel 1 Stufe kleiner machen
+				w20->w12!!->w10->w8->w6
+			- 5 Punkte sind in 1 freien Erfolg umtauschbar
+			- verbesserung in fester reihenfolge?
+		- Spezialisierungspunkte2:
+			- jeder Punkt kann benutzt werden um 1 belibiges Würfelergebnis um 1 zu verändern
+				-> kann stacken.
+		- Schwierigkeit:
+			- je Schwieriger desto:
+				a) kleiner der Erfolg-teil/größer der Misserfolg teil des Würfels
+					- X/Y werden größer
+					- trivial:X~15
+					- einfach:X~12
+					- mittel:X~9
+					- schwer:X~6
+					- meisterhaft:X~3
+					- legendär:X~1
+				b) master w12:
+					- trivial:X~10
+					- einfach:X~8
+					- mittel:X~6
+					- schwer:X~4
+					- meisterhaft:X~2
+					- legendär:X~1
+
+			- je Komplexer desto:
+				a) mehr Erfolge sind notwendig um die Probe zu bestehen
+				
+				
+				
+				
+								
+DONE Würfel v3(Fusion+):
+   - Würfelsystem anforderungen: Spez/Attribute erzeugen eine gewisse '2 dimensionalität'
+   - Erfolge/Misserfolge lassen sich in 'leicht'/'normal' und 'kritisch' einteilen(mindestens)
+
+	Wirkung Attr: mehr Würfel
+	Wirkung Spez: bessere Würfel(wie jetzt)(neue Würfel regeln: wenn nix anderes mehr geht oder wenn der Gegner mehr Würfel hat('auffüllend'))	
+	=> Gegenproben:
+		- Angreifer/Aktionator und Verteidiger würfeln normal
+			- Attr*d20, die durch Spez verbessert werden
+				20->12->8->4;-(3/4)>12->...
+				primitiv:20
+				Trivial: 16
+				Einfach: 12
+				Mittel:   8
+				Schwer:   4
+				Meister:  2
+				Legendär: 1
+			- Jeder Wurf <= Schwierigkeit zählt als Erfolg
+			- Jeder Wurf > Schwierigkeit zählt als Fehlschlag
+		- Die Erfolge des Angreifers werden AUFSTEIGEND sortiert
+		- Die Erfolge des Verteidigers werden ABSTEIGEND sortiert
+		- Falls einer der beiden mehr Erfolge als der andere hat werden die SCHLECHTESTEN direkt als Erfolg gezählt(für die Qualitätsbetrachtung zählt es als ob der Gegner eine(erfolgreiche) 20 gewürfelt hätte).
+		- Angreifer u. Verteidiger Erfolge werden paarweise verglichen
+			- gleich: ungültig
+			- Angreifer niedriger: Angriffserfolg
+			- Verteidiger niedriger: Verteidigungserfolg
+		=> Kritisch:
+			??- Je nach Qualität der einzelnen Erfolge(Differenz zum Gegner)?
+				- vs Qualität der Gegenerfolge
+				- +Qualität: besonders elegant
+					-> wertet 'Erfolge gegen Gegner' zu 'freien Erfolgen' auf
+				- -Qualität: 'Grad so geschafft'
+					-> 'leichtere' Erfolge/Treffer
+			- Je nach menge der
+				- 'freie' Erfolge(übrige Würfel).
+					- 1 'freier' Erfolg = 1 Dominanz über den Gegner
+					=> Krit/'normalere Erfolge'/positiver Nebeneffekt?/schneller?
+				- Erfolge gegen Gegner.
+					- 1 Erfolg = 1 verhinderte Reaktion
+					=> 'normalere' Erfolge/Treffer /?positiver Nebeneffekt?/?schneller?
+				- Gegenerfolge(ab 3 Verteidigererfolgen,...)
+					- 1 Gegenerfolg = 1 (teilweise) erfolgreiche Reaktion/Komplikation/unvorhergesehene Hürde
+					=> Erfolgsreduktion(erst 'Erfolge gegen Gegner' dann 'freie Erfolge')
+					=> Antikrit
+				- Fehlschlägen
+					- 1 Fehlschlag = 1 Patzer/Missgeschick/Komplikation
+					=> Wertet 'freie Erfolge' zu normalen Erfolgen ab.
+					=> Antikrit/'leichte Erfolge'/negativer Nebeneffekt/langsamer
+			- Je nach Erfolg/Gegenerfolg rate(3x so viele Erfolge wie Verteidiger,...).
+			- Je nach Erfolg/Anzahl rate(9/10 Würfel haben einen Erfolg generiert).
+			=> z.b. 
+				- jeder eigene Erfolg +3 Verbesserungspunkte
+				- jeder gegner Erfolg -3 Verbesserungspunkte
+				- jeder eigene Fehlschlag -1 Verbesserungspunkte
+		=> Situationsboni(Kampf gegen mehrere Gegner): Schwierigkeit wird erhöht.
+
+
+	=> Normale Proben: Wie Gegenproben, aber:
+		- es wird für die Probe e.v. ein Minimalergebnis festgelegt(max. X Gegenerfolge/Fehlschlägen oder min Y Erfolge)
+		- (oder) Es wird zusätzlich zur Schwierigkeit ein 'Attribut'/'Spez'/'Schwierigkeit' für die Umgebung definiert.
+		- um die Lösungsqualität zu verbessern können freiwillig mehr 'Umgebungswürfel' erzeugt werden.
+			- +4 Verbesserungspunkte pro Extrawürfel
+		- Lösungsqualität(Geschwindigkeit/Eleganz/Komplikationen/...) wird durch die Menge der:
+			- 'Umgebungserfolge'(o. rate)
+			- Fehlschläge(o. Fehlschlagsrate)
+			- Erfolge
+		und die 'Qualität' der einzelnen Erfolge(Differenz zur 'Umgebung'/Schwierigkeit/20) bestimmt
+
+
+	=> Zeitproben: entfällt(bzw. ersetzt durch boni/Erleichterung)
+	
+Dices(Damage&Co):
+	Nahkampf: 1dx
+		-> dx ist bestimmt durch den "Waffenstäkewert"(min. Wert um Waffe zu benutzen)
+		-> Waffenstäkewert hat je nach Gegenstandsgröße bestimmte Standardwerte(+min/max)
+		-> Größere haben einen bonus auf ihre Stärke wenns um den Waffenstäkewert geht(Troll mit Stärke 1 kann Keule mit Waffenstäkewert 2 benutzen)
+	Fernkampf: festwert
+	Würfeln: Krits seltener machen -> Geg. Erfolg negiert zuerst die Krits dann die Erfolge
+	Schaden: 
+		-> Krit stufen ermittlen(anzahl Krits-Anzahl Misserfolge)
+		-> Krit stufe > 0: würfele extra dx(siehe Schaden)/multipliziere Festwert mit der Krit stufe
+		-> Krit stufe < 0: würfele d(x*2^Krit stufen)(-1 = d8 zu d4/d12 zu d6/d6 zu d4/d4 zu 1/1 zu 0)
+	Rüstung:
+		-> pro 2 Rüstungspunkte: entferne 1 positive Krit stufe
+		-> pro 1 Rüstungspunkte: veringere Krit stufen um 1 unter 0
+
+
+Nahkampf zu viele Proben(rankommen/wegkommen + Angriff)
+	=> Distanzkram überarbeiten
+		'Klauen bei Low Fantasy von Felix?'
+			=> Runde: 
+				1. Manövrieren der Nahkämpfer(Supportaktion)
+					a)
+						Distanzänderung/Bewegung zu/von einem anderen -> mind. supp aktion
+						(relative) Distanz halten: supp aktion oder Nahkampfverteidigungsaktion
+					b)Probe:
+						alle beteiligten machen 1? entsprechende Probe(akrobatik/Ausweichen)
+							- Akrobatik: nur gegen 1 Ziel(näher/nicht weiter weg)
+							- Ausweichen: gegen beliebig viele Ziele(nicht zu nah)
+						es wird festgelegt auf wen man sich fokusiert(Angriffsziel)?
+					c)auswertung:Kritische Erfolge einzusetzen benötigt min. 1 anderen Erfolg
+						Ausweichen Probe:
+							- pro Erfolg: Erhöhung der Distanz um 1/halten der Distanz
+							- Kritischer Erfolg: Kann die (anderen) erfolge gegen einen 2. Gegner einsetzen
+							- 2x Kritischer Erfolg: Kann die (anderen) erfolge gegen 2 andere Gegner einsetzen
+							- ...
+ 						Akrobatik Probe:
+							- pro Erfolg: senkung der Distanz um 1/halten der distanz
+							- Kritischer Erfolg: Kann die (anderen) erfolge (als ausweichen erfolge) gegen einen 2. Gegner einsetzen
+verwenden(ohne diesen Kritischen)
+												
+				2. Angriffe/Sonstiges(Spieler)
+				3. Angriffe/Sonstiges(NPC/Gegner)
+				4. Leute sterben
+		=> Alternative zu Distanzproben: mit in Angriff verrechnen: 
+				1. spezielle Manöver um Distanzen schnell zu ändern(mit entsprechenden Mali)
+				2. Erfolge bei Angriff-> näher ran, Erfolge bei Verteidigung(ausweichen) -> weiter weg
+etwas viel Schaden(HP*1,5)?! => Basisschaden auf 4 reduzieren
+	-> Rüstungszeugs(Mali ca. 1/3 weniger)
+
+

@@ -1,0 +1,331 @@
+\chapter{Zauber TODO}
+\label{Zauberliste}
+\section{Illusion}
+\addAndPrintSpell{Licht}{
+	Stufe=0,
+	Beschreibung={Verzaubert einen Gegenstand, sodass er leuchtet.},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{2}$: Licht wird als eigenständiges Kugelförmiges Objekt geformt.},
+	MagMacht={
+		;$\xrightarrow{1}$: Licht hält für (+) 1 min.
+		;$\xrightarrow{1}$: Licht erzeugt (+) 5m Leuchtradius.
+		;$\xrightarrow{3}$: Startet mit einem Lichtblitz, der alle blendet, die hinsehen(2 Runden lang Treffer um 1 erschwert).}
+}
+
+\addAndPrintSpell{WobelBobelBoden}{
+	Stufe=1,
+	Beschreibung={Der Boden scheint sich ständig zu bewegen(wie Wackelpudding).},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: 5m radius mit dem Magier als Zentrum, Geländeschwierigkeit +1
+		;$\xrightarrow{1}$: +5m radius
+		;$\xrightarrow{1}$: Zentrum kann bis zu 5m vom Magier entfernt sein(gilt als Zauberreichweite)
+		;$\xrightarrow{3}$: Geländeschwierigkeit nochmals +1.
+		},
+}
+
+\addAndPrintSpell{Illusion}{
+	Stufe=1,
+	Beschreibung={Erzeugt eine einzelne Illusion, eines Objekts, in bis zu 5m Abstand zum Zauberer, die alle Anwesenden beeinflusst.;
+	Für Kampfsituationen gilt ein Kritischer Treffer sind 2 unpassende Handlungen.},
+	MagVerstand={
+		;$\xrightarrow{0}$: Illusion hat sehr schlechte Qualität, aussehen der Illusion zufällig(Elf, Mensch, Monster, Truhe, Schwert, ...), keine Anpassung an die Umgebung(jede Aktion gilt als unpassende Handlung).
+		;$\xrightarrow{1}$: Illusion hat schlechte Qualität, nur die Basisart der Illusion ist bestimmbar(Humanoid, Monster, Gegenstand, Pflanze, ...), Anpassung immer noch schlecht, jedoch gut genug, dass die Illusion aktiv beobachtet werden muss um die Abnormalitäten zu erkennen.
+		;$\xrightarrow{2}$: Illusion hat normale Qualität(wählbare Rassen (Mensch, Elf, Goblin, Troll, ...), Anpassung an die statische Umgebung(nicht an bewegte Objekte/Personen).
+		;$\xrightarrow{3}$: Illusion hat gute Qualität(die eigenen Vorstellungen werden weitestgehend umgesetzt), Anpassung an alles außer Kampfsituationen(wenn Illusion 'getroffen' würde(1 Angriffserfolg)).
+		;$\xrightarrow{4}$: Illusion hat gute Qualität \& kann sich an Duelle anpassen( mindestens 2 Angreifer o. Treffer(Ausweicherfolge = 4) gelten als unpassende Handlung).
+		;$\xrightarrow{7}$: Illusion hat ausgezeichnete Qualität, komplexe Kampfsituationen möglich(nur ein Treffer(Ausweicherfolge = 11 (-2 pro Angreifer)) gilt als unpassende Handlung).
+		;$\xrightarrow{1}$: Ausweicherfolge + 1.
+		;$\xrightarrow{2}$: Illusion führt Ausweichkonteraktionen aus wenn möglich.
+		},
+}
+
+\addAndPrintSpell{Verändernde Illusion}{
+	Stufe=2,
+	Beschreibung={Erzeugt eine Illusion, die ein Objekt verändert(Unsichtbarkeit, Versetzter Arm, scheinbare Verwandlung).},
+	MagVerstand={
+		;$\xrightarrow{0}$: 'Verpixelungseffekte'.
+		;$\xrightarrow{1}$: Extra Bein/Ohr/Kopf/...(kein Arm).
+		;$\xrightarrow{2}$: Extra Arm.
+		;$\xrightarrow{3}$: Teilweise Unsichtbarkeit/Teilverwandlung.
+		;$\xrightarrow{4}$: Schein Körperteil(Illusion eines Körperteils und Tarnung des echten).
+		;$\xrightarrow{5}$: Schein Verwandlung.
+		;$\xrightarrow{6}$: Vollständige Unsichtbarkeit.
+		},
+}
+
+\addAndPrintSpell{Imitation}{
+	Stufe=2,
+	Beschreibung={Ändert Körperliche Eigenschaften(Aussehen, Stimme, ...) in die der Zielperson(du musst diese schon einmal gesehen/gehört haben).},
+	MagVerstand={
+		;$\xrightarrow{0}$: Unter einem Umhang wirkst du genau wie die Zielperson ... wenn du nichts sagen musst ... und schon eine ähnliche Größe hattest.
+		;$\xrightarrow{1}$: Gesichtsform passt.
+		;$\xrightarrow{1}$: Stimme passt.
+		;$\xrightarrow{2}$: Körperform passt.
+		;$\xrightarrow{3}$: Perfekte Imitation.
+		;$\xrightarrow{2}$: Größenanpassung des Körpers um 1 Größenstufe.
+		},
+}
+
+\section{Angriff}
+\addAndPrintSpell{Angriff}{
+	Stufe={1},
+	Beschreibung={Mag Geschoss o.ä..},
+}
+\addAndPrintSpell{Magie auflösen}{
+	Stufe={2},
+	Beschreibung={Vernichtet die Zaubermatrix eines temporären Zaubers.;
+	Wenn die Ziel Zaubermatrix vor weniger als 10 Minuten entstanden ist muss außerdem die Magieverteidigung überwunden werden.},
+	MagVerstand={
+		;$\xrightarrow{0}$: löst einen Stufe 0 Zauber auf.
+		;$\xrightarrow{1}$: löst einen Stufe 1 Zauber auf.
+		;$\xrightarrow{2}$: löst einen Stufe 2 Zauber auf.
+		;$\xrightarrow{4}$: löst einen Stufe 3 Zauber auf.
+		;$\xrightarrow{8}$: löst einen Stufe 4 Zauber auf.
+		;$\xrightarrow{15}$: löst einen Stufe 5 Zauber auf.
+		},
+	MagMacht={Jeder Schadenspunkt erhöht die benötigte Erhaltungsprobe um 1 Erfolg.},
+}
+\addAndPrintSpell{Explosion}{
+	Stufe={2},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: Ausweichen erzeugt immer mindestens einen leichten Treffer wenn der Bereich(2m Radius) nicht komplett verlassen wird.},
+	MagMacht={
+		;$\xrightarrow{Initial}$: Durchmesser 1 m.
+		;$\xrightarrow{1}$: Radius + 1 m.},
+}
+\addAndPrintSpell{Direkter Schmerz}{
+	Stufe={2},
+	Beschreibung={Angriffsmagie, umgeht Rüstung u. Verteidigung(Ausweichen/Schild), nicht tödlicher Schaden. Die Angriffswert Verbesserungen können für diesen Zauber nicht verwendet werden.},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: Angriff umgeht Rüstung und normale Verteidigungsmaßnahmen(immer Basisschaden).},
+}
+
+\section{Verstärkung}
+\addAndPrintSpell{Reinigung}{
+	Stufe=0,
+	Beschreibung={Säubert einen Gegenstand, indem die Schmutzabweisende Eigenschaft verstärkt wird. Der Dreck verschwindet nicht einfach sondern wird einfach ab/herausfallen.},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{0}$:Größe: Kleiner Gegenstand (oder einfache Kleidung)
+		;$\xrightarrow{1}$:Größe: Normal Gegenstand (oder Lederrüstung)
+		;$\xrightarrow{2}$:Größe: Großer Gegenstand (oder Metallrüstung)
+		;$\xrightarrow{3+X}$:Größe: Riesiger Gegenstand($\leq(250*2^X)\%$ der Körpergröße)
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: Schmutz wird um +25\% reduziert.
+		;$\xrightarrow{1}$: wenn vollständig gereinigt: +1 Deko für 8h.
+		}
+}
+\addAndPrintSpell{Schild(Magie)}{
+	Stufe=1,
+	Beschreibung={Verstärkt den natürlichen magischen Schild eines Wesens/Objekts.},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{0}$: Schild wirkt nur gegen Zauber der Stufe 0-1.
+		;$\xrightarrow{2}$: Schild wirkt nur gegen Zauber der Stufe 0-2.
+		;$\xrightarrow{4}$: Schild wirkt nur gegen Zauber der Stufe 0-3.
+		;$\xrightarrow{6}$: Schild wirkt gegen alle Zauber.
+		;$\xrightarrow{2}$: Auch wenn das Objekt/Wesen keinen natürlichen Schild besitzt(magische Macht=0)},
+	MagMacht={Der Schild verstärkt den magischen Schild soweit, dass entweder der Zauber gerade so neutralisiert wird(Schilderfolge>Zaubererfolge) oder der Schild verbraucht ist. Wenn noch Erfolge übrigbleiben werden sie auf die nächste Schildprobe übertragen.
+		;$\xrightarrow{1}$: +1 magischer Erfolg gegen Zauber der Stufe 0-1.
+		;$\xrightarrow{2}$: +1 magischer Erfolg gegen beliebige Zauber.
+		},
+}
+\addAndPrintSpell{Heilung}{
+	Stufe=1,
+	Beschreibung={Verstärkt die natürliche Regeneration eines Lebewesens, sodass sich Wunden innerhalb von Sekunden schließen und heilen.},
+	MagDauer={Spontan},
+	MagMacht={
+		;$\xrightarrow{1}$: +5 Heilungswürfel(d1) für den Zauber.
+		},
+}
+\addAndPrintSpell{Schild(Schaden)}{
+	Stufe=2,
+	Beschreibung={Verstärkt die Haut/Oberfläche eines Wesens/Objekts, damit diese eine gewisse Schadensmenge (zusätzlich, insgesamt) absorbiert.},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: Schild wirkt gegen eine Schadensquelle(Physisch, Feuer, Eis, ...).
+		;$\xrightarrow{2}$: Schild wirkt gegen eine weitere Schadensquelle.
+		;$\xrightarrow{6}$: Schild wirkt gegen jede Schadensquelle.
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: +5 Schutzwürfel(d1) für den Zauber.
+		},
+}
+\addAndPrintSpell{Schutzschild}{
+	Stufe=2,
+	Beschreibung={Erzeugt einen unsichtbaren Schutzschild um den Zauberer(oder einen nahen Verbündeten(max. 5 Meter entfernt am ende des Zuges des Zauberers)). Der Schild bricht zusammen wenn sich das Ziel aus der Zauberreichweite entfernt oder der Schild auf 0 Schutzpunkte fällt. Der Schild startet mit seiner vollen Kapazität und regeneriert bei jeder erfolgreichen Erhaltungsprobe Punkte.},
+	MagDauer={Temporär},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: Schild wirkt gegen eine Schadensquelle(Physisch, Feuer, Eis, ...).
+		;$\xrightarrow{2}$: Schild wirkt gegen eine weitere Schadensquelle.
+		;$\xrightarrow{6}$: Schild wirkt gegen jede Schadensquelle.
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: Schild regeneriert +1 Punkt pro Runde, Schildkapazität +2.
+		;$\xrightarrow{1}$: Schildkapazität +5.
+		;$\xrightarrow{1}$: Schild regeneriert +2 Punkt pro Runde.
+		},
+}
+\addAndPrintSpell{Reparatur}{
+	Stufe=3,
+	Beschreibung={Erzeugt regenerative Eigenschaften bei einem Gegenstand. Jeder Zaubermisserfolg generiert einen Gegenstandschadenseffekt, der eine Haltbarkeitsprobe gegen $3+Zaubermachterfolge$ nach sich zieht.},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{0}$:Größe: Kleiner Gegenstand (oder einfache Kleidung)
+		;$\xrightarrow{1}$:Größe: Normal Gegenstand (oder Lederrüstung)
+		;$\xrightarrow{2}$:Größe: Großer Gegenstand (oder Metallrüstung)
+		;$\xrightarrow{3+X}$:Größe: Riesiger Gegenstand($\leq(250*2^X)\%$ der Körpergröße)
+		;$\xrightarrow{0}$:Beschädigung: leicht(bis zu 4 HP Schaden)
+		;$\xrightarrow{2}$:Beschädigung: mittel(bis zu 8 HP Schaden)
+		;$\xrightarrow{4}$:Beschädigung: katastrophal(bis zu 10 HP Schaden)
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: 1 HP wird regeneriert.
+		;$\xrightarrow{2}$: wenn vollständig repariert(10 HP): +1 HP.
+		}
+}
+
+\section{Verwandlung}
+\addAndPrintSpell{Telekinese}{
+	Stufe=0,
+	Beschreibung={Verändert die Umgebung eines Objekts, um dieses zu bewegen(über den Boden oder andere feste Oberflächen gleiten zu lassen).}
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: Max. 1 Pfund Gewicht, kann sich nur entlang von festen Gegenständen bewegen.
+		;$\xrightarrow{1}$: +1 Pfund maximales Gewicht
+		;$\xrightarrow{1}$: Objekt kann für maximal (+) 1 KR auch innerhalb von Flüssigkeiten beliebig bewegt werden(Bewegungsradius ist halbiert).
+		;$\xrightarrow{4}$: Objekt kann für maximal (+) 1 KR beliebig bewegt werden(z.b. schweben)(Bewegungsradius ist halbiert).
+		},
+	MagMacht={
+		;$\xrightarrow{1}$: +1 Meter Bewegungsradius in der ersten KR.
+		;$\xrightarrow{3}$: +1 Meter Bewegungsradius in der ersten KR ohne Bodenkontakt(als Sprung/Wurf).
+		;$\xrightarrow{1}$: +2 Meter Bewegungsradius (0,5m pro KR).
+		}
+}
+
+\addAndPrintSpell{Rückverwandlung}{
+	Stufe=selbst:1;andere:2,
+	Beschreibung={Erlaubt es Sachen in ihre Ursprüngliche Form zurückzuverwandeln, dabei müssen alle  Magische Macht Effekte der Verwandlung rückgängig gemacht werden(selbe Erfolgsmenge wie bei der Verwandlung)},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{Initial}$: $<\frac{1}{2}h$ Verwandlungsdauer.
+		;$\xrightarrow{1}$: $<1h$ Verwandlungsdauer.
+		;$\xrightarrow{2}$: $<2h$ Verwandlungsdauer.
+		;$\xrightarrow{3}$: $<4h$ Verwandlungsdauer.
+		;$\xrightarrow{1}$: $+4h$ Verwandlungsdauer.
+		;$\xrightarrow{9}$: $\geq24h$ Verwandlungsdauer.
+		},
+}
+
+\addAndPrintSpell{Verwandlung Personen und Kreaturen}{
+	Stufe={selbst:2;andere:3},
+	Beschreibung={Du kannst dich(bzw. andere) verwandeln, allerdings hast du kaum Kontrolle darüber was dabei passiert...;
+Bei Verwandlungen in Tiere ändern sich nur körperliche Attribute, die Verwandlung in andere Reiche, zum oder vom Unbelebten, oder in magische Wesen ändert jedoch auch die Seele des Verwandelten.;
+Geistige Attribute(und mit ihnen auch die Persönlichkeit, ...) werden in jedem Fall nach 4, 12 und 24 Stunden angepasst. Nach 24h hat man sich vollständig in das andere Wesen verwandelt und ist sich nicht mehr bewusst darüber mal was anderes gewesen zu sein.},
+	MagVerstand={Gezieltere Verwandlung:
+		;$\xrightarrow{1}$: Klasse(z.b. Säugetier/Vogel/...)
+		;$\xrightarrow{2}$: Ordnung(z.b. Raubtier/Primat/...)
+		;$\xrightarrow{3}$: Familie(z.b. Katzen/Hunde/Humanoide/...)
+		;$\xrightarrow{4}$: Gattung(Spezies wie Mensch/Tiger/...)
+		;$\xrightarrow{5}$: Ein spezielles Wesen(z.b. Eronso Mümmel von nebenan oder seine Katze) 
+		;$\xrightarrow{5}$: Verwandlung in ein anders Reich(z.b. Dämon/Pflanze/Geist/Untoter/...)
+		;$\xrightarrow{6}$: Verwandlung in ein spezifisches Reich/Familie
+		;$\xrightarrow{7}$: $\rightarrow$Unbelebtes(weiteres siehe \ref{unlebendVerwandlung})
+		;$\xrightarrow{7}$: Verwandlung in ein Magische Wesen(Elementare/Greifen/Drachen/Schleim/...)
+		;$\xrightarrow{8}$: Verwandlung in ein bestimmtes Magisches Wesen(Familie z.b. Elementar)
+		;$\xrightarrow{3}$: Gezielte Teilverwandlung(z.b. Die Flügel eines Vogels wachsen lassen.)(+ Basiskosten des ursprünglichen Ziels z.b. Vogel)
+		;$\xrightarrow{??}$: Spezialisierte Verwandlungen??},
+}\label{lebendVerwandlung}
+
+\addAndPrintSpell{Verwandlung Gegenstände}{
+	Stufe=1,
+	Beschreibung={Du kannst Gegenstände verwandeln, die du in den Händen hältst/berührst.},
+	MagVerstand={
+		;$\xrightarrow{0}$: Größe: Kleiner Gegenstand
+		;$\xrightarrow{1}$: Größe: Normal Gegenstand
+		;$\xrightarrow{3}$: Größe: Großer Gegenstand
+		;$\xrightarrow{5+X}$: Größe: Riesiger Gegenstand($\leq(250*2^X)\%$ der Körpergröße)
+		;$\xrightarrow{0}$: Ergebnis: Typ Äquivalent(Schwert$\rightarrow$Schwert)
+		;$\xrightarrow{1}$: Ergebnis: Übertyp Äquivalent(Waffe$\rightarrow$Waffe)
+		;$\xrightarrow{4}$: Ergebnis: beliebiger Typ (Waffe$\rightarrow$Stein)
+		;$\xrightarrow{0}$: Ergebnis: gleiches Material
+		;$\xrightarrow{6}$: Ergebnis: beliebiges Material
+		;$\xrightarrow{4}$: Ergebnis: Material wird 'lebendig'(könnte etwas fühlen/tun)
+		;$\xrightarrow{1}$: Ergebnis('lebendiges' Material): +1 Empfindungsart
+		;$\xrightarrow{2}$: Ergebnis('lebendiges' Material): +1 Aktionsmöglichkeit
+		;$\xrightarrow{5}$: Ergebnis: $\rightarrow$Lebendes(weiteres siehe \ref{lebendVerwandlung})},
+	MagMacht={TS = Technikstufe des Zielgegenstands(Maximal Stufe 1).
+		;$\xrightarrow{TS+1}$: 1 Qualitätsstufe umverteilen
+		;$\xrightarrow{2*(TS+1)}$: $\pm$ 1 Qualitätsstufe
+		;$\xrightarrow{?}$: Materialänderungskosten je nach Veränderung.
+		;$\xrightarrow{1}$: 1 Empfindungsart wird sensitiver(z.b. taub$\rightarrow$schwerhörig$\rightarrow$...).
+		;$\xrightarrow{2}$: 1 Aktionsmöglichkeit wird stärker(z.b. stumm$\rightarrow$flüstern$\rightarrow$...).
+		;$\xrightarrow{??}$: TODO: ....}
+}\label{unlebendVerwandlung}
+
+\section{Elementar}
+\addAndPrintSpell{Einfache Elementarmanipulation}{
+	Stufe=0,
+	Beschreibung={Du kannst das gewählte Element beeinflussen(in einem Kubus von 10cm Länge).},
+	MagDauer={Spontan},
+	MagVerstand={
+		;$\xrightarrow{1}$: Kubusgröße * 2},
+	MagMacht={
+		;$\xrightarrow{1}$: Basiseffekt wird verstärkt oder geschwächt(Wärme bei Feuer,...)(Faktor 1,5)
+		;$\xrightarrow{2}$: Element wird verstärkt oder geschwächt(Feuer wird größer,...)(Faktor 1,5)},
+}\label{Einfache Elementarmanipulation}
+
+\addAndPrintSpell{Erzeugung von Elementen}{
+	Stufe=1,
+	Beschreibung={Wie \ref{Einfache Elementarmanipulation} nur dass das Element nicht vorher dagewesen sein muss(wird einfach erschaffen).},
+	MagDauer={Spontan bis Temporär},
+	MagMacht={
+		;$\xrightarrow{1}$: Element wird erzeugt(Streichholzflamme bei Feuer,...)
+		;$\xrightarrow{2}$: Element wird erzeugt ohne Basismaterial(Feuer ohne brennbares, ...)
+		;$\xrightarrow{1}$: Erzeugtes Element wird verstärkt(Faktor 1,5)
+		},
+}
+\addAndPrintSpell{Elementarangriff}{
+	Stufe=2,
+	Beschreibung={Wie Angriffszauber, aber Schadenswürfel beginnen bei d4 statt d1 Schwierigkeit ist einfach bis meisterlich, außerdem können Zusatzeffekte gekauft werden(abhängig vom Element).},
+}
+\addAndPrintSpell{weitere Elementarzauber}{
+	Stufe=0-5,
+	Beschreibung={Kreativität des Spielers/Spielleiters.},
+}
+
+\section{Beschwörung}
+\addAndPrintSpell{weitere Beschwörungen}{
+	Stufe=0-5,
+	Beschreibung={Kreativität des Spielers/Spielleiters.},
+}
+\begin{TODO}!!!TODO!!!
+->Zufällige vs gezielte??
+BSP:
+
+->Verstand: ...
+-> Macht: ...
+
+St0:
+Geisterbeschwörung/Gegenstandsbelebung
+
+St1:
+Beschwörung niederer(Diener/Underlinge)
+Zurückschicken von Kreaturen unter Kontrolle
+leichte Beeinflussung/Gedankenlesen
+
+St2:
+Beschwörung mittlerer(normal)
+
+
+St3:
+Beschwörung höherer('General' z.b. Lich/Zombigeneral/...)
+->e.v. unkontroliert
+Zurückschicken von unkontrollierten Beschwörungen
+Gedankenkontrolle
+Tor
+
+-> Beschwörung/Verbannung von Menschen/...??
+\end{TODO}

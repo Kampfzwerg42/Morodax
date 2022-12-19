@@ -1,0 +1,134 @@
+\makeatletter
+\define@cmdkeys{EquipmentItem}[Equip@]{InvGrAnz, InvNorAnz, InvKleinAnz, Rus, RusRS, RusRK, RusMali, RusVor, InvGrAnzMax, InvNorAnzMax, InvKleinAnzMax,
+ Kosten, Stufe, Size, Schaden, Name, Spez, Supp, Beschreibung, Nachladen, Reichweite, Mag,  Verbrauch, Preis, Bild,
+ MagVerstand,MagMacht, MagDauer}[]
+
+\newcommand{\defaultEquip}{\setkeys{EquipmentItem}{InvGrAnz, InvNorAnz, InvKleinAnz, Rus, RusRS, RusRK, RusMali, RusVor, InvGrAnzMax, InvNorAnzMax, InvKleinAnzMax,
+ Kosten, Stufe, Size, Schaden, Name, Spez, Supp, Beschreibung, Nachladen, Reichweite, Mag,  Verbrauch, Preis, Bild,
+ MagVerstand,MagMacht, MagDauer}}
+
+\newcommand{\addAndPrintItem}[2]{	
+    \expandafter\gnewcommand\csname DB#1\endcsname{
+    		\setkeys+{EquipmentItem,CharacterSheet}{#2}}
+	\PrintItemFromDB{#1}
+}
+
+\newcommand{\addAndPrintSpell}[2]{
+    \expandafter\gnewcommand\csname DB#1\endcsname{
+    		\setkeys+{EquipmentItem,CharacterSheet}{#2}}
+	\PrintItemFromDB{#1}
+}
+
+\newcounter{ct}
+\newcounter{addOne}
+\def\set#1{\setkeys+{EquipmentItem,CharacterSheet}{#1}}
+\newcommand{\call}[1]{%
+        \csname DB#1\endcsname
+}
+\newcommand{\NameTo}[2][]{
+	\defaultEquip
+	\expandafter\set\expandafter{Name=#2}
+	\call{#2}
+	\expandafter\set\expandafter{#1}
+}
+
+\newcommand{\PPrintItemItemsDesc}[3][]{
+\IfEq{}{#2}{}{%
+	\item[#3:]\begin{description}[nosep]%
+	\StrRight{#2}{200000}[\helpStr]%
+	\StrCount{\helpStr}{;}[\countOfLines]%
+	\setcounter{addOne}{\countOfLines}%
+	\addtocounter{addOne}{1}%
+	\forloop{ct}{0}{\value{ct} < \value{addOne}}%
+	{%
+		\StrCount{\helpStr}{;}[\countNewlines]%
+		\IfEq{\countNewlines}{0}%
+			{\StrRight{\helpStr}{20000}[\currentLine]}%
+			{\StrBefore{\helpStr}{;}[\currentLine]}%
+		\StrBefore{\currentLine}{:}[\strBeforeDoubleDot]%
+		\IfEq{\strBeforeDoubleDot}{}%
+			{\item[]}%
+			{\item[\emph{\strBeforeDoubleDot}]\StrBehind{\currentLine}{:}[\currentLine]}%
+		\currentLine
+		\StrBehind{\helpStr}{;}[\helpStr]%
+		\IfEq{}{#1}{}{$-$#1}%Optional Maxima
+	}%
+	\end{description}%
+}%
+}
+\newcommand{\PrintItemFromDB}[2][]{
+\NameTo[#1]{#2}
+\saveexpandmode
+\expandarg
+	\vbox{
+	\subsection{\Equip@Name}
+	\begin{description}[itemsep=3pt, parsep=0pt]
+		\PPrintItemItemsDesc{\Equip@Beschreibung}{Beschreibung}
+		\PPrintItemItemsDesc{\Equip@Schaden}{Schaden}
+		\PPrintItemItemsDesc{\Equip@Reichweite}{Reichweite}
+		\PPrintItemItemsDesc{\Equip@Mag}{Magazin}
+		\PPrintItemItemsDesc{\Equip@Verbrauch}{Verbrauch pro Anwendung}
+		\PPrintItemItemsDesc{\Equip@Nachladen}{Nachladen}
+		\PPrintItemItemsDesc{\Equip@RusRK}{Passive Rüstungsklasse}
+		\PPrintItemItemsDesc{\Equip@RusRS}{Rüstungsschutz}
+		\PPrintItemItemsDesc{\Equip@RusMali}{Mali}
+		\PPrintItemItemsDesc{\Equip@RusVor}{Voraussetzungen}
+		\PPrintItemItemsDesc{\Equip@Stufe}{Stufe}
+		\PPrintItemItemsDesc{\Equip@Preis}{Listenpreis}
+		\PPrintItemItemsDesc{\Equip@Kosten}{Kosten bei Erschaffung}
+		\PPrintItemItemsDesc{\Equip@Size}{Größe}
+		\PPrintItemItemsDesc[\Equip@InvKleinAnzMax]{\Equip@InvKleinAnz}{Kleine Gegenstände}
+		\PPrintItemItemsDesc[\Equip@InvNorAnzMax]{\Equip@InvNorAnz}{Normale Gegenstände}
+		\PPrintItemItemsDesc[\Equip@InvGrAnzMax]{\Equip@InvGrAnz}{Große Gegenstände}
+		\PPrintItemItemsDesc{\Equip@MagDauer}{Lebensdauer des Zaubers}
+		\PPrintItemItemsDesc{\Equip@MagVerstand}{Verbesserungen Zauberweben}
+		\PPrintItemItemsDesc{\Equip@MagMacht}{Verbesserungen Zaubermacht}
+		\PPrintItemItemsDesc{\Equip@Spez}{Spezial}
+		\PPrintItemItemsDesc{\Equip@Supp}{Supportaktionen}
+		\Image{\IfEq{}{\Equip@Bild}{}{\item \includegraphics[keepaspectratio, width=\linewidth, height=3cm]{\Equip@Bild}}}
+	\end{description}
+}
+\restoreexpandmode
+}
+
+\def\CharInvGr{}
+\def\CharInvNr{}
+\def\CharInvKl{}
+\def\CharInvSo{}
+\newcommand{\GenerateCharacterRus}[2][]{
+	\NameTo[#1,Rus=#2]{#2}
+}
+
+\newcommand{\ItemToText}{
+	\Equip@Name(%
+		\begin{small}%
+		\IfEq{}{\Equip@Beschreibung}{}{%
+			\Equip@Beschreibung; }%
+		\IfEq{}{\Equip@Schaden}{}{%
+			\Equip@Schaden; }%
+		\IfEq{}{\Equip@Spez; }{}{%
+			\Equip@Spez}%
+		\end{small})%
+}
+
+\newcommand{\addToInv}[2][]{
+	\NameToItem[#1]{#2}
+	\IfSubStr{\Equip@Size}{Groß}{
+		\edef\CharInvGr{\CharInvGr; \ItemToText}
+		\setkeys{CharacterSheet}{InvGr=\CharInvGr}
+		}{\IfSubStr{\Equip@Size}{Normal}{
+			\edef\CharInvNr{\CharInvNr; \ItemToText}
+			\setkeys{CharacterSheet}{InvNor=\CharInvNr}
+			}{\IfSubStr{\Equip@Size}{Klein}{
+				\edef\CharInvKl{\CharInvKl; \ItemToText}
+				\setkeys{CharacterSheet}{InvKlein=\CharInvKl}
+				}{
+					\edef\CharInvGr{\CharInvSo; \ItemToText}
+					\setkeys{CharacterSheet}{InvSonst=\CharInvSo}
+				}
+			}
+		}
+}
+%TODO ADD Eigenschaften/Tallente/Rassen(aka Listenseite)
+
+\makeatother
