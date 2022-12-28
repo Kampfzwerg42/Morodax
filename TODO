@@ -1,0 +1,138 @@
+Morodax rebirth:
+
+1. früher ansetzen(Technik grade erst im entstehen) mehr 'Piraten' zeitalter als Industrielle Revolution:
+	1. Nahkampf: normal(mittlerer schaden skaliert mit Kraft)+verbessert
+	2. Fernkampf: Bogen(geringer schaden skaliert mit Kraft)+Armbrust(mittlerer Schaden/nachladezeit)+Vorderlader(viel schaden aber auch hohe ladezeit)
+		- Relikte: 'moderne' Waffen als hinterlassenschaft von Morodax -> z.t. nicht/nur begrenzt nachladbar(bateriebasis?!)
+(typische)Quests: Monsterjagt, Ruinen erkunden(Schatzjagten/antike relikte,...), ...
+
+2. Magie: e.v. anregungen aus DDD
+	- Magiekraft beeinflusst missgeschicke?!
+	- grundlegend beibehalten
+3. Magietech: anregungen aus DDD?
+	- Verzauberungen/... halbwegs normal das das existiert
+	- benötigt in jedem Fall spezielle Energiekristalle um Energie zu speichern/nutzen
+	- Laden über einfachen Zauber möglich(Ladezeit abhängig von skilllevel?) beschädigung des Kristalls bei stümperei?
+
+	=> 1. "Magietech" erfordert Kristalle('Monsterdrops')
+		-> Kristalle können magische Energie speichern(je größer desto mehr)
+		-> Kleinere Kristalle werden oft gemörsert und für Tränke ect verwendet
+		-> Ohne 2. ergibt sich ein 'Energiespeicher' für Zauberer
+	=> 2. "Magietech" erfordert Runen?/2. Kristall/??
+		-> Um Zaubermatrizen einzuarbeiten
+		-> ohne Speicherkristall ergibt sich ein Konstrukt das nur noch mit Energie versorgt werden muss um den Zauber auszulösen(mit einer Chance das die Matrix verbraucht wird wodurch die erst wieder repariert werden muss)
+	=> beides Zusammen ergibt MagieTech
+	=> optional 3. Energiegewinnung aus Umgebungsmagie(??
+	=> beides Zusammen ergibt MagieTech
+	=> optional 3. Energiegewinnung aus Umgebungsmagie(??))
+
+MagieIdee:
+	- anregung aus Mages of Mystralia:
+		Mana als Magieresorce
+			Manapool von Zaubermacht abhängig
+			Manaregeneration als Aktion(gibt jeweils 1/2, 1/4 o. 1/8) Mana zurück?
+				-> Durch nutzung von Kristallen beschleunigbar(->Manatränke)?
+			-> Manapool bestimmt Max. Zaubergröße/Zauber pro Sekunde
+			
+		Neue Zauber erschaffen?
+			-> Basiszauber modifizierbar durch verschiedene 'Runenkonstrukte' mit definierten Kosten(Komplexiät/Macht/Manakosten)/Effekten
+			-> Erschaffung neuer Basiszauber/Runenkonstrukte möglich aber Zeitaufwendig und teuer
+			-> Standard Runenkonstrukte/Zauber gibts zu kaufen(Magiergilde oder so)
+
+Neues Würfeln:
+1. 
+	- Attr+Spez=punkte
+			- Attr: 6-15
+			- Spez: 0-15
+			-> Kosten/punkt: const?
+				=> Attribut: teuer(2(+)x)
+				=> Spez: günstig(1x)
+		- Anders:
+			- Attr: 1-5(-> max Würfel(1=w6,2=w8,...5=w20)
+				-> Kosten steigend
+			- Spez: 0(aka 6)-24+
+				-> Kosten constant
+	- Würfelpool= Xd4, wird mit punkten successiv verbessert (Xd6 -> Xd8 -> ...) pro Punkt 1 Würfel um 1 Stufe
+		-> Standartwürfel: d6 -> d4 normal nur durch mali erreichbar.
+		-> Durch boni können bis zu w20 würfel erreicht werden
+		//-> nicht in Würfel umwandelbare(positive wie negative) Punkte werden (halbiert?) zum Würfelergebniss hinzugefügt(als Erfolge/Fails)
+		//	-> ALTERNATIVE: extra d6 verwerfen der 'besten'/'schlechtesten' Würfel
+		//	-> 'Perfekte Erfolge'/'Epic Fails' bleiben aber stets 'Erfolge' bzw. 'Fails' können aber je nach Spielleiterentscheid trotzdem abgeschwächt werden.
+		//		-> 'normale' Erfolge/Fails werden niemals zu 'Perfekten Erfolgen'/'Epic Fails'
+		-??>?? mit Spezialisierungspunkten können würfel bis auf d12/d20(~5% fail chance) geupgraded(+3/+4 volle Stufen) werden weitere Spezpunkte werden nur genutzt um Mali zu veringern??
+			-> Boni durch einfache Aufgaben/passendes Werkzeug können weitere upgrades erlauben
+			-> Mali werden zunächst mit den Spez. punkten verrechnet und erst danach wird der Bonus draufgerechnet
+		-> Boni: bis zu 1 volle Sutfe(alle Würfel +1) durch Situationsmodifikatoren(passende Ausrüstung ect.)
+		-> Mali: bis zu 2 volle Sutfe(alle Würfel -1) durch Situationsmodifikatoren(passende Ausrüstung/Zeitdruck ect.)
+		-> Boni: bis zu 1 volle Sutfen(alle Würfel +1) durch 'Einfache Aufgabe'
+		-> Mali: bis zu 2(max. 4) volle Sutfen(alle Würfel -1) durch 'Schwere/(nahezu unmögliche) Aufgabe'
+		-> Mali: bis zu 2 volle Sutfen(alle Würfel -1) durch Gegnerskills(??skill/2??-> 1,5)
+	- Spezialmoves/Bessere/Speziellere Ergebnisse:
+		- z.b, auch suchen nach speziellen sachen(nadel im Heuhaufen)
+		- Kann vorher angesagt werden(=> entsprechender Würfelmalus)
+			-> erlaubt z.t. genauer zu steuern was man findet(Mehr Erfolge -> e.v. Spielleiterentscheid wie die Auswirkung ist/was möglich geworden ist).
+		- oder 1 (extra) Erfolg kann gegen 2(/3) Malistufen getauscht werden(Gelegenheitsaktion/Zufallsfund)
+		- Kann genutzt werden um Aufgaben zu probieren die eigentlich zu schwer wären("<6d4")
+	- 1,2 = Fail(1 Kritisch); 3 = Nix; ab 4(ab 3(2)/ab 5/6/... bei besonders einfachen/schweren proben) = Erfolg
+	- Erfolge - Misserfolge(kritisch doppelt)=ergebniss([-(2*)X;X])
+		-> Ergebniss = 0 -> Erfolg mit Konsequenzen
+		-> Ergebniss > 0 -> Geschafft
+		-> [2..X) -> ...
+		-> Ergebniss X -> Perfekt
+		-> Ergebniss < 0 Fail
+		-> [-X..2] -> ... -> erwartungswert 'noob' =-X/2 !!
+		-> Ergebniss < -X -> Epic Fail
+	- X= 6
+	- Angriffe:
+		- Verteidiger besitzt X-Punkte Rüstung(0,5-2x MaxWürfel->0,5-2 Stufen downgrade)
+		- Angreifer nutzt Spezialisierung-Verteidigung als 'Würfelpunkte'
+
+	- Schaden: LP:
+			- ~(1-)5(+): Getier(spinnen, nager,...)
+			- ~(5-)10(+): Goblins&co
+			- ~(10-)20(+):Menschen
+			- >20: div. Monster
+		Schaden/Effekte je nach waffe:
+			- Faust: Schaden=Erfolge ODER spezialmoves(z.b. 4+ Erfolg=Schwitzkasten o.ä.)
+			-> hp~10 pro Konstitutions/Lebenskraft Attributspunkt
+			-> waffen machen fix schaden(3-15) (-> 'normale' Wafffen 5-10)
+			-> Rüstung entsprechend 0-~10 Schutz(schaden=Schaden-Schutz)
+			-> viele Erfolge = Wundeffekt beim treffer
+			=> Schadenpotential pro Angriff:
+				-> Klingenwaffen: Instakill möglich(ohne rüstung)
+				-> Wuchtwaffen: kein Instakill aber Knockdown/Stun?
+				-> Stichwaffen: Instakill nur gezielt(Kopf/Herz); sonst...
+				=> Instakill/Knockout nur mit Ansage aka. 7(+)Erfolge -> Ansage ziel auf Kopf(+1 Erfolg)+6Erfolge wären ok sons ergibt sich ein 'normaler' Kopftreffer
+	= Kampf
+		- 3 Aktionen pro Runde: Oberkörper; Unterkörper; Reaktiv
+			- Oberkörper: Alles was Hände/Waffen betrifft
+			- Unterkörper: primär alles was Ortsänderung betrifft('Gehen'->'Rennen(+Reaktiv/Oberkörper)'->Sprinten(alles))
+			- Reaktiv: alles was reaktion auf/erwartung von best. aktionen anderer erfordert (o. mehrere betrifft) -> alles was Verteidigung/Fallenstellen/Kombiaktionen(mit anderen)/AOE angriffe
+			- Verschiedene dieser aktionen können kombiniert werden um mächtigere/besondere Aktionen auszuführen(AOE, Doge, Parade/Konter, ...)
+			=> Spezialfähigkeit: Reaktiv -> 2(verschiene) Reaktivaktionen(-> Tausch von Unterkörper/Oberkörper?)
+			=> Spezialfähigkeit: Beidhändig -> 1 Oberkörperaktion pro Waffe(-1Reaktion o. Unterkörper?)
+		=> Verteidigung:
+			-> Angriff kann verteidigt werden(Reaktivaktion)
+			=> Angriffsmalus
+			=> jeder weiter Angreifer der Verteidigt wird erhält einen kommulativen Bonus
+		=> Ohne Vertidigung(verbrauchte Reaktion):
+			=> Angriff einfacher => trotzdem kein '100% Instakill'?
+	
+	Todo:
+		-> Attribute? -> ..
+		-> Attributgruppen(Körper/Geist/Seele)? -> ...
+		-> Nahkampf(Skill-Rüstung -> Probe -> Schadenmachen(wie?))
+		-> Fernkampf(Bogen/Armbrust/Vorderlader?/Magiegun)-> wie anders als Nahkampf?
+			-> relevante Größen: Entfernung, Waffe, Bewegung(Ziel), Größe(Ziel)
+				Bewegung=Kleineres Ziel=Schwerer zu treffen(Kleiner===mehr bewegung)
+				Entfernungen:
+					- Nah -> Bewegung zählt doppelt
+					- Normal ->  ?
+					- Fern === kleineres Ziel
+		-> Magie -> (Skill - Zauberschwierigkeit - Zielresistenz?) ?? -> !!weben und Macht sollte beides einfluss haben??
+			=> WIE?!
+			-> Primäreffekte + Optimierungen
+			-> 1 Zauberaktion(Weben)=1 Effekt hinzufügen
+			-> Zauber 'starten' -> verbraucht Mana
+			-> Mana als resorce(wie LP) levelbar; regeneriert sich langsam über zeit; duch spezialzauber 'beschleunigbar'(Kosmische meditation; Blutmagie(selbst)+erweiterte(andere); Manaentzug)
+			-> Mana 0 hat irgendwelche nebeneffekte
