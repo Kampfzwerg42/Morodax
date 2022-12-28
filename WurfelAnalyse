@@ -1,0 +1,27 @@
+Eigenschaften:
+	1. Attribute -> Grenze/Limit/'Grundfähigkeit' => ändern von Max/Min werten/ändern der Skillgrenzen
+		-> nur ein höheres Attribut soll nur bei einfachen Aufgaben hilfreich sein
+		=> wenig einfluss auf Wahrscheinlichkeit von Schweren Aufgaben
+		=> hohen einfluss auf Wahrscheinlichkeit von Leichten Aufgaben
+	2. Skills -> Können -> Zuverlässigkeit ect -> höhere chance für bessere Ergebnisse => primär Wahrscheinlichkeitsanpassung
+		-> Skill-> wie gut weiß er was er tut -> 
+		=> hohen einfluss auf Wahrscheinlichkeit insbesondere von Schweren Aufgaben
+		=> in 'nütlichkeit' limitiert durch Attribut -> ohne Attribut weiß man was man tun müsste kann es aber nicht richtig umsetzten
+	3. Einfach => Tischsystem => <=10 Würfel(epische Gegner) <7 Würfel normaler wurf(>1 Würfel)
+	4. Support von Monstern => Powerlevel sollte 'endlos' steigerbar sein
+	5. Symetrisch(gegenproben) oder Asymetrisch(nur 1 Probe gegen feste werte)
+		-> egal
+
+
+Systemideen:
+	1. (1=-2;2=-1;3=0;rest=1)+-abwandlungen 
+		-> a) feste Zahl Würfel start d6 Attribut als würfellimit(d6/d8/...) => Attribut als Skillgrenze nicht als Max/Min
+		-> b) Attribut würfel Skillevel als 'verbesserung' von Würfeln => start d6 d4 negativ; ...
+			=> komisches verhalten + potentiell sehr viele Würfel(Monster ect.)
+	2. 1=-1 ab X=1 -> X=> skilllevel => zu wenig steigerung?
+	3. Morodax 1.0(erfolge besser je kleiner)
+	3. Morodax 2.0(nur erfolg oder nicht erfolg)
+	4. Morodax 2.0 Asymetrisch(Erschwerniss statt gegenproben)
+		=> ähnlich wie 2. <=X=>'+1' >Y=>'-1' Y=X+8
+		=> Generelles Problem bei Morodax: würfel auswahl treffen braucht zeit(denken)
+		=> !! WIE IM KAMPF??

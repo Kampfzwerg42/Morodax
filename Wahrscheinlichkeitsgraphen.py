@@ -18,33 +18,34 @@ def ErgSuccess(Ereigniss,x):
         sumOf+=num*erg
     return sumOf>=x
 
-maxNum=6
+maxNum=2
 
 #werteXAchse=range(-maxNum*2,maxNum*2+1)
 werteXAchse=[-12,-7,-6,-1,0,1,2,3,4,5,6,7,8]
-plotDim=(maxNum,6)
+werteXAchseMulti=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8]
+plotDim=(6,maxNum)
 n=3
 def WListForPlot(w1,i):
+
     WList=[]
     for _ in Ws:
         WList.append(0)
     
-    WList[w1]=i+n
-    return WList,f'{i+n}w{Ws[w1]}({(i+n)*(w1-1)})'
+    WList[w1]=6
+    amount=n*i+1
+    return WList,amount,f'{i+n}w{Ws[w1]}({(i+n)*(w1-1)})({amount} times)'
 
     WList[w1+1]=i
     WList[w1]=maxNum-i
     a=f"{maxNum-i}*{Ws[w1]:2}+{i}*{Ws[w1+1]:2}: "
     if i==0:
-        return WList,f"{maxNum-i}w{Ws[w1]}"
+        return WList,1,f"{maxNum-i}w{Ws[w1]}"
     if i==maxNum:
-        return WList,f"{i}w{Ws[w1+1]}"
-    return WList,f"{maxNum-i}w{Ws[w1]} + {i}w{Ws[w1+1]}"
+        return WList,1,f"{i}w{Ws[w1+1]}"
+    return WList,1,f"{maxNum-i}w{Ws[w1]} + {i}w{Ws[w1+1]}"
 
 
 import sys,math
-from tqdm import tqdm
-import matplotlib.pyplot as plt
 
 def PxTimesYOrMore(Px, y, overallAmount,cache={}):
     asStr=f"{Px} {y} {overallAmount}"
@@ -86,7 +87,6 @@ def PErg(WList,cache={}):
     #print(WList,result)
     return result
 
-
 #P(X>=x)
 def PX(x, WList,Ergebnisse={},cache={}):
     asStr=f"{x}{WList}{Ergebnisse}"
@@ -99,68 +99,91 @@ def PX(x, WList,Ergebnisse={},cache={}):
             pGes+=p
     cache[asStr]=pGes
     return pGes
+def PXN(amount, x, WList, cache={}):
+    asStr=f"{x}{WList}"
+    if cache.get(asStr):
+        return cache.get(asStr)
+    if(amount==0):
+        return 1
+    if(amount==1):
+        return PX(x,WList)
+    pGes=0
+    for j in werteXAchseMulti:
+        pGes+=PEqX(j,WList)*PXN(amount-1,x-j,WList)
+    cache[asStr]=pGes
+    return pGes
 
 #P(X>x)
 def PGeX(x, WList):
     return PX(x+0.01,WList)
+def PGeXN(amount,x, WList):
+    return PXN(amount,x+0.01,WList)
 #P(X<=x)
 def PLEqX(x, WList):
     return 1-PGeX(x,WList)
+def PLEqXN(amount,x, WList):
+    return 1-PGeXN(amount,x,WList)
 #P(X<x)
 def PLoX(x, WList):
     return 1-PX(x,WList)
+def PLoXN(amount,x, WList):
+    return 1-PXN(amount,x,WList)
 #P(X==x)
 def PEqX(x, WList):
     return PX(x,WList)-PGeX(x,WList)
+def PEqXN(amount,x, WList):
+    return PXN(amount,x,WList)-PGeXN(amount,x,WList)
 
-from tqdm import tqdm
 import time
-from joblib import Parallel, delayed
+import matplotlib.pyplot as plt
 
 fig,ax = plt.subplots(plotDim[0],plotDim[1],sharex=True,sharey=True)
 maxLenTitle=0
-for x in tqdm(range(plotDim[0])):
+for x in range(plotDim[0]):
     for y in range(plotDim[1]):
-        maxLenTitle=max(maxLenTitle,len(WListForPlot(x,y)[1]))
+        maxLenTitle=max(maxLenTitle,len(WListForPlot(x,y)[2]))
 with open("out.txt","w") as f:
-    for x in tqdm(range(plotDim[0])):
+    for x in (range(plotDim[0])):
         for y in range(plotDim[1]):
-            WList,title=WListForPlot(x,y)
+            WList,amount,title=WListForPlot(x,y)
 
             outLine=f'{title:{maxLenTitle}}'
+            outLine2=outLine
             ydata = []
             xdata = []
-            if PLoX(werteXAchse[0],WList)>0.0000000000001:
+            if PLoXN(amount,werteXAchse[0],WList)>0.0000000000001:
                 xdata.append(f'<{werteXAchse[0]}')
-                ydata.append(PLoX(werteXAchse[0],WList)*100)
+                ydata.append(PLoXN(amount,werteXAchse[0],WList)*100)
             for j in range(len(werteXAchse)):
                 wert=werteXAchse[j]
 
                 if '>=' in outfilePrints:
-                    outLine+=f">={wert}={PX(wert,WList)*100:5.1f}%; "
+                    outLine+=f">={wert}={PXN(amount,wert,WList)*100:5.1f}%; "
                 if '>' in outfilePrints:
-                    outLine+=f">{j}={PGeX(wert,WList)*100:5.1f}%; "
+                    outLine+=f">{j}={PGeXN(amount,wert,WList)*100:5.1f}%; "
                 if '=' in outfilePrints:
-                    outLine+=f"=={wert}={PEqX(wert,WList)*100:5.1f}%; "
+                    outLine+=f"=={wert}={PEqXN(amount,wert,WList)*100:5.1f}%; "
                 if '<=' in outfilePrints:
-                    outLine+=f"<={wert}={PLEqX(wert,WList)*100:5.1f}%; "
+                    outLine+=f"<={wert}={PLEqXN(amount,wert,WList)*100:5.1f}%; "
                 if '<' in outfilePrints:
-                    outLine+=f"<{wert}={PLoX(wert,WList)*100:5.1f}%; "
+                    outLine+=f"<{wert}={PLoXN(amount,wert,WList)*100:5.1f}%; "
 
                 if j+1!=len(werteXAchse) and wert-werteXAchse[j+1]!=-1:
                     continue
                 if j==0 or wert-werteXAchse[j-1]==1:
                     xdata.append(f'{wert}')
-                    ydata.append(PEqX(wert,WList)*100)
+                    ydata.append(PEqXN(amount,wert,WList)*100)
                 else:
                     prevWert=werteXAchse[j-1]
                     xdata.append(f'[{prevWert};{wert}]')
-                    ydata.append((PX(prevWert,WList)-PGeX(wert,WList))*100)
-            if PGeX(wert,WList)>0.0000000000001:
+                    ydata.append((PXN(amount,prevWert,WList)-PGeXN(amount,wert,WList))*100)
+            if PGeXN(amount,wert,WList)>0.0000000000001:
                 xdata.append(f'>{wert}')
-                ydata.append(PGeX(wert,WList)*100)
+                ydata.append(PGeXN(amount,wert,WList)*100)
             outLine+="\n"
+            outLine2+="\n"
             f.write(outLine)
+            f.write(outLine2)
             ax[x,y].barh(xdata, ydata)
             ax[x,y].set_title(title)
             ax[plotDim[0]-1,y].set_xlabel("Prozent(%)")

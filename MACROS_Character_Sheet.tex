@@ -4,7 +4,8 @@
 
 \define@cmdkeys{CharacterSheet}[CharAttr@]{St,Ge,Ko,Wa,Ch,AW,TW,TG,MV,MM}[\ \ \ \ \ \ ]
 
-\define@cmdkeys{CharacterSheet}[CharSpez@]{StKr,StAb,StAk,
+\define@cmdkeys{CharacterSheet}[CharSpez@]{Leb,Mag,
+										StKr,StAb,StAk,
 										GeNa,GeAu,GeHe,
 										KoZa,KoAu,KoWi,
 										WaSu,WaWa,WaSc,
@@ -35,7 +36,8 @@
 \newcommand{\CharacterSheetUser}{
 \setkeys{CharacterSheet}{LPMax,MPMax,MPDesc}
 \setkeys{CharacterSheet}{St,Ge,Ko,Wa,Ch,AW,TW,TG,MV,MM}
-\setkeys{CharacterSheet}{StKr,StAb,StAk,
+\setkeys{CharacterSheet}{Leb,Mag,
+							StKr,StAb,StAk,
 							GeNa,GeAu,GeHe,
 							KoZa,KoAu,KoWi,
 							WaSu,WaWa,WaSc,
@@ -55,8 +57,19 @@
 				Rus, RusRS, RusRK,RusMali,RusVor}
 }
 
-\newcommand{\charTab}[7][]{	\multirow{#2}{3cm}{#3:\nobreak\hfill#5\IfEq{}{#1}{}{\linebreak\begin{large}#1#7\end{large}}} & #4:\hfill #6\\}
-\newcommand{\charTabExtraLine}[2]{\cline{3-3}&	&	#1:\hfill #2\\}
+\newcommand{\txtfld}[3][1cm]{
+	\TextField[borderstyle=I,value=#3,borderwidth=0,width=#1,height=0.8\baselineskip]{#2:}
+}
+\newcommand{\txtfldSilent}[3][1cm]{
+	\TextField[borderstyle=I,value=#3,borderwidth=0,width=#1,name=#2,height=0.8\baselineskip]{}
+}
+\newcommand{\txtfldBig}[4][1cm]{	\TextField[borderstyle=I,value=#3,borderwidth=0,multiline=true,width=#1,name=#2,height=(0.8+2-1)*\baselineskip]{}
+}
+
+\newcommand{\valueTab}[5]{	\multirow{#1}{3cm}{\begin{large}\txtfld{#2}{}/\txtfldSilent[0.5cm]{#2Max}{#5}\end{large}} & \txtfld{#3}{#4}\\}
+\newcommand{\charTab}[5]{	\multirow{#1}{3cm}{\txtfld{#2}{#4}} & \txtfld{#3}{#5}\\}
+\newcommand{\charTabExtraLine}[2]{\cline{3-3}&	&	\txtfld{#1}{#2}\\}
+\newcommand{\charTabExtraFreeLine}[1]{\cline{3-3}&	&	\txtfldSilent[2.8cm]{Spez#1}{}:\txtfldSilent{Spez#1Wert}{}\\}
 \newcommand{\rot}[1]{\begin{turn}{90}#1\end{turn}}
 
 \newcommand{\CharacterSheet}[1]{
@@ -69,62 +82,64 @@
 \begin{large}\vspace{-1.5mm}
 \setlength\tabcolsep{2pt}\begin{tabular}[t]{|c|l|l|}
 \hline 
+&	\valueTab{1}{LP}{Lebenskraft}{\CharSpez@Leb}{\Char@LPMax}
+	\cline{2-3}
+&	\valueTab{1}{MP}{Magiekraft}{\CharSpez@Mag}{\Char@MPMax}
+\hline 
 \multirow{12}{*}{\begin{turn}{90}\large \textbf{\underline{Körperlich}}\end{turn}}&
-	\charTab{3}{Fitness}{Kraft}{\CharAttr@St}{\CharSpez@StKr}{}
+	\charTab{3}{Fitness}{Kraft}{\CharAttr@St}{\CharSpez@StKr}
 	\charTabExtraLine{Abwehr}{\CharSpez@StAb}
 	\charTabExtraLine{Akrobatik}{\CharSpez@StAk}
 	\cline{2-3}
-&	\charTab{3}{Geschick}{Nahkampf}{\CharAttr@Ge}{\CharSpez@GeNa}{}
+&	\charTab{3}{Geschick}{Nahkampf}{\CharAttr@Ge}{\CharSpez@GeNa}
 	\charTabExtraLine{Ausweichen}{\CharSpez@GeAu}
 	\charTabExtraLine{Heimlichkeit}{\CharSpez@GeHe}
 	\cline{2-3}
-&	\charTab[LP:\hfill/]{3}{Konstitution}{Zähigkeit}{\CharAttr@Ko}{\CharSpez@KoZa}{\Char@LPMax}
+&	\charTab{3}{Konstitution}{Zähigkeit}{\CharAttr@Ko}{\CharSpez@KoZa}
 	\charTabExtraLine{Ausdauer}{\CharSpez@KoAu}
 	\charTabExtraLine{Willenskraft}{\CharSpez@KoWi}
 	\cline{2-3}
-&	\charTab{3}{Wahrnehmung}{Suchen}{\CharAttr@Wa}{\CharSpez@WaSu}{}
+&	\charTab{3}{Wahrnehmung}{Suchen}{\CharAttr@Wa}{\CharSpez@WaSu}
 	\charTabExtraLine{Wachsamkeit}{\CharSpez@WaWa}
 	\charTabExtraLine{Schätzen}{\CharSpez@WaSc}
 \hline 
 \multirow{14}{*}{\begin{turn}{90}\large \textbf{\underline{Geistig}}\end{turn}}
-&	\charTab[\Char@MPDesc]{5}{Allgemeines Wissen}{Lebewesen}{\CharAttr@AW}{\CharSpez@AWMo}{\Char@MPMax}
+&	\charTab{5}{Allgemeines Wissen}{Lebewesen}{\CharAttr@AW}{\CharSpez@AWMo}
 	\charTabExtraLine{Geschichte}{\CharSpez@AWGe}
 	\charTabExtraLine{Aktuelles}{\CharSpez@AWAk}
 	\charTabExtraLine{Untergrund}{\CharSpez@AWUn}
 	\charTabExtraLine{Sprachen}{\CharSpez@AWFr}
 	\cline{2-3}
-&	\charTab{4}{Technisches Wissen}{Mechanik}{\CharAttr@TW}{\CharSpez@TWMe}{}
+&	\charTab{4}{Technisches Wissen}{Mechanik}{\CharAttr@TW}{\CharSpez@TWMe}
 	\charTabExtraLine{Chemie}{\CharSpez@TWCh}
 	\charTabExtraLine{Druck}{\CharSpez@TWDr}
-	\charTabExtraLine{\hspace{2,8cm}}{}
+	\charTabExtraFreeLine{4}
 	\cline{2-3}
-&	\charTab{5}{Magischer Verstand}{Angriff}{\CharAttr@MV}{\CharSpez@MVAn}{}
+&	\charTab{5}{Magischer Verstand}{Angriff}{\CharAttr@MV}{\CharSpez@MVAn}
 	\charTabExtraLine{Illusion}{\CharSpez@MVIl}
 	\charTabExtraLine{Verstärkung}{\CharSpez@MVVS}
 	\charTabExtraLine{Verwandlung}{\CharSpez@MVVW}
-	\charTabExtraLine{\hspace{2,8cm}}{}
+	\charTabExtraFreeLine{3}
 \hline 
 \multirow{14}{*}{\begin{turn}{90}\large \textbf{\underline{Seelisch}}\end{turn}}
-&	\charTab{4}{Technisches Geschick}{Schusswaffen}{\CharAttr@TG}{\CharSpez@TGSc}{\Char@LPMax}
+&	\charTab{4}{Technisches Geschick}{Schusswaffen}{\CharAttr@TG}{\CharSpez@TGSc}
 	\charTabExtraLine{andere Waffen}{\CharSpez@TGAn}
 	\charTabExtraLine{Gegenstände}{\CharSpez@TGRu}
-	\charTabExtraLine{\hspace{2,8cm}}{}
+	\charTabExtraFreeLine{2}
 	\cline{2-3}
-&	\charTab{6}{Magische Macht}{Angriff}{\CharAttr@MM}{\CharSpez@MMAn}{}
+&	\charTab{4}{Magische Macht}{Angriff}{\CharAttr@MM}{\CharSpez@MMAn}
 	\charTabExtraLine{Illusion}{\CharSpez@MMIl}
-	\charTabExtraLine{Verstärkung}{\CharSpez@MMVS}
-	\charTabExtraLine{Verwandlung}{\CharSpez@MMVW}
-	\charTabExtraLine{\hspace{2,8cm}}{}
+	\charTabExtraFreeLine{1}
 	\charTabExtraLine{\textcolor{gray}{Schild}}{\CharSpez@MMSh}
 	\cline{2-3}
-&	\charTab{4}{Charisma}{Rhetorik}{\CharAttr@Ch}{\CharSpez@ChRh}{}
+&	\charTab{4}{Charisma}{Rhetorik}{\CharAttr@Ch}{\CharSpez@ChRh}
 	\charTabExtraLine{Einschüchtern}{\CharSpez@ChEi}
 	\charTabExtraLine{Verführen}{\CharSpez@ChVe}
 	\charTabExtraLine{Menschenkenntnis}{\CharSpez@ChMe}
 \hline 
-&&\hspace{2,8cm}:\\
+&\txtfldSilent{Attr1}{}&\txtfldSilent[2.8cm]{FreeSpez2}{}:\txtfldSilent{FreeSpez2-1}{}\\
 \hline 
-&&\hspace{2,8cm}:\\
+&\txtfldSilent{Attr2}{}&\txtfldSilent[2.8cm]{FreeSpez1}{}:\txtfldSilent{FreeSpez1-1}{}\\
 \hline 
 \end{tabular} 
 \end{large}\end{minipage}\nolinebreak
@@ -136,17 +151,17 @@
 \setlength\tabcolsep{2pt}\vspace{-0,8cm}\end{normalsize}
 \begin{tabulary}{\textwidth}{rp{1cm}L}
 Glück:&1&\\
-EP:&&\\
-Erschöpfung:&&\\
+EP:&\txtfldSilent{EP}{}&\\
+Erschöpfung:&\txtfldSilent{Erschöpfung}{}&\\
 \end{tabulary}\end{minipage}\begin{minipage}[t]{0.66\textwidth}
 \begin{tabularx}{\textwidth}[t]{rXrp{0.5cm}rp{2cm}}
-Name: &\Char@Name & Alter:& \Char@Alter &Größe:&\Char@Size \\
-Rasse: &\multicolumn{3}{c}{\FillCell{\Char@Rasse}} &Gewicht:& \Char@Gewicht \\
+Name: &\txtfldSilent[5cm]{Name}{\Char@Name} & Alter:& \txtfldSilent[0.5cm]{Alter}{\Char@Alter} &Größe:&\txtfldSilent[2cm]{Size}{\Char@Size} \\
+Rasse: &\multicolumn[6cm]{3}{c}{\FillCell{\txtfldSilent{Rasse}{\Char@Rasse}}} &Gewicht:& \txtfldSilent[2cm]{Gewicht}{\Char@Gewicht} \\
 \end{tabularx}
 
 \begin{tabularx}{\textwidth}[t]{rX}
 \hline
-\multirow{2}{3.5cm}{\raggedleft besondere\newline Eigenschaften:} &\multirow{2}{\linewidth}{\FillCell{\Char@Eigenschaften}}  \\
+\multirow{2}{3.5cm}{\raggedleft besondere\newline Eigenschaften:} &\multirow{2}{\linewidth}{\FillCell{\txtfldSilent[10cm]{Eigenschaften}{\Char@Eigenschaften}}}  \\
  \\
 \hline
 Beschreibung:&\multirow{4}{\linewidth}{\FillCell{\Char@Beschreibung}}\\
@@ -160,9 +175,9 @@ Spezialtalente: &\multirow{2}{\linewidth}{\FillCell{\Char@Talente}}\\
 \end{minipage}
 \begin{tabularx}{\textwidth}[t]{rrXrXrXrX}
 \hline 
-\textbf{Geldkristalle}&\emph{Mithril}:&&\emph{Gold}: &&\emph{Silber}:&&\emph{Kupfer}:&\\
+\textbf{Geldkristalle}&\emph{Mithril}:&\txtfldSilent{Geld1}{}&\emph{Gold}: &\txtfldSilent{Geld2}{}&\emph{Silber}:&\txtfldSilent{Geld3}{}&\emph{Kupfer}:&\txtfldSilent{Geld4}{}\\
 \hline
-\textbf{Münzen}&Gold: &\Char@Gold &Silber: &\Char@Silber &Kupfer: & \Char@Kupfer & Zinn: & \\
+\textbf{Münzen}&Gold: &\txtfldSilent{Geld5}{\Char@Gold} &Silber: &\txtfldSilent{Geld6}{\Char@Silber} &Kupfer: & \txtfldSilent{Geld7}{\Char@Kupfer} & Zinn: & \txtfldSilent{Geld8}{}\\
 \hline 
 \end{tabularx}
 
