@@ -3,7 +3,7 @@ Ws=[4,6,8,10,12,20,100]
 
 outfilePrints=['>=']
 
-outcomes=[-2,-1,0,1]
+outcomes=[-1,-1,0,1]
 def PWx(outcome,W):
     if outcome<=0:
         return 1/W
@@ -12,28 +12,88 @@ def PWx(outcome,W):
     return (W-3)/W
 def ErgSuccess(Ereigniss,x):
     sumOf=0
+    hasSucc=0
     for i in range(len(Ereigniss)):
         erg=outcomes[i]
         num=Ereigniss[i]
+        if(i>1 and num>0):
+            hasSucc=1
         sumOf+=num*erg
-    return sumOf>=x
+    if(x<=-12):
+        return hasSucc==1
+    return hasSucc==1 and sumOf>=x
+def ErgMultiSuccess(newX,gesX,amount):
+    if(gesX<=-12):
+        if(newX<=-12):
+            return 1,-12
+        return 0,-12
+    if(newX<-12):
+        return -1,0
+    #<-6 -> auto lost
+    diff=max(-6,gesX-newX)
+    penality=2
+    oriAmount=amount
+    while(amount>=penality):
+        amount-=penality
+        diff+=1
+    if(diff>(7*(oriAmount-1))):
+        #<-7 -> vorher verloren
+        return -1,0
+    return 0,diff
 
-maxNum=2
+maxNum=6
 
 #werteXAchse=range(-maxNum*2,maxNum*2+1)
-werteXAchse=[-12,-7,-6,-1,0,1,2,3,4,5,6,7,8]
-werteXAchseMulti=[-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8]
-plotDim=(6,maxNum)
-n=3
+werteXAchse=[-12,-7,-6,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+werteXAchseMulti=[-100,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7]
+plotDim=(7,maxNum)
+n=1
 def WListForPlot(w1,i):
-
     WList=[]
     for _ in Ws:
         WList.append(0)
     
-    WList[w1]=6
-    amount=n*i+1
-    return WList,amount,f'{i+n}w{Ws[w1]}({(i+n)*(w1-1)})({amount} times)'
+    #WList[w1]=6
+    #amount=n*i+1
+    #return WList,amount,f'{i+n}w{Ws[w1]}({(i+n)*(w1-1)})({amount} times)'
+
+    #System Attr=würfel, Spez=güte v1
+    spez=(w1-2)*4
+    attr=5#i+n
+    amount=1+i
+    #tiefenaufbau
+    #att=attr
+    #spe=spez
+    #while (att>0):
+    #    if(spe>5):
+    #        spe-=5
+    #        att-=1
+    #        WList[5]+=1
+    #    else:
+    #        WList[spe]+=1
+    #        spe=0
+    #        att-=1
+    #return WList,amount,f'Attr:{attr};Spez:{spez}({WList[0]}w{Ws[0]},{WList[1]}w{Ws[1]},{WList[2]}w{Ws[2]},{WList[3]}w{Ws[3]},{WList[4]}w{Ws[4]},{WList[5]}w{Ws[5]})'
+    #breitenaufbau
+    wr1=int(abs(spez)/attr)
+    wa2=spez%attr
+    if wr1>=4:
+        wr1=4
+        wa2=min(0,attr,int((spez-attr*4)/3))
+    if spez<0:
+        wr1=-wr1
+    else:
+        wr1+=1
+    if wr1<0:
+        wr1=0
+        wa2=0
+    WList[wr1+0]=attr-wa2
+    WList[wr1+1]=wa2
+    return WList,amount,f'{amount}xAttr:{attr};Spez:{spez}({WList[wr1+0]}w{Ws[wr1+0]},{WList[wr1+1]}w{Ws[wr1+1]})'
+
+    #WList[w1]=i+n
+    #amount=1
+    #return WList,amount,f'{WList[w1]}w{Ws[w1]}'
 
     WList[w1+1]=i
     WList[w1]=maxNum-i
@@ -100,7 +160,7 @@ def PX(x, WList,Ergebnisse={},cache={}):
     cache[asStr]=pGes
     return pGes
 def PXN(amount, x, WList, cache={}):
-    asStr=f"{x}{WList}"
+    asStr=f"{amount} {x} {WList}"
     if cache.get(asStr):
         return cache.get(asStr)
     if(amount==0):
@@ -109,7 +169,13 @@ def PXN(amount, x, WList, cache={}):
         return PX(x,WList)
     pGes=0
     for j in werteXAchseMulti:
-        pGes+=PEqX(j,WList)*PXN(amount-1,x-j,WList)
+        posi,res=ErgMultiSuccess(j,x,amount)
+        if(posi==0):
+            pGes+=PEqX(j,WList)*PXN(amount-1,res,WList)
+        if(posi==1):
+            pGes+=PEqX(j,WList)
+    #print(asStr)
+    #for^amount
     cache[asStr]=pGes
     return pGes
 
@@ -183,11 +249,12 @@ with open("out.txt","w") as f:
             outLine+="\n"
             outLine2+="\n"
             f.write(outLine)
-            f.write(outLine2)
+            #f.write(outLine2)
             ax[x,y].barh(xdata, ydata)
             ax[x,y].set_title(title)
             ax[plotDim[0]-1,y].set_xlabel("Prozent(%)")
             ax[x,plotDim[1]-1].set_ylabel("")
+        f.write("\n")
 plt.show()
             
             

@@ -125,7 +125,17 @@ Neues Würfeln:
 			=> Angriff einfacher => trotzdem kein '100% Instakill'?
 	
 	Todo:
-		-> Attribute? -> ..
+		Würfel+:
+			-> Attribute -> anzahl würfel
+			-> upgrade w20 4? spez punkte? start bei w4
+			-> WErtändeung 1: -1; 2:'-'0; 3: '+'0
+			-> Epic-Fail: keine 'Positiven' ergebnisse
+			-> Ergebnisse wieder '2D' -> aka. Schwierigkeit+Erfolgsmenge als getrennte Zielgrößen
+			-> -X Modifier-> ???
+			-> siehe out.W4.2.txt
+			
+		-> spezialisten:
+			-> Attr(1-6) -> Fähigkeit(0-Attr*2) ->Spezialisierung(0-Fäh*2)
 		-> Attributgruppen(Körper/Geist/Seele)? -> ...
 		-> Nahkampf(Skill-Rüstung -> Probe -> Schadenmachen(wie?))
 		-> Fernkampf(Bogen/Armbrust/Vorderlader?/Magiegun)-> wie anders als Nahkampf?
