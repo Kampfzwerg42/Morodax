@@ -10,18 +10,24 @@
 \section{Proben}
 \label{AllgProben}
 
-Für eine Probe werden immer 6 Würfel geworfen und in 4 Kategorien sortiert:
+Für eine Probe werden immer 6 Würfel geworfen und in 5 Kategorien sortiert:
 \begin{description}
 \item[1] Gilt als -2 Erfolge
 \item[2] Gilt als -1 Erfolg
 \item[3] Wird ignoriert(+-0)
-\item[>3] Gilt als 1 Erfolg
+\item[3..9] Gilt als 1 Erfolg
+\item[>9] Gilt als 2 Erfolge
 \end{description}
 Es werden alle Erfolge zusammengezählt:
 \begin{description}
-\item[6 Erfolge] Probe 'perfekt' erfolgreich
+\item[$\geq$6 Erfolge] Probe 'perfekt' erfolgreich
 \item[$\geq$1 Erfolge] Probe erfolgreich.
-\item[0 Erfolge] Probe prinzipiell erfolgreich es gibt allerdings Konsequenzen oder Probe fehlgeschlagen ohne Konsequenzen.
+\item[0 Erfolge] Akteur kann wählen:
+\begin{description}
+\item Probe erfolgreich aber dauert wesentlich länger(*5 min. 30 Minuten)
+\item Macht doch nix(Probe quasi annulliert).
+\item Probe erfolgreich aber es passieren 'Schusselfehler' (z.b. Verteidigungslücke, hält nur 1 Kampf, ...).
+\end{description}
 \item[-1..-6 Erfolge] Probe fehlgeschlagen.
 \item[$\leq$-7 Erfolge] Epischer Fehlschlag.
 \end{description}

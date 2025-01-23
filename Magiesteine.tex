@@ -1,0 +1,85 @@
+\section{Magiekristalle - Formen}
+
+X-Punkt: Erlaubt den Kristall mit X anderen (direkt) zu kombinieren.(X=1..8)
+1-Punkt: Preis Einkauf: günstig/machbar
+2-Punkt: Preis Einkauf: teuer, nur von Gnomen? Meisterhandwerkern produzierbar
+3+-Punkt: Artefaktqualität: nicht mit bekannten Mitteln herstellbar.
+
+\section{Manakristalle}
+An jede Zaubermatrix kann immer nur genau 1 Manakristall(Manaquelle) angeschlossen werden. Anders als Magiekristalle können Manakristalle aber relativ einfach ausgetauscht werden(5 min Arbeitsaufwand).
+Winzig(Goblin): 50MP
+Klein(Manawolf): 100MP
+Normal(Eulenbär): 250MP
+Groß(Mantikor): 500MP
+Riesig(Drache): 1500MP
+Gigantisch(H-Hohn): 5000MP
+
+\section{Magiekristalle unsortiert - Effekte}
+Jede Zaubermatrix besteht aus verschiedenen verbundenen Magiekristallen die auf einem Trägerobjekt montiert werden.
+Eine Zaubermatrix zu verändern erfordert eine Probe und Zeit(8h+- je nach Probenergebnis)(bei einer gescheiterten Probe zerfällt die Matrix in ihre Einzelteile(Magiekristalle).
+Eine Zaubermatrix besteht aus 1 Phänomenologischen Magiekristall und beliebigen Verstärkungs-/Veränderungskristallen.
+
+\addAndPrintKristall{Manasammler}{
+	Typ={-},
+	Beschreibung={Sammelt 1MP/10min},
+	Manakosten={-6/h},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Manavertailer}{
+	Typ={Veränderung},
+	Beschreibung={Erlaubt den Anschluss mehrerer Manakristalle an den Kreislauf.},
+	Manakosten={+0},
+	Einschränkungen={Verbindungspunkte als Manakristallverbindungen, genau 1 Verbindung zum Anschluss an den Zauberkreis.},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Elementarerschaffung}{
+	Typ={Phänomenologisch},
+	Beschreibung={Erzeugt Feuer/Wasser/Erde/Wind(genau 1)},
+	Manakosten={1},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Gewalt}{
+	Typ={Veränderung},
+	Beschreibung={Zauber verursacht Schaden & 1 Zusatzeffekt je nach Phänomenologie(Feuer + Dmg gegen leicht entflechtbares, ...).},
+	Manakosten={+X},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Distanz}{
+	Typ={Veränderung},
+	Beschreibung={Erlaubt Zauber über eine Entfernung von bis zu 30m zu wirken(Form passend zu Phänomenologie z.b. Feuer als 'Flammenwerfer', Erde als Kugel, ...).},
+	Manakosten={+X},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Verzauberung}{
+	Typ={Veränderung},
+	Beschreibung={Zauber wirkt (nur) auf den verbundenen Gegenstand.},
+	Manakosten={*0,5},
+	Einschränkungen={-},
+	PreisVK={sehr wenig}, PreisEK={wenig},
+}
+\addAndPrintKristall{Dauerbrenner}{
+	Typ={Veränderung},
+	Beschreibung={Macht anhaltend(1/min)},
+	Manakosten={*1/min},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Weiche}{
+	Typ={Veränderung},
+	Beschreibung={Verbindet 1 definierten Punkt mit 1 von mehreren anderen Punkten.},
+	Manakosten={+1},
+	Einschränkungen={3+ Verbindungspunkte},
+	PreisVK={???}, PreisEK={???},
+}
+\addAndPrintKristall{Verstärker}{
+	Typ={Verstärkung},
+	Beschreibung={Effektstärke *5.},
+	Manakosten={*5},
+	Einschränkungen={-},
+	PreisVK={???}, PreisEK={???},
+}
+TODO Zauber aus Magica raussuchen...
